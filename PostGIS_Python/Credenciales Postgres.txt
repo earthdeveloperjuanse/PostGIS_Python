@@ -1,0 +1,6 @@
+Credenciales Postgres
+
+-> Contraseña: postgres
+-> Puerto: 5433
+
+PostGIS 3.3 Bundle for PostgreSQL 17 

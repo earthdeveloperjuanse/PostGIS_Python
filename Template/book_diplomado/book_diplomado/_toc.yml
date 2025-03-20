@@ -1,0 +1,15 @@
+# Table of contents
+
+
+format: jb-book
+root: intro
+
+parts:
+  - caption: modulo_0
+    chapters:
+      - file: modulo_0/1740009537_plantillamd/1740009537_plantillamd.md
+      - file: modulo_0/1739882476_plantillanb/1739882476_plantillanb.ipynb
+   
+  - caption: PostGIS
+    chapters:
+      - file: PostGIS/1742175898_PostGIS_Python/1742175898_PostGIS_Python.md
