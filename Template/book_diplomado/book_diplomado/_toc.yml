@@ -1,6 +1,5 @@
 # Table of contents
 
-
 format: jb-book
 root: intro
 
@@ -10,6 +9,7 @@ parts:
       - file: modulo_0/1740009537_plantillamd/1740009537_plantillamd.md
       - file: modulo_0/1739882476_plantillanb/1739882476_plantillanb.ipynb
    
-  - caption: PostGIS
+  - caption: modulo_postgis
     chapters:
-      - file: PostGIS/1742175898_PostGIS_Python/1742175898_PostGIS_Python.md
+      - file: modulo_postgis/1742549645_plantillamd/1742549645_plantillamd.md
+      - file: modulo_postgis/1742549645_plantillamd/1742549645_plantillanb.ipynb
