@@ -1,0 +1,684 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Introducción a las principales librerías: NumPy, Pandas, rasterio, GDAL y geopandas &#8212; Módulo 1 Introducción a la Inteligencia Artificial aplicada a los Sistemas de Información Geográfica</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'modulo_0/1740009537_plantillamd/1740009537_plantillamd';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Introducción a las principales librerías: NumPy, Pandas, rasterio, GDAL y geopandas" href="../1739882476_plantillanb/1739882476_plantillanb.html" />
+    <link rel="prev" title="¡Bienvenida al Módulo 1!" href="../../intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/IGAC.png" class="logo__image only-light" alt="Módulo 1 Introducción a la Inteligencia Artificial aplicada a los Sistemas de Información Geográfica - Home"/>
+    <script>document.write(`<img src="../../_static/IGAC.png" class="logo__image only-dark" alt="Módulo 1 Introducción a la Inteligencia Artificial aplicada a los Sistemas de Información Geográfica - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    ¡Bienvenida al Módulo 1!
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">modulo_0</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introducción a las principales librerías: NumPy, Pandas, rasterio, GDAL y geopandas</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../1739882476_plantillanb/1739882476_plantillanb.html">Introducción a las principales librerías: NumPy, Pandas, rasterio, GDAL y geopandas</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">modulo_postgis</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../modulo_postgis/1742549645_plantillamd/1742549645_plantillamd.html">Bases de datos espaciales: PostGIS y su integración con Python</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/modulo_0/1740009537_plantillamd/1740009537_plantillamd.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introducción a las principales librerías: NumPy, Pandas, rasterio, GDAL y geopandas</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introducción a las principales librerías: NumPy, Pandas, rasterio, GDAL y geopandas</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caso-de-uso-o-contexto-exploracion-de-la-cobertura-del-suelo-para-6-municipios-de-cundinamarca">Caso de Uso o Contexto : Exploración de la Cobertura del Suelo para 6 Municipios de Cundinamarca</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recursos">Recursos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-del-problema">Análisis del Problema</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">NumPy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-resultados-o-conclusiones">Análisis de Resultados o Conclusiones</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#instrucciones-para-organizar-la-unidad">Instrucciones para organizar la unidad</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">Referencias</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="introduccion-a-las-principales-librerias-numpy-pandas-rasterio-gdal-y-geopandas">
+<h1>Introducción a las principales librerías: NumPy, Pandas, rasterio, GDAL y geopandas<a class="headerlink" href="#introduccion-a-las-principales-librerias-numpy-pandas-rasterio-gdal-y-geopandas" title="Link to this heading">#</a></h1>
+<div class="danger admonition">
+<p class="admonition-title">Guía para el docente</p>
+<ul class="simple">
+<li><p>El título  debe corresponder al nombre de la unidad sin incluir numeración.</p></li>
+</ul>
+</div>
+<p>✅ <strong>Ejemplo correcto:</strong> Introducción a las principales librerías: NumPy, Pandas, rasterio, GDAL y geopandas<br />
+❌ <strong>Ejemplo incorrecto:</strong> 1.2.1. Introducción a las principales librerías: NumPy, Pandas, rasterio, GDAL y geopandas</p>
+<a class="reference internal image-reference" href="../../_images/unidades1.JPG"><img alt="unidad" class="align-center" src="../../_images/unidades1.JPG" style="width: 500px;" />
+</a>
+<p style="text-align: center; font-size: 12px;"> 
+<strong>Fig.1. Unidades temáticas – Creación propia.</strong>
+ </p>
+<section id="caso-de-uso-o-contexto-exploracion-de-la-cobertura-del-suelo-para-6-municipios-de-cundinamarca">
+<h2>Caso de Uso o Contexto : Exploración de la Cobertura del Suelo para 6 Municipios de Cundinamarca<a class="headerlink" href="#caso-de-uso-o-contexto-exploracion-de-la-cobertura-del-suelo-para-6-municipios-de-cundinamarca" title="Link to this heading">#</a></h2>
+<div class="danger admonition">
+<p class="admonition-title">Guía para el docente</p>
+<ul class="simple">
+<li><p>En esta sección, se presentará un <strong>caso de uso o un contexto</strong> con el fin de ilustrar los conceptos a desarrollar en la guía. Esto permitirá una mejor comprensión y aplicación de los temas abordados.</p></li>
+</ul>
+</div>
+<p>Ejemplo, El departamento de Cundinamarca requiere conocer la distribución de su cobertura del suelo para mejorar la gestión territorial y ambiental. Se busca analizar la cobertura del suelo en seis municipios mediante datos raster y vectoriales, identificando áreas urbanas, agrícolas, bosques y cuerpos de agua.</p>
+<section id="recursos">
+<h3>Recursos<a class="headerlink" href="#recursos" title="Link to this heading">#</a></h3>
+<div class="nota admonition">
+<p class="admonition-title">Recursos</p>
+<ul class="simple">
+<li><p>Jupyter Notebook: <a class="reference internal" href="#ruta/al/archivo.ipynb"><span class="xref myst"><span>📥</span> Introducción_librerías.ipynb</span></a></p></li>
+<li><p>Capa vectorial: <a class="reference internal" href="#ruta/al/archivo/cobertura.txt"><span class="xref myst"><span>📥</span> cobertura.zip</span></a></p></li>
+</ul>
+<p><strong>En este recuadro, se deben listar los recursos requeridos para desarrollar la guía, como bases vectoriales, imágenes satelitales y etc</strong></p>
+</div>
+</section>
+<section id="analisis-del-problema">
+<h3>Análisis del Problema<a class="headerlink" href="#analisis-del-problema" title="Link to this heading">#</a></h3>
+<div class="danger admonition">
+<p class="admonition-title">Guía para el docente</p>
+<ul class="simple">
+<li><p>En está sección se describirá el objetivo de la unidad en relación con el caso de uso, así como los conceptos clave que se deben considerar para abordar el análisis del caso de uso.</p></li>
+</ul>
+</div>
+<p><strong>Objetivo:</strong> Analizar la distribución de la cobertura del suelo en seis municipios de Cundinamarca.</p>
+<p><strong>Conceptos:</strong></p>
+<ul class="simple">
+<li><p>Análisis estadístico: Cálculo de proporciones y tendencias para interpretar la distribución de la cobertura del suelo.</p></li>
+</ul>
+<div class="danger admonition">
+<p class="admonition-title">Guía para el docente</p>
+<ul class="simple">
+<li><p>Las siguientes secciones se adaptarán según el desarrollo que desee realizar, culminando con un análisis de resultados o conclusiones.</p></li>
+</ul>
+</div>
+<p>Ejemplo</p>
+</section>
+<section id="numpy">
+<h3>NumPy<a class="headerlink" href="#numpy" title="Link to this heading">#</a></h3>
+<p>NumPy (Numerical Python) es una biblioteca de Python que proporciona estructuras de datos eficientes y funciones matemáticas  para la manipulación de arreglos multidimensionales (arrays).</p>
+<a class="reference internal image-reference" href="../../_images/NumPy1.png"><img alt="numpy" class="align-center" src="../../_images/NumPy1.png" style="width: 300px;" />
+</a>
+<p style="text-align: center; font-size: 12px;">
+    <strong> Fig.2. Imagen tomada de 
+    <a href="https://numpy.org/" target="_blank">NumPy Website</a></strong>
+</p>
+<p><strong>¿Para qué sirve NumPy?</strong></p>
+<ul class="simple">
+<li><p>Manejo de arreglos y matrices: Facilita la creación, manipulación y almacenamiento de datos en estructuras eficientes.</p></li>
+<li><p>Operaciones matemáticas y estadísticas: Permite realizar cálculos rápidos como sumas, promedios, medianas, desviaciones estándar, etc.</p></li>
+<li><p>Álgebra lineal: Incluye funciones para resolver ecuaciones, descomposiciones matriciales y transformaciones lineales.</p></li>
+<li><p>Manejo eficiente de datos grandes: Optimiza la memoria y el procesamiento en comparación con las listas nativas de Python.</p></li>
+<li><p>Interoperabilidad con otras bibliotecas: Se integra con <code class="docutils literal notranslate"><span class="pre">pandas</span></code> , <code class="docutils literal notranslate"><span class="pre">SciPy</span></code>, <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> y <code class="docutils literal notranslate"><span class="pre">TensorFlow</span></code> , entre otras.</p></li>
+</ul>
+<p>NumPy es clave en el procesamiento de datos geoespaciales por varias razones:</p>
+<ul class="simple">
+<li><p>Procesamiento de datos raster : Los archivos raster (como imágenes satelitales y modelos de elevación) son esencialmente matrices de valores numéricos. NumPy permite su manipulación rápida, cálculo de estadísticas y aplicación de filtros.</p></li>
+<li><p>Bibliotecas como <code class="docutils literal notranslate"><span class="pre">rasterio</span></code>, <code class="docutils literal notranslate"><span class="pre">GDAL</span></code> y xarray usan NumPy internamente para manejar datos raster.</p></li>
+</ul>
+<p>📌 <a class="reference external" href="https://numpy.org/">Documentación de Numpy</a></p>
+<p>En la <strong>Tabla 1</strong>, se presenta la <strong>Clasificación de Uso del Suelo - Nivel 1</strong>.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Nivel 1</p></th>
+<th class="head"><p>Nombre</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Territorios Artificializados</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Territorios Agrícolas</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Bosques y Áreas Seminaturales</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Áreas Húmedas</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>Superficies de Agua</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p align="left" style="font-size: 12px;"><b>
+<strong>Tabla 1. Clasificación de Uso del Suelo - Nivel 1</strong></b>
+</p>
+<p>La fórmula para el índice de vegetación normalizado (NDVI) es:</p>
+<div class="math notranslate nohighlight">
+\[\text{NDVI} = \frac{(NIR - RED)}{(NIR + RED)}\]</div>
+<p align="center" style="font-size: 12px;">
+<b><strong>Ecuación 1. Ejemplo</strong>
+</b></p>
+<p><strong>Ejemplo código:</strong></p>
+<div class="highlight-codigo notranslate"><div class="highlight"><pre><span></span>import numpy as np
+
+# Simulación  dos bandas 
+nir = np.array([[0.2, 0.4], [0.6, 0.8]])  # Banda infrarroja cercana
+red = np.array([[0.1, 0.3], [0.5, 0.7]])  # Banda roja
+
+# Cálculo del NDVI
+ndvi = (nir - red) / (nir + red)
+
+print(ndvi)
+</pre></div>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Actividad</p>
+<ul class="simple">
+<li><p><strong>Este reacudro está destinado a preguntas y actividades para los estudiantes.</strong></p></li>
+</ul>
+</div>
+</section>
+<section id="analisis-de-resultados-o-conclusiones">
+<h3>Análisis de Resultados o Conclusiones<a class="headerlink" href="#analisis-de-resultados-o-conclusiones" title="Link to this heading">#</a></h3>
+<div class="danger admonition">
+<p class="admonition-title">Guía para el docente</p>
+<p>-Para la sección de Análisis de Resultados o Conclusiones de la unidad, se recomienda que el docente, indique los objetivos de aprendizaje alcanzados</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Nota</p>
+<ul class="simple">
+<li><p><strong>En este recuadro, proporcione definiciones  conceptos clave, aspectos importantes o recomendaciones que los estudiantes deben comprender para asimilar el contenido de la lección.</strong></p></li>
+</ul>
+</div>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="instrucciones-para-organizar-la-unidad">
+<h1>Instrucciones para organizar la unidad<a class="headerlink" href="#instrucciones-para-organizar-la-unidad" title="Link to this heading">#</a></h1>
+<p>Para organizar su unidad:</p>
+<ol class="arabic simple">
+<li><p><strong>Crear una carpeta con un código único</strong>: Genere un código único utilizando una marca de tiempo Unix. Puede obtener la marca de tiempo actual en <a class="reference external" href="https://www.unixtimestamp.com/">https://www.unixtimestamp.com/</a>. El nombre de la carpeta debe seguir el formato <code class="docutils literal notranslate"><span class="pre">marcaDeTiempo_nombreAbreviado</span></code>, por ejemplo, <code class="docutils literal notranslate"><span class="pre">17400010441_introduccion_librerias</span></code>.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/codigo1.JPG"><img alt="alt" class="align-center" src="../../_images/codigo1.JPG" style="width: 800px;" />
+</a>
+<p align="center" style="font-size: 12px;"><b>
+<strong>Fig.3. Creación carpeta – Creación propia.</strong></b>
+</p>
+<ol class="arabic simple">
+<li><p><strong>Dentro de esta carpeta</strong>:</p>
+<ul class="simple">
+<li><p><strong>Archivo principal</strong>: Cree un archivo principal en formato Markdown (<code class="docutils literal notranslate"><span class="pre">.md</span></code>) o Jupyter Notebook (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>). El nombre del archivo debe coincidir con el de la carpeta, por ejemplo, <code class="docutils literal notranslate"><span class="pre">17400010441_introduccion_librerias.md</span></code> o <code class="docutils literal notranslate"><span class="pre">17400010441_introduccion_librerias.ipynb</span></code>.</p></li>
+<li><p><strong>Carpeta de imágenes</strong>: Cree una subcarpeta llamada <code class="docutils literal notranslate"><span class="pre">imagenes</span></code> donde almacenará todas las imágenes que utilizará en su archivo principal.</p></li>
+</ul>
+</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/carpetas2.JPG1."><img alt="alt" class="align-center" src="../../_images/carpetas2.JPG1." style="width: 300px;" />
+</a>
+<p align="center" style="font-size: 12px;"><b>
+<strong>Fig.4. Creación carpetas – Creación propia.</strong></b>
+</p>
+<section id="referencias">
+<h2>Referencias<a class="headerlink" href="#referencias" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://numpy.org/">NumPy - Sitio Oficial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterbook.org/en/stable/content/index.html">JupyterBook</a></p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./modulo_0\1740009537_plantillamd"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">¡Bienvenida al Módulo 1!</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../1739882476_plantillanb/1739882476_plantillanb.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Introducción a las principales librerías: NumPy, Pandas, rasterio, GDAL y geopandas</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introducción a las principales librerías: NumPy, Pandas, rasterio, GDAL y geopandas</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caso-de-uso-o-contexto-exploracion-de-la-cobertura-del-suelo-para-6-municipios-de-cundinamarca">Caso de Uso o Contexto : Exploración de la Cobertura del Suelo para 6 Municipios de Cundinamarca</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recursos">Recursos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-del-problema">Análisis del Problema</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">NumPy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-resultados-o-conclusiones">Análisis de Resultados o Conclusiones</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#instrucciones-para-organizar-la-unidad">Instrucciones para organizar la unidad</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">Referencias</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Instituto Geográfico Agustín Codazzi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
