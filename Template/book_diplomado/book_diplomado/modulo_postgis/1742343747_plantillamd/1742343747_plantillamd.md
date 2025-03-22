@@ -306,7 +306,7 @@ Abrir Stack Builder e instalar la extensión espacial PostGIS
 <p style="text-align: center; font-size: 12px;"> <strong>Fig. 7. Instalación PostGIS</strong></p>
 
 Identificar e instalar los componentes a instalar para complementar PostGIS
-```{image} IImagenes/Components_PostGIS.PNG
+```{image} Imagenes/Components_PostGIS.PNG
 :width: 500px
 :align: center
 :alt: unidad
