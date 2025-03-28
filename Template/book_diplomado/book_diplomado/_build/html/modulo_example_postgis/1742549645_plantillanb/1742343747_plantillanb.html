@@ -1,0 +1,1166 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Bases de datos espaciales: PostGIS y su integración con Python (Ejemplo de uso) &#8212; Módulo 1 Introducción a la Inteligencia Artificial aplicada a los Sistemas de Información Geográfica</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'modulo_example_postgis/1742549645_plantillanb/1742343747_plantillanb';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Bases de datos espaciales: PostGIS y su integración con Python" href="../../modulo_introduction_postgis/1742549645_plantillanb/1742343747_plantillanb.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/IGAC.png" class="logo__image only-light" alt="Módulo 1 Introducción a la Inteligencia Artificial aplicada a los Sistemas de Información Geográfica - Home"/>
+    <script>document.write(`<img src="../../_static/IGAC.png" class="logo__image only-dark" alt="Módulo 1 Introducción a la Inteligencia Artificial aplicada a los Sistemas de Información Geográfica - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    ¡Bienvenida al Módulo 1!
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">modulo_0</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../modulo_0/1740009537_plantillamd/1740009537_plantillamd.html">Introducción a las principales librerías: NumPy, Pandas, rasterio, GDAL y geopandas</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../modulo_0/1739882476_plantillanb/1739882476_plantillanb.html">Introducción a las principales librerías: NumPy, Pandas, rasterio, GDAL y geopandas</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">modulo_introduction_postgis</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../modulo_introduction_postgis/1742549645_plantillanb/1742343747_plantillanb.html">Bases de datos espaciales: PostGIS y su integración con Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">modulo_example_postgis</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Bases de datos espaciales: PostGIS y su integración con Python (Ejemplo de uso)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/modulo_example_postgis/1742549645_plantillanb/1742343747_plantillanb.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Bases de datos espaciales: PostGIS y su integración con Python (Ejemplo de uso)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos-espaciales">Bases de datos espaciales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabla-de-contenido">Tabla de contenido</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definiciones-preliminares">Definiciones preliminares</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-lenguaje-sql">El lenguaje SQL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postgresql">PostgreSQL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postgis">PostGIS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-postgis-python">Integración PostGIS / Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caso-de-estudio-administracion-de-datos-para-generacion-de-modelo-clasificador-de-bosque-no-bosque-por-medio-de-postgis-y-python">Caso de estudio: Administración de datos para generación de modelo clasificador de Bosque / No Bosque por medio de PostGIS y Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias-y-recursos">Referencias y Recursos</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos">Bases de Datos</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sql">SQL</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">PostGIS</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python-y-librerias-cientificas">Python y Librerías Científicas</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-y-entornos-de-desarrollo">Jupyter y Entornos de Desarrollo</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="bases-de-datos-espaciales-postgis-y-su-integracion-con-python-ejemplo-de-uso">
+<h1>Bases de datos espaciales: PostGIS y su integración con Python (Ejemplo de uso)<a class="headerlink" href="#bases-de-datos-espaciales-postgis-y-su-integracion-con-python-ejemplo-de-uso" title="Link to this heading">#</a></h1>
+<section id="bases-de-datos-espaciales">
+<h2>Bases de datos espaciales<a class="headerlink" href="#bases-de-datos-espaciales" title="Link to this heading">#</a></h2>
+</section>
+<section id="tabla-de-contenido">
+<h2>Tabla de contenido<a class="headerlink" href="#tabla-de-contenido" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Definiciones preliminares</p></li>
+<li><p>El lenguaje SQL<br>
+2.1. Creación y eliminación de tablas<br>
+2.2. Inserción de datos<br>
+2.3. Consultas básicas con SELECT<br>
+2.4. Eliminación de duplicados con DISTINCT<br>
+2.5. Uso de JOIN para combinar tablas<br>
+2.6. Subconsultas<br>
+2.7. Uso de GROUP BY y HAVING<br>
+2.8. Actualización de datos<br>
+2.9. Eliminar registros<br>
+2.10. Vistas<br>
+2.11. Llaves foráneas<br>
+2.12. Transacciones<br></p></li>
+<li><p>PostgreSQL<br>
+3.1. Instalación</p></li>
+<li><p>PostGIS<br>
+4.1. Instalación<br>
+4.2. Administración PostGIS<br>
+4.2.1. Modelo de datos espacial<br>
+4.2.2. Tipos de datos geográficos<br>
+4.2.3. Cálculo de atributos geométricos<br>
+4.2.4. Sistemas de referencia espacial<br>
+4.3. Cargar datos espaciales utilizando SQL<br>
+4.3.1. Datos vectoriales<br>
+4.3.2. Extrayendo datos espaciales vectoriales<br>
+4.3.3. Datos ráster<br>
+4.3.4. Extrayendo datos espaciales ráster<br></p></li>
+<li><p>Integración PostGIS / Python</p></li>
+<li><p>Caso de estudio: Administración de datos para generación de modelo clasificador de Bosque / No Bosque por medio de PostGIS y Python</p></li>
+<li><p>Referencias y recursos</p></li>
+</ol>
+<section id="definiciones-preliminares">
+<h3>Definiciones preliminares<a class="headerlink" href="#definiciones-preliminares" title="Link to this heading">#</a></h3>
+<p><strong>Base de datos</strong></p>
+<p>“…Una base de datos es una recopilación organizada de información o datos estructurados, que normalmente se almacena de forma electrónica en un sistema informático. Normalmente, una base de datos está controlada por un sistema de gestión de bases de datos (DBMS). En conjunto, los datos y el DBMS, junto con las aplicaciones asociadas a ellos, reciben el nombre de sistema de bases de datos, abreviado normalmente a simplemente base de datos….”</p>
+<p><strong>Lenguaje de consulta estructurada (SQL)</strong>
+“…El SQL es un lenguaje de programación que utilizan casi todas las bases de datos relacionales para consultar, manipular y definir los datos, y para proporcionar control de acceso….”</p>
+<p><strong>Software de base de datos</strong>
+“…El software de base de datos se utiliza para crear, editar y mantener archivos y registros de bases de datos, lo que facilita la creación de archivos y registros, la entrada de datos, la edición de datos, la actualización y la creación de informes. El software también maneja el almacenamiento de datos, las copias de seguridad y la creación de informes, así como el control de acceso múltiple y la seguridad….”</p>
+<p><strong>Sistema de gestión de bases de datos</strong>
+“…Normalmente, una base de datos requiere un programa de software de bases de datos completo, conocido como sistema de gestión de bases de datos (DBMS). Un DBMS sirve como interfaz entre la base de datos y sus programas o usuarios finales, lo que permite a los usuarios recuperar, actualizar y gestionar cómo se organiza y se optimiza la información. Un DBMS también facilita la supervisión y el control de las bases de datos, lo que permite una variedad de operaciones administrativas como la supervisión del rendimiento, el ajuste, la copia de seguridad y la recuperación.
+Algunos ejemplos de software de bases de datos o DBMS populares incluyen MySQL, Microsoft Access, Microsoft SQL Server, FileMaker Pro, Oracle Database y dBASE…”</p>
+<p>Oracle (<a class="reference external" href="https://www.oracle.com/co/database/what-is-database/">https://www.oracle.com/co/database/what-is-database/</a>)</p>
+<p><strong>PostgreSQL</strong>
+“…PostgreSQL es un sistema de gestión de bases de datos relacionales de objetos ( ORDBMS ) basado en POSTGRES, versión 4.2 , desarrollado en el Departamento de Informática de la Universidad de California en Berkeley. POSTGRES fue pionero en muchos conceptos que solo estuvieron disponibles en algunos sistemas de bases de datos comerciales mucho más tarde….”</p>
+<p>PostgreSQL (<a class="reference external" href="https://www.postgresql.org/docs/current/intro-whatis.html">https://www.postgresql.org/docs/current/intro-whatis.html</a>)</p>
+</section>
+<section id="el-lenguaje-sql">
+<h3>El lenguaje SQL<a class="headerlink" href="#el-lenguaje-sql" title="Link to this heading">#</a></h3>
+<p>“…El lenguaje de consulta estructurada (SQL) es un lenguaje estándar para la creación y manipulación de bases de datos…”</p>
+<p>AWS (<a class="reference external" href="https://aws.amazon.com/es/what-is/sql/#:~:text=El%20lenguaje%20de%20consulta%20estructurada%20(SQL)%20es%20un%20lenguaje%20est%C3%A1ndar,relacional%20que%20utiliza%20consultas%20SQL.">https://aws.amazon.com/es/what-is/sql/#:~:text=El lenguaje de consulta estructurada (SQL) es un lenguaje estándar,relacional que utiliza consultas SQL.</a>)</p>
+</section>
+<section id="postgresql">
+<h3>PostgreSQL<a class="headerlink" href="#postgresql" title="Link to this heading">#</a></h3>
+<p>“…PostgreSQL es un sistema de gestión de bases de datos relacionales de objetos (ORDBMS), desarrollado en el Departamento de Informática de la Universidad de California en Berkeley. POSTGRES fue pionero en muchos conceptos que solo estuvieron disponibles en algunos sistemas de bases de datos comerciales mucho más tarde…Y gracias a la licencia liberal, PostgreSQL puede ser utilizado, modificado y distribuido por cualquier persona de forma gratuita y para cualquier propósito, ya sea privado, comercial o académico”
+PostgreSQL (<a class="reference external" href="https://www.postgresql.org/docs/current/intro-whatis.html">https://www.postgresql.org/docs/current/intro-whatis.html</a>)</p>
+</section>
+<section id="postgis">
+<h3>PostGIS<a class="headerlink" href="#postgis" title="Link to this heading">#</a></h3>
+<p>“…PostGIS amplía las capacidades de la base de datos relacional PostgreSQL al agregar soporte para almacenar, indexar y consultar datos geoespaciales….”
+Las características de PostGIS incluyen:</p>
+<ul class="simple">
+<li><p><strong>Almacenamiento de datos espaciales:</strong> almacene diferentes tipos de datos espaciales, como puntos, líneas, polígonos y multigeometrías, tanto en datos 2D como 3D.</p></li>
+<li><p><strong>Indexación espacial:</strong> busque y recupere rápidamente datos espaciales en función de su ubicación.</p></li>
+<li><p><strong>Funciones espaciales:</strong> una amplia gama de funciones espaciales que le permiten filtrar y analizar datos espaciales, medir distancias y áreas , intersecar geometrías, crear búferes y más.</p></li>
+<li><p><strong>Procesamiento de geometría:</strong> herramientas para procesar y manipular datos geométricos, como simplificación , conversión y generalización.</p></li>
+<li><p><strong>Soporte de datos ráster:</strong> almacenamiento y procesamiento de datos ráster , como datos de elevación y datos meteorológicos.</p></li>
+<li><p><strong>Geocodificación y geocodificación inversa:</strong> Funciones para geocodificación y geocodificación inversa.</p></li>
+<li><p><strong>Integración:</strong> acceda y trabaje con PostGIS utilizando herramientas de terceros como QGIS , GeoServer , MapServer , ArcGIS, Tableau.</p></li>
+</ul>
+<p>PostGIS (<a class="reference external" href="https://postgis.net/">https://postgis.net/</a>)</p>
+</section>
+<section id="integracion-postgis-python">
+<h3>Integración PostGIS / Python<a class="headerlink" href="#integracion-postgis-python" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Cargar datos desde Shapefile con librerías de python <code class="docutils literal notranslate"><span class="pre">Geopandas</span></code>, <code class="docutils literal notranslate"><span class="pre">Shapely</span></code> y <code class="docutils literal notranslate"><span class="pre">psycopg2</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># GeoPandas: Extensión de Pandas para manejar datos geoespaciales (puntos, líneas, polígonos).</span>
+<span class="c1"># Permite leer, escribir y analizar datos espaciales en formatos como Shapefile, GeoJSON, etc.</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">geopandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gpd</span>
+<span class="c1"># Psycopg2: Biblioteca para conectar Python con bases de datos PostgreSQL.</span>
+<span class="c1"># Se usa para ejecutar consultas SQL, manejar transacciones y trabajar con datos espaciales en PostGIS.</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">psycopg2</span>
+<span class="c1"># Shapely: Biblioteca para la manipulación y análisis de geometrías espaciales.</span>
+<span class="c1"># &#39;wkt&#39; (Well-Known Text) permite convertir entre texto y objetos geométricos.</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">shapely</span><span class="w"> </span><span class="kn">import</span> <span class="n">wkt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Leer los datos espaciales con ayuda de Geopandas</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shapefile_path</span> <span class="o">=</span> <span class="s2">&quot;./Samples/Samples_Point.shp&quot;</span>  <span class="c1"># Ruta del archivo .shp con datos geoespaciales</span>
+<span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">shapefile_path</span><span class="p">)</span>  <span class="c1"># Cargar el archivo en un GeoDataFrame</span>
+<span class="n">gdf</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>  <span class="c1"># Mostrar las primeras filas del GeoDataFrame para inspección</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Shape_Leng</th>
+      <th>Shape_Area</th>
+      <th>class</th>
+      <th>ORIG_FID</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Bosque</td>
+      <td>0</td>
+      <td>POINT (333600.852 710803.978)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Bosque</td>
+      <td>0</td>
+      <td>POINT (333797.268 710693.129)</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Bosque</td>
+      <td>0</td>
+      <td>POINT (333865.332 710844.816)</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Bosque</td>
+      <td>0</td>
+      <td>POINT (334120.089 710615.341)</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Bosque</td>
+      <td>0</td>
+      <td>POINT (334166.762 710842.872)</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Crear la conexión con la base de datos espacial</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DB_CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;dbname&quot;</span><span class="p">:</span> <span class="s2">&quot;DB_GIS&quot;</span><span class="p">,</span>                 <span class="c1"># Nombre de la base de datos</span>
+    <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;postgres&quot;</span><span class="p">,</span>                 <span class="c1"># Usuario de la base de datos</span>
+    <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;postgres&quot;</span><span class="p">,</span>             <span class="c1"># Contraseña del usuario</span>
+    <span class="s2">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>                <span class="c1"># Dirección del servidor (localhost si es local)</span>
+    <span class="s2">&quot;port&quot;</span><span class="p">:</span> <span class="s2">&quot;5432&quot;</span>                      <span class="c1"># Puerto predeterminado de PostgreSQL</span>
+<span class="p">}</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="o">**</span><span class="n">DB_CONFIG</span><span class="p">)</span>    <span class="c1"># Establecer conexión con la base de datos PostgreSQL</span>
+<span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>                     <span class="c1"># Crear un cursor para ejecutar comandos SQL</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Creación de tabla con columnas a cargar</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crear una tabla en PostGIS si no existe</span>
+<span class="n">create_table_query</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">CREATE TABLE IF NOT EXISTS training_sample (</span>
+<span class="s2">    id SERIAL PRIMARY KEY,              -- Identificador único autoincremental</span>
+<span class="s2">    class TEXT,                         -- Columna para almacenar la clase del punto</span>
+<span class="s2">    geom GEOMETRY(Geometry, 32619)      -- Columna geométrica con proyección EPSG:32619 (UTM Zona 19N)</span>
+<span class="s2">);</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">create_table_query</span><span class="p">)</span>     <span class="c1"># Ejecutar la consulta SQL para crear la tabla</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>                       <span class="c1"># Confirmar la creación de la tabla en la base de datos</span>
+</pre></div>
+</div>
+</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/Table_Training_Sample.PNG"><img alt="unidad" class="align-center" src="../../_images/Table_Training_Sample.PNG" style="width: 500px;" />
+</a>
+<p style="text-align: center; font-size: 12px;"> 
+<strong>Fig. 1. Tabla creada "training_sample" en base de datos </strong>
+</p><p>Insertar los datos</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conn</span><span class="o">.</span><span class="n">rollback</span><span class="p">()</span>  <span class="c1"># Realizar un rollback por seguridad antes de insertar datos (opcional)</span>
+<span class="n">insert_query</span> <span class="o">=</span> <span class="s2">&quot;INSERT INTO training_sample (class, geom) VALUES (</span><span class="si">%s</span><span class="s2">, ST_GeomFromText(</span><span class="si">%s</span><span class="s2">, 32619))&quot;</span>
+<span class="c1"># Iterar sobre cada fila del GeoDataFrame y cargar los datos en la base de datos</span>
+<span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">gdf</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">class_</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;class&quot;</span><span class="p">]</span>                       <span class="c1"># Extraer el valor de la columna &#39;class&#39; (ajustar según los nombres de columnas)</span>
+    <span class="n">geom</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">wkt</span>                  <span class="c1"># Convertir la geometría a formato WKT (Well-Known Text)    </span>
+    <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">insert_query</span><span class="p">,</span> <span class="p">(</span><span class="n">class_</span><span class="p">,</span> <span class="n">geom</span><span class="p">))</span>   <span class="c1"># Ejecutar la consulta SQL con los valores extraídos</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>                                   <span class="c1"># Confirmar la inserción de datos en la base de datos</span>
+<span class="n">cur</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>                                     <span class="c1"># Cerrar el cursor y la conexión con la base de datos</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Cargar datos desde archivo .tif con librerías de python <code class="docutils literal notranslate"><span class="pre">subprocess</span></code> y <code class="docutils literal notranslate"><span class="pre">psycopg2</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">psycopg2</span>     <span class="c1"># psycopg2: Librería para conectar Python con bases de datos PostgreSQL. Permite ejecutar consultas SQL, manipular datos y gestionar transacciones.</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>   <span class="c1"># subprocess: Módulo para ejecutar comandos del sistema desde Python. Se usa para llamar programas externos como psql, raster2pgsql, etc.</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DB_CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;dbname&quot;</span><span class="p">:</span> <span class="s2">&quot;DB_GIS&quot;</span><span class="p">,</span>                 <span class="c1"># Nombre de la base de datos</span>
+    <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;postgres&quot;</span><span class="p">,</span>                 <span class="c1"># Usuario de la base de datos</span>
+    <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;postgres&quot;</span><span class="p">,</span>             <span class="c1"># Contraseña del usuario</span>
+    <span class="s2">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>                <span class="c1"># Dirección del servidor (localhost si es local)</span>
+    <span class="s2">&quot;port&quot;</span><span class="p">:</span> <span class="s2">&quot;5432&quot;</span>                      <span class="c1"># Puerto predeterminado de PostgreSQL</span>
+<span class="p">}</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="o">**</span><span class="n">DB_CONFIG</span><span class="p">)</span> 
+<span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="c1"># Abrir el archivo raster (.tif)</span>
+<span class="n">raster_path</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;C:\Users\JHERNANDEZ\OneDrive - Esri NOSA\Documentos\GitHub\PostGIS_Python\PostGIS_Python\temp_raster.tif&#39;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;PGPASSWORD&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">DB_CONFIG</span><span class="p">[</span><span class="s2">&quot;password&quot;</span><span class="p">]</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">¿Por qué usar PGPASSWORD?</span>
+<span class="sd">- Evita que psql solicite la contraseña cada vez que se ejecuta un comando.</span>
+<span class="sd">- Facilita la automatización de tareas en PostgreSQL, como importar datos o ejecutar scripts SQL.</span>
+<span class="sd">- Es más seguro que escribir la contraseña directamente en el comando, pero aún es recomendable eliminarla después de su uso.&#39;</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;\n¿Por qué usar PGPASSWORD?\n- Evita que psql solicite la contraseña cada vez que se ejecuta un comando.\n- Facilita la automatización de tareas en PostgreSQL, como importar datos o ejecutar scripts SQL.\n- Es más seguro que escribir la contraseña directamente en el comando, pero aún es recomendable eliminarla después de su uso.&#39;\n&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ruta a la carpeta donde están raster2pgsql y psql</span>
+<span class="n">pg_bin_path</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;C:\Program Files\PostgreSQL\16\bin&quot;</span>
+<span class="n">sql_output_path</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;C:\Shp_Example\prueba.sql&quot;</span>
+<span class="c1"># Construir el comando con la ruta completa de raster2pgsql y psql</span>
+<span class="n">cmd</span> <span class="o">=</span> <span class="sa">fr</span><span class="s1">&#39;&quot;</span><span class="si">{</span><span class="n">pg_bin_path</span><span class="si">}</span><span class="s1">\raster2pgsql.exe&quot; -s 32619 -I -C &quot;</span><span class="si">{</span><span class="n">raster_path</span><span class="si">}</span><span class="s1">&quot; &gt;  </span><span class="si">{</span><span class="n">sql_output_path</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="c1"># Ejecutar el comando en la terminal</span>
+<span class="n">process</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">capture_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cmd</span> <span class="o">=</span> <span class="sa">fr</span><span class="s1">&#39;&quot;</span><span class="si">{</span><span class="n">pg_bin_path</span><span class="si">}</span><span class="s1">\psql.exe&quot; -d </span><span class="si">{</span><span class="n">DB_CONFIG</span><span class="p">[</span><span class="s2">&quot;dbname&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1"> -U </span><span class="si">{</span><span class="n">DB_CONFIG</span><span class="p">[</span><span class="s2">&quot;user&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1"> -h </span><span class="si">{</span><span class="n">DB_CONFIG</span><span class="p">[</span><span class="s2">&quot;host&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1"> -p </span><span class="si">{</span><span class="n">DB_CONFIG</span><span class="p">[</span><span class="s2">&quot;port&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1"> -f &quot;</span><span class="si">{</span><span class="n">sql_output_path</span><span class="si">}</span><span class="s1">&quot;&#39;</span>
+<span class="c1"># Ejecutar el comando</span>
+<span class="n">process</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">capture_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># Limpiar la variable de entorno después de ejecutar el comando</span>
+<span class="k">del</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;PGPASSWORD&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">process</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BEGIN
+CREATE TABLE
+INSERT 0 1
+CREATE INDEX
+ANALYZE
+ addrasterconstraints 
+----------------------
+ t
+(1 fila)
+
+COMMIT
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="caso-de-estudio-administracion-de-datos-para-generacion-de-modelo-clasificador-de-bosque-no-bosque-por-medio-de-postgis-y-python">
+<h3>Caso de estudio: Administración de datos para generación de modelo clasificador de Bosque / No Bosque por medio de PostGIS y Python<a class="headerlink" href="#caso-de-estudio-administracion-de-datos-para-generacion-de-modelo-clasificador-de-bosque-no-bosque-por-medio-de-postgis-y-python" title="Link to this heading">#</a></h3>
+<p>El caso de estudio <strong>“Bosque - No Bosque”</strong> consiste en la clasificación de áreas geográficas en dos categorías: regiones con cobertura boscosa y regiones sin cobertura boscosa. Este análisis es fundamental para la gestión ambiental, la planificación territorial y el monitoreo del cambio climático. Para lograr esta clasificación, se integran <strong>datos ráster y vectoriales</strong> almacenados en una base de datos PostgreSQL, combinados con técnicas de Machine Learning en Python.</p>
+<p>El proceso comienza con la extracción de datos ráster almacenados en PostGIS, los cuales contienen información multiespectral de imágenes satelitales. Luego, se combinan con muestras de entrenamiento vectoriales que indican la cobertura real de la tierra, permitiendo entrenar un modelo de clasificación basado en <strong>Random Forest</strong>. Este modelo aprende a diferenciar áreas boscosas y no boscosas a partir de las firmas espectrales de los píxeles.</p>
+<p>La <strong>integración de PostGIS y Python</strong> es clave para procesar datos espaciales de manera eficiente. PostGIS permite realizar consultas geoespaciales avanzadas y gestionar datos ráster y vectoriales en una base de datos optimizada, mientras que Python proporciona herramientas avanzadas para el análisis de datos y el entrenamiento de modelos de aprendizaje automático. La combinación de ambas tecnologías permite automatizar la extracción de datos, la clasificación y la visualización de los resultados en mapas interpretables.</p>
+<p>Este enfoque facilita la toma de decisiones basadas en datos espaciales, permitiendo la identificación de patrones de deforestación, el monitoreo de la salud de los bosques y la generación de políticas ambientales más efectivas.</p>
+<p>Cargar imagen a base de datos espacial</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>raster2pgsql.exe<span class="w"> </span>-s<span class="w"> </span><span class="m">32619</span><span class="w"> </span>-I<span class="w"> </span>-C<span class="w"> </span>C:<span class="se">\P</span>ostGIS_Python<span class="se">\n</span>ir_aoi.tif<span class="w"> </span>&gt;<span class="w"> </span>C:<span class="se">\P</span>ostGIS_Python<span class="se">\l</span>oad_nir_img.sql
+
+psql<span class="w"> </span>-d<span class="w"> </span>postgis_34_sample<span class="w"> </span>-f<span class="w"> </span>C:<span class="se">\P</span>ostGIS_Python<span class="se">\l</span>oad_nir_img.sql
+</pre></div>
+</div>
+<p>Importas las liberías necesarias para el caso de uso</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">psycopg2</span>                                                                     <span class="c1"># Conectar a la base de datos PostgreSQL con PostGIS</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>                                                                  <span class="c1"># Manipulación de arrays numéricos y operaciones matemáticas</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">rasterio</span>                                                                     <span class="c1"># Manejo y procesamiento de datos ráster</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>                                                                 <span class="c1"># Manejo de datos tabulares y consultas SQL</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>                                <span class="c1"># División de datos en entrenamiento y prueba</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.ensemble</span><span class="w"> </span><span class="kn">import</span> <span class="n">RandomForestClassifier</span>                                 <span class="c1"># Algoritmo de clasificación de bosques aleatorios</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">confusion_matrix</span><span class="p">,</span> <span class="n">classification_report</span> <span class="c1"># Evaluación del modelo</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>                                                     <span class="c1"># Generación de gráficos</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>                                                               <span class="c1"># Visualización de datos con gráficos estadísticos</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.colors</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mcolors</span>                                                 <span class="c1"># Manejo de colores en visualizaciones</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">skimage.transform</span><span class="w"> </span><span class="kn">import</span> <span class="n">resize</span>                                                <span class="c1"># Redimensionamiento de imágenes</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Configuración de parámetros para conexión con base de datos local</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Configuración de conexión a la base de datos PostgreSQL con PostGIS</span>
+<span class="n">DB_CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;dbname&quot;</span><span class="p">:</span> <span class="s2">&quot;postgis_34_sample&quot;</span><span class="p">,</span>      <span class="c1"># Nombre de la base de datos</span>
+    <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;postgres&quot;</span><span class="p">,</span>                 <span class="c1"># Usuario de la base de datos</span>
+    <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;postgres&quot;</span><span class="p">,</span>             <span class="c1"># Contraseña del usuario</span>
+    <span class="s2">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>                <span class="c1"># Dirección del servidor (localhost si es local)</span>
+    <span class="s2">&quot;port&quot;</span><span class="p">:</span> <span class="s2">&quot;5432&quot;</span>                      <span class="c1"># Puerto predeterminado de PostgreSQL</span>
+<span class="p">}</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">conectar_postgis</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Establece una conexión a la base de datos PostgreSQL con soporte PostGIS.</span>
+<span class="sd">    Retorna:</span>
+<span class="sd">        conn (psycopg2.connection): Objeto de conexión a la base de datos.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">conn</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="o">**</span><span class="n">DB_CONFIG</span><span class="p">)</span>  <span class="c1"># Conectar a la base de datos usando la configuración definida</span>
+    <span class="k">return</span> <span class="n">conn</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Extraer el ráster almacenado en la base de datos espacial</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Establece la conexión con la base de datos PostgreSQL con PostGIS</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">conectar_postgis</span><span class="p">()</span>
+<span class="c1"># Crea un cursor para ejecutar consultas SQL</span>
+<span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="c1"># Ejecuta una consulta SQL para obtener un ráster desde la base de datos en formato GDAL (GeoTIFF)</span>
+<span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT ST_AsGDALRaster(rast, &#39;GTiff&#39;) FROM nir_aoi LIMIT 1;&quot;</span><span class="p">)</span>
+<span class="c1"># Recupera el resultado de la consulta (raster_bin contiene los datos del ráster en formato binario)</span>
+<span class="n">raster_bin</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+<span class="c1"># Guarda temporalmente la imagen ráster en un archivo local (GeoTIFF)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;temp_raster.tif&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">raster_bin</span><span class="p">)</span>
+<span class="c1"># Abre la imagen ráster utilizando rasterio</span>
+<span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;temp_raster.tif&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">src</span><span class="p">:</span>
+    <span class="n">raster_array</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>   <span class="c1"># Carga el contenido del ráster como un array NumPy</span>
+    <span class="n">transform</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">transform</span>   <span class="c1"># Obtiene la transformación del ráster (ubicación y resolución espacial)</span>
+<span class="c1"># Cierra el cursor y la conexión a la base de datos para liberar recursos</span>
+<span class="n">cur</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Extraer los datos de muestras (Geometría punto. Bosque - No Bosque)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Establece la conexión con la base de datos PostgreSQL con PostGIS</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">conectar_postgis</span><span class="p">()</span>
+<span class="c1"># Consulta SQL para extraer coordenadas y etiquetas de clasificación desde la tabla de muestras de entrenamiento</span>
+<span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">SELECT ST_X(geom) AS lon, ST_Y(geom) AS lat, class FROM training_sample;</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="c1"># Ejecuta la consulta y almacena los resultados en un DataFrame de pandas</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">conn</span><span class="p">)</span>
+<span class="c1"># Cierra la conexión con la base de datos para liberar recursos</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Extraer los valores de píxel de cada banda del ráster para cada muestra</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Listas para almacenar los valores de los píxeles extraídos y sus respectivas etiquetas</span>
+<span class="n">valores_pixeles</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">etiquetas</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1"># Iteramos sobre cada fila del DataFrame que contiene las muestras de entrenamiento</span>
+<span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span>                              <span class="c1"># Extraemos las coordenadas y la clase de la muestra    </span>
+    <span class="c1"># Convertimos coordenadas geográficas (lon, lat) a índices de píxel en la imagen ráster</span>
+    <span class="n">row_idx</span><span class="p">,</span> <span class="n">col_idx</span> <span class="o">=</span> <span class="o">~</span><span class="n">transform</span> <span class="o">*</span> <span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">)</span>                                          <span class="c1"># Aplicamos la transformación inversa</span>
+    <span class="n">row_idx</span><span class="p">,</span> <span class="n">col_idx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">row_idx</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">col_idx</span><span class="p">)</span>                                       <span class="c1"># Convertimos a enteros para obtener la posición en la matriz ráster</span>
+    <span class="c1"># Verificamos que las coordenadas convertidas estén dentro de los límites del ráster</span>
+    <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">row_idx</span> <span class="o">&lt;</span> <span class="n">raster_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">col_idx</span> <span class="o">&lt;</span> <span class="n">raster_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span>
+        <span class="c1"># Extraemos los valores de las bandas del píxel correspondiente y los almacenamos en la lista</span>
+        <span class="n">valores_pixeles</span><span class="o">.</span><span class="n">append</span><span class="p">([</span>
+            <span class="n">raster_array</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">row_idx</span><span class="p">,</span> <span class="n">col_idx</span><span class="p">],</span>  <span class="c1"># Banda 1 (Ej. Rojo)</span>
+            <span class="n">raster_array</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">row_idx</span><span class="p">,</span> <span class="n">col_idx</span><span class="p">],</span>  <span class="c1"># Banda 2 (Ej. Verde)</span>
+            <span class="n">raster_array</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="n">row_idx</span><span class="p">,</span> <span class="n">col_idx</span><span class="p">]</span>   <span class="c1"># Banda 3 (Ej. Azul)</span>
+        <span class="p">])</span>
+        <span class="n">etiquetas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>                                                         <span class="c1"># Almacenamos la etiqueta de la muestra en la lista</span>
+<span class="c1"># Convertimos las listas a arreglos NumPy para su uso en el modelo de Machine Learning</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">valores_pixeles</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">etiquetas</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dividir el universo de muestras en grupos de entrenamiento y validación</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Entrenamiento del modelo de clasificación</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inicialización del modelo de clasificación Random Forest</span>
+<span class="n">modelo</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span>
+    <span class="n">n_estimators</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>      <span class="c1"># Número de árboles en el bosque</span>
+    <span class="n">max_depth</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>           <span class="c1"># Profundidad máxima de cada árbol para evitar sobreajuste</span>
+    <span class="n">max_features</span><span class="o">=</span><span class="s2">&quot;sqrt&quot;</span><span class="p">,</span>    <span class="c1"># Número máximo de características consideradas en cada división (raíz cuadrada del total)</span>
+    <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span>        <span class="c1"># Fijamos una semilla para asegurar reproducibilidad de resultados</span>
+    <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span>               <span class="c1"># Utiliza todos los núcleos de la CPU disponibles para acelerar el entrenamiento</span>
+<span class="p">)</span>
+<span class="c1"># Entrenamiento del modelo con los datos de entrenamiento</span>
+<span class="n">modelo</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="c1"># Realización de predicciones sobre el conjunto de prueba</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">modelo</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Evaluación del rendimiento del modelo</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cálculo de la precisión del modelo</span>
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Precisión:&quot;</span><span class="p">,</span> <span class="n">accuracy</span><span class="p">)</span>  <span class="c1"># Imprime la precisión global del modelo</span>
+<span class="c1"># Cálculo de la exactitud del modelo con formato de 4 decimales</span>
+<span class="n">exactitud</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Exactitud del modelo: </span><span class="si">{</span><span class="n">exactitud</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># Cálculo de la matriz de confusión</span>
+<span class="n">conf_matrix</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="c1"># Visualización de la matriz de confusión con Seaborn</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">conf_matrix</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Blues&quot;</span><span class="p">,</span> 
+            <span class="n">xticklabels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;No Bosque&quot;</span><span class="p">,</span> <span class="s2">&quot;Bosque&quot;</span><span class="p">],</span> 
+            <span class="n">yticklabels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;No Bosque&quot;</span><span class="p">,</span> <span class="s2">&quot;Bosque&quot;</span><span class="p">])</span>
+<span class="c1"># Etiquetas para los ejes</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Predicción&quot;</span><span class="p">)</span>            <span class="c1"># Etiqueta del eje X</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Real&quot;</span><span class="p">)</span>                  <span class="c1"># Etiqueta del eje Y</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Matriz de Confusión&quot;</span><span class="p">)</span>    <span class="c1"># Título del gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>                          <span class="c1"># Mostrar la matriz de confusión</span>
+<span class="c1"># Generación del informe de clasificación con métricas detalladas</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">target_names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;No Bosque&quot;</span><span class="p">,</span> <span class="s2">&quot;Bosque&quot;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Aplicación del modelo para predecir la clase de cada píxel en la imagen ráster</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filas</span><span class="p">,</span> <span class="n">columnas</span> <span class="o">=</span> <span class="n">raster_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">raster_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># Extraemos el número de filas y columnas del ráster</span>
+<span class="c1"># Reestructuramos la imagen ráster en una matriz donde cada fila es un píxel y las columnas son las bandas espectrales</span>
+<span class="n">raster_reshaped</span> <span class="o">=</span> <span class="n">raster_array</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>                 <span class="c1"># Convertimos a formato (N, 3), donde N es el número total de píxeles</span>
+<span class="n">predicciones</span> <span class="o">=</span> <span class="n">modelo</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">raster_reshaped</span><span class="p">)</span>                  <span class="c1"># Aplicamos el modelo entrenado para predecir la clase de cada píxel en la imagen ráster</span>
+<span class="n">predict_</span> <span class="o">=</span> <span class="n">predicciones</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">filas</span><span class="p">,</span> <span class="n">columnas</span><span class="p">)</span>                <span class="c1"># Reformateamos las predicciones en la misma estructura de la imagen original (filas, columnas)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mapa_clases</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;No_Bosque&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Bosque&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>                         <span class="c1"># Diccionario de mapeo de clases: Asigna valores numéricos a las etiquetas de clasificación</span>
+<span class="n">predict_numeric</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="n">mapa_clases</span><span class="o">.</span><span class="n">get</span><span class="p">)(</span><span class="n">predict_</span><span class="p">)</span>           <span class="c1"># Convierte la matriz de predicciones categóricas a valores numéricos usando el diccionario de mapeo</span>
+<span class="n">filas</span><span class="p">,</span> <span class="n">columnas</span> <span class="o">=</span> <span class="n">raster_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">raster_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>      <span class="c1"># Extraemos las dimensiones de la imagen original</span>
+<span class="c1"># Redimensionamos la imagen predicha para ajustarla a la resolución original del ráster</span>
+<span class="n">predict_resized</span> <span class="o">=</span> <span class="n">resize</span><span class="p">(</span>
+    <span class="n">predict_numeric</span><span class="p">,</span> <span class="p">(</span><span class="n">filas</span><span class="p">,</span> <span class="n">columnas</span><span class="p">),</span> 
+    <span class="n">order</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>                                                        <span class="c1"># Mantiene valores discretos sin interpolación</span>
+    <span class="n">anti_aliasing</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>                                            <span class="c1"># Evita suavizar los bordes para mantener las clases bien definidas</span>
+    <span class="n">preserve_range</span><span class="o">=</span><span class="kc">True</span>                                             <span class="c1"># Mantiene los valores originales sin normalización</span>
+<span class="p">)</span>
+<span class="n">cmap</span> <span class="o">=</span> <span class="n">mcolors</span><span class="o">.</span><span class="n">ListedColormap</span><span class="p">([</span><span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;white&quot;</span><span class="p">])</span>                   <span class="c1"># Definimos un mapa de colores para visualizar la clasificación. &quot;Bosque&quot; será verde, &quot;No Bosque&quot; será blanco</span>
+<span class="n">bounds</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>                                                <span class="c1"># Definimos los límites de cada clase en el mapa de colores</span>
+<span class="n">norm</span> <span class="o">=</span> <span class="n">mcolors</span><span class="o">.</span><span class="n">BoundaryNorm</span><span class="p">(</span><span class="n">bounds</span><span class="p">,</span> <span class="n">cmap</span><span class="o">.</span><span class="n">N</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>                      <span class="c1"># Creamos una figura con 2 subgráficos (1 fila, 2 columnas)</span>
+<span class="c1"># Construimos una imagen en color RGB a partir de las bandas del ráster original</span>
+<span class="n">raster_rgb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span>
+    <span class="n">raster_array</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>  <span class="c1"># Banda Roja</span>
+    <span class="n">raster_array</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>  <span class="c1"># Banda Verde</span>
+    <span class="n">raster_array</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>   <span class="c1"># Banda Azul</span>
+<span class="p">],</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">raster_rgb</span> <span class="o">=</span> <span class="n">raster_rgb</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>                          <span class="c1"># Normalizamos los valores del ráster RGB para mejorar la visualización</span>
+<span class="n">raster_rgb</span> <span class="o">/=</span> <span class="n">raster_rgb</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">raster_rgb</span><span class="p">)</span>                                           <span class="c1"># Mostramos la imagen original en la primera columna</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Imagen Original (RGB)&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>                                                  <span class="c1"># Oculta los ejes para mejorar la visualización</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">predict_resized</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">)</span>          <span class="c1"># Mostramos la clasificación &quot;Bosque / No Bosque&quot; en la segunda columna</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Clasificación Bosque / No Bosque&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>                                                  <span class="c1"># Ajusta el diseño de la figura para evitar solapamientos</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>                                                          <span class="c1"># Muestra la figura con las dos imágenes</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output_raster_path</span> <span class="o">=</span> <span class="s2">&quot;clasificacion_bosque.tif&quot;</span>
+<span class="n">transform</span> <span class="o">=</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;temp_raster.tif&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">transform</span>  <span class="c1"># Extrae la transformación del raster original</span>
+<span class="c1"># Guardar el resultado en un nuevo raster GeoTIFF</span>
+<span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span>
+    <span class="n">output_raster_path</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span>
+    <span class="n">driver</span><span class="o">=</span><span class="s2">&quot;GTiff&quot;</span><span class="p">,</span>
+    <span class="n">height</span><span class="o">=</span><span class="n">predict_resized</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> 
+    <span class="n">width</span><span class="o">=</span><span class="n">predict_resized</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+    <span class="n">count</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>  <span class="c1"># Una sola banda (clasificación)</span>
+    <span class="n">dtype</span><span class="o">=</span><span class="n">rasterio</span><span class="o">.</span><span class="n">uint8</span><span class="p">,</span>  <span class="c1"># Tipo de datos para la clasificación (0 y 1)</span>
+    <span class="n">crs</span><span class="o">=</span><span class="s2">&quot;EPSG:32619&quot;</span><span class="p">,</span>  <span class="c1"># Asegurar que tenga el mismo CRS que la imagen original</span>
+    <span class="n">transform</span><span class="o">=</span><span class="n">transform</span>
+<span class="p">)</span> <span class="k">as</span> <span class="n">dst</span><span class="p">:</span>
+    <span class="n">dst</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">predict_resized</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">rasterio</span><span class="o">.</span><span class="n">uint8</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">psycopg2</span>     <span class="c1"># psycopg2: Librería para conectar Python con bases de datos PostgreSQL. Permite ejecutar consultas SQL, manipular datos y gestionar transacciones.</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>   <span class="c1"># subprocess: Módulo para ejecutar comandos del sistema desde Python. Se usa para llamar programas externos como psql, raster2pgsql, etc.</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="n">DB_CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;dbname&quot;</span><span class="p">:</span> <span class="s2">&quot;postgis_34_sample&quot;</span><span class="p">,</span>      <span class="c1"># Nombre de la base de datos</span>
+    <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;postgres&quot;</span><span class="p">,</span>                 <span class="c1"># Usuario de la base de datos</span>
+    <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;postgres&quot;</span><span class="p">,</span>             <span class="c1"># Contraseña del usuario</span>
+    <span class="s2">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>                <span class="c1"># Dirección del servidor (localhost si es local)</span>
+    <span class="s2">&quot;port&quot;</span><span class="p">:</span> <span class="s2">&quot;5432&quot;</span>                      <span class="c1"># Puerto predeterminado de PostgreSQL</span>
+<span class="p">}</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="o">**</span><span class="n">DB_CONFIG</span><span class="p">)</span> 
+<span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="c1"># Abrir el archivo raster (.tif)</span>
+<span class="n">raster_path</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;C:\Users\ingju\OneDrive\Escritorio\Repositorios\Tools_ArcGIS\PostGIS_Python\PostGIS_Python\clasificacion_bosque.tif&#39;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;PGPASSWORD&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">DB_CONFIG</span><span class="p">[</span><span class="s2">&quot;password&quot;</span><span class="p">]</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">¿Por qué usar PGPASSWORD?</span>
+<span class="sd">- Evita que psql solicite la contraseña cada vez que se ejecuta un comando.</span>
+<span class="sd">- Facilita la automatización de tareas en PostgreSQL, como importar datos o ejecutar scripts SQL.</span>
+<span class="sd">- Es más seguro que escribir la contraseña directamente en el comando, pero aún es recomendable eliminarla después de su uso.&#39;</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="c1"># Ruta a la carpeta donde están raster2pgsql y psql</span>
+<span class="n">pg_bin_path</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;C:\Program Files\PostgreSQL\16\bin&quot;</span>
+<span class="n">sql_output_path</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;C:\Shp_Example\classify_raster.sql&quot;</span>
+<span class="c1"># Construir el comando con la ruta completa de raster2pgsql y psql</span>
+<span class="n">cmd</span> <span class="o">=</span> <span class="sa">fr</span><span class="s1">&#39;&quot;</span><span class="si">{</span><span class="n">pg_bin_path</span><span class="si">}</span><span class="s1">\raster2pgsql.exe&quot; -s 32619 -I -C &quot;</span><span class="si">{</span><span class="n">raster_path</span><span class="si">}</span><span class="s1">&quot; &gt;  </span><span class="si">{</span><span class="n">sql_output_path</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="c1"># Ejecutar el comando en la terminal</span>
+<span class="n">process</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">capture_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">cmd</span> <span class="o">=</span> <span class="sa">fr</span><span class="s1">&#39;&quot;</span><span class="si">{</span><span class="n">pg_bin_path</span><span class="si">}</span><span class="s1">\psql.exe&quot; -d </span><span class="si">{</span><span class="n">DB_CONFIG</span><span class="p">[</span><span class="s2">&quot;dbname&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1"> -U </span><span class="si">{</span><span class="n">DB_CONFIG</span><span class="p">[</span><span class="s2">&quot;user&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1"> -h </span><span class="si">{</span><span class="n">DB_CONFIG</span><span class="p">[</span><span class="s2">&quot;host&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1"> -p </span><span class="si">{</span><span class="n">DB_CONFIG</span><span class="p">[</span><span class="s2">&quot;port&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1"> -f &quot;</span><span class="si">{</span><span class="n">sql_output_path</span><span class="si">}</span><span class="s1">&quot;&#39;</span>
+<span class="c1"># Ejecutar el comando</span>
+<span class="n">process</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">capture_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># Limpiar la variable de entorno después de ejecutar el comando</span>
+<span class="k">del</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;PGPASSWORD&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">process</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/Load_Classify.png"><img alt="unidad" class="align-center" src="../../_images/Load_Classify.png" style="width: 500px;" />
+</a>
+<p style="text-align: center; font-size: 12px;"> 
+<strong>Fig. 2. Conexión a base de datos espacial desde QGIS para visualización de resultados </strong>
+</p></section>
+<section id="referencias-y-recursos">
+<h3>Referencias y Recursos<a class="headerlink" href="#referencias-y-recursos" title="Link to this heading">#</a></h3>
+<section id="bases-de-datos">
+<h4>Bases de Datos<a class="headerlink" href="#bases-de-datos" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Oracle</strong> - <a class="reference external" href="https://www.oracle.com/co/database/what-is-database/">¿Qué es una base de datos?</a></p></li>
+<li><p><strong>PostgreSQL</strong> - <a class="reference external" href="https://www.postgresql.org/docs/current/intro-whatis.html">Introducción a PostgreSQL</a></p></li>
+<li><p><strong>PostgreSQL - Documentación</strong> - <a class="reference external" href="https://www.postgresql.org/docs/current/">PostgreSQL Docs</a></p></li>
+</ul>
+</section>
+<section id="sql">
+<h4>SQL<a class="headerlink" href="#sql" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>SQL en AWS</strong> - <a class="reference external" href="https://aws.amazon.com/es/what-is/sql/#:~:text=El%20lenguaje%20de%20consulta%20estructurada%20(SQL)%20es%20un%20lenguaje%20est%C3%A1ndar,relacional%20que%20utiliza%20consultas%20SQL.">¿Qué es SQL?</a></p></li>
+<li><p><strong>Acciones SQL en PostgreSQL</strong> - <a class="reference external" href="https://www.postgresql.org/docs/current/">Documentación Oficial</a></p></li>
+</ul>
+</section>
+<section id="id1">
+<h4>PostGIS<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Sitio Oficial de PostGIS</strong> - <a class="reference external" href="https://postgis.net/">PostGIS.net</a></p></li>
+<li><p><strong>Carga de datos vectoriales en PostGIS</strong> - <a class="reference external" href="https://postgis.net/docs/manual-3.5/using_postgis_dbmanagement.html#loading-data">Gestión de datos en PostGIS</a></p></li>
+<li><p><strong>Formatos Ráster en PostGIS</strong> - <a class="reference external" href="https://postgis.net/docs/using_raster_dataman">Uso de datos ráster en PostGIS</a></p></li>
+</ul>
+</section>
+<section id="python-y-librerias-cientificas">
+<h4>Python y Librerías Científicas<a class="headerlink" href="#python-y-librerias-cientificas" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p><strong>NumPy</strong> - <a class="reference external" href="https://numpy.org/">Sitio Oficial</a></p></li>
+<li><p><strong>Pandas</strong> - <a class="reference external" href="https://pandas.pydata.org/docs/">Documentación Oficial</a></p></li>
+<li><p><strong>GeoPandas</strong> - <a class="reference external" href="https://geopandas.org/en/stable/">Documentación Oficial</a></p></li>
+<li><p><strong>Scikit-Image</strong> - <a class="reference external" href="https://scikit-image.org/docs/stable/">Documentación Oficial</a></p></li>
+<li><p><strong>Scikit-Learn</strong> - <a class="reference external" href="https://scikit-learn.org/stable/">Sitio Oficial</a></p></li>
+<li><p><strong>Rasterio</strong> - <a class="reference external" href="https://rasterio.readthedocs.io/en/latest/">Documentación Oficial</a></p></li>
+<li><p><strong>Shapely</strong> - <a class="reference external" href="https://shapely.readthedocs.io/en/stable/">Documentación Oficial</a></p></li>
+<li><p><strong>Matplotlib</strong> - <a class="reference external" href="https://matplotlib.org/stable/contents.html">Documentación Oficial</a></p></li>
+</ol>
+</section>
+<section id="jupyter-y-entornos-de-desarrollo">
+<h4>Jupyter y Entornos de Desarrollo<a class="headerlink" href="#jupyter-y-entornos-de-desarrollo" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>JupyterBook</strong> - <a class="reference external" href="https://jupyterbook.org/en/stable/content/index.html">Documentación Oficial</a></p></li>
+<li><p><strong>Jupyter Notebook</strong> - <a class="reference external" href="https://jupyter.org/documentation">Guía Oficial</a></p></li>
+<li><p><strong>VS Code para Python</strong> - <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">Extensión Oficial</a></p></li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./modulo_example_postgis\1742549645_plantillanb"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../modulo_introduction_postgis/1742549645_plantillanb/1742343747_plantillanb.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Bases de datos espaciales: PostGIS y su integración con Python</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos-espaciales">Bases de datos espaciales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabla-de-contenido">Tabla de contenido</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definiciones-preliminares">Definiciones preliminares</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-lenguaje-sql">El lenguaje SQL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postgresql">PostgreSQL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postgis">PostGIS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-postgis-python">Integración PostGIS / Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caso-de-estudio-administracion-de-datos-para-generacion-de-modelo-clasificador-de-bosque-no-bosque-por-medio-de-postgis-y-python">Caso de estudio: Administración de datos para generación de modelo clasificador de Bosque / No Bosque por medio de PostGIS y Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias-y-recursos">Referencias y Recursos</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos">Bases de Datos</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sql">SQL</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">PostGIS</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python-y-librerias-cientificas">Python y Librerías Científicas</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-y-entornos-de-desarrollo">Jupyter y Entornos de Desarrollo</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Instituto Geográfico Agustín Codazzi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
