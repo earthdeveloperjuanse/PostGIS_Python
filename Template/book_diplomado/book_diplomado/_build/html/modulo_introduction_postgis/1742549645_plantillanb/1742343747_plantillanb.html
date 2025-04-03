@@ -342,59 +342,52 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos-espaciales">Bases de datos espaciales</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabla-de-contenido">Tabla de contenido</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definiciones-preliminares">Definiciones preliminares</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-lenguaje-sql">El lenguaje SQL</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-y-eliminacion-de-tablas">- Creación y eliminación de tablas</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#insercion-de-datos">- Inserción de datos</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#consultas-basicas-con-select">- Consultas básicas con <code class="docutils literal notranslate"><span class="pre">SELECT</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminacion-de-duplicados-con-distinct">- Eliminación de duplicados con <code class="docutils literal notranslate"><span class="pre">DISTINCT</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-join-para-combinar-tablas">- Uso de <code class="docutils literal notranslate"><span class="pre">JOIN</span></code> para combinar tablas</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#subconsultas">- Subconsultas</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-group-by-y-having">- Uso de <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code> y <code class="docutils literal notranslate"><span class="pre">HAVING</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#actualizacion-y-eliminacion-de-datos">- Actualización y eliminación de datos</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminar-registros">- Eliminar registros</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vistas">- Vistas</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#llaves-foraneas">- Llaves foráneas</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#transacciones">- Transacciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definiciones-preliminares">Definiciones preliminares</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-lenguaje-sql">El lenguaje SQL</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-y-eliminar-tablas">Crear y eliminar tablas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#insercion-de-datos">- Inserción de datos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consultas-basicas-con-select">- Consultas básicas con <code class="docutils literal notranslate"><span class="pre">SELECT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminacion-de-duplicados-con-distinct">- Eliminación de duplicados con <code class="docutils literal notranslate"><span class="pre">DISTINCT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-join-para-combinar-tablas">- Uso de <code class="docutils literal notranslate"><span class="pre">JOIN</span></code> para combinar tablas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subconsultas">- Subconsultas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-group-by-y-having">- Uso de <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code> y <code class="docutils literal notranslate"><span class="pre">HAVING</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#actualizacion-y-eliminacion-de-datos">- Actualización y eliminación de datos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminar-registros">- Eliminar registros</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vistas">- Vistas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#llaves-foraneas">- Llaves foráneas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transacciones">- Transacciones</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postgresql">PostgreSQL</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#proceso-de-instalacion">Proceso de instalación</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#postgresql">PostgreSQL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#postgis">PostGIS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#administracion-postgis">Administración PostGIS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-de-datos-espacial">Modelo de datos espacial</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-datos-geograficos">Tipos de datos geográficos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-de-atributos-geometricos">Cálculo de atributos geométricos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sistemas-de-referencia-espacial">Sistemas de referencia espacial</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cargar-datos-espaciales-utilizando-sql">Cargar datos espaciales utilizando SQL</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#datos-vectoriales">- Datos vectoriales</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postgis">PostGIS</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Proceso de instalación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utilizando-el-shapefile-loader">Utilizando el Shapefile Loader</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extrayendo-datos-espaciales-vectoriales">Extrayendo datos espaciales vectoriales</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#datos-raster">- Datos raster</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#administracion-postgis">Administración PostGIS</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-de-datos-espacial">Modelo de datos espacial</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-datos-geograficos">Tipos de datos geográficos</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-de-atributos-geometricos">Cálculo de atributos geométricos</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sistemas-de-referencia-espacial">Sistemas de referencia espacial</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cargar-datos-espaciales-utilizando-sql">Cargar datos espaciales utilizando SQL</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#datos-vectoriales">- Datos vectoriales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utilizando-el-rasters-loader">Utilizando el Rasters Loader</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extrayendo-datos-espaciales-raster">Extrayendo datos espaciales ráster</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#obtener-metadatos-del-raster">Obtener metadatos del ráster</a></li>
 </ul>
 </li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utilizando-el-shapefile-loader">Utilizando el Shapefile Loader</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#extrayendo-datos-espaciales-vectoriales">Extrayendo datos espaciales vectoriales</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#datos-raster">- Datos raster</a></li>
 </ul>
 </li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utilizando-el-rasters-loader">Utilizando el Rasters Loader</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#extrayendo-datos-espaciales-raster">Extrayendo datos espaciales ráster</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-postgis-python">Integración PostGIS / Python</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias-y-recursos">Referencias y Recursos</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos">Bases de Datos</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sql">SQL</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">PostGIS</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python-y-librerias-cientificas">Python y Librerías Científicas</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-y-entornos-de-desarrollo">Jupyter y Entornos de Desarrollo</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-postgis-python">Integración PostGIS / Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-entre-psycopg2-y-sqlalchemy-para-la-carga-de-datos-espaciales">Comparación entre <code class="docutils literal notranslate"><span class="pre">psycopg2</span></code> y <code class="docutils literal notranslate"><span class="pre">SQLAlchemy</span></code> para la carga de datos espaciales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias-y-recursos">Referencias y Recursos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos-y-sql">🗃️ Bases de datos y SQL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postgis-y-funciones-espaciales">🌐 PostGIS y funciones espaciales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-postgresql-postgis">🐍 Python + PostgreSQL/PostGIS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas-y-entornos-de-desarrollo">💻 Herramientas y entornos de desarrollo</a></li>
 </ul>
 </li>
 </ul>
@@ -410,46 +403,24 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="bases-de-datos-espaciales-postgis-y-su-integracion-con-python">
 <h1>Bases de datos espaciales: PostGIS y su integración con Python<a class="headerlink" href="#bases-de-datos-espaciales-postgis-y-su-integracion-con-python" title="Link to this heading">#</a></h1>
-<section id="bases-de-datos-espaciales">
-<h2>Bases de datos espaciales<a class="headerlink" href="#bases-de-datos-espaciales" title="Link to this heading">#</a></h2>
-</section>
-<section id="tabla-de-contenido">
-<h2>Tabla de contenido<a class="headerlink" href="#tabla-de-contenido" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Definiciones preliminares</p></li>
-<li><p>El lenguaje SQL<br>
-2.1. Creación y eliminación de tablas<br>
-2.2. Inserción de datos<br>
-2.3. Consultas básicas con SELECT<br>
-2.4. Eliminación de duplicados con DISTINCT<br>
-2.5. Uso de JOIN para combinar tablas<br>
-2.6. Subconsultas<br>
-2.7. Uso de GROUP BY y HAVING<br>
-2.8. Actualización de datos<br>
-2.9. Eliminar registros<br>
-2.10. Vistas<br>
-2.11. Llaves foráneas<br>
-2.12. Transacciones<br></p></li>
-<li><p>PostgreSQL<br>
-3.1. Instalación</p></li>
-<li><p>PostGIS<br>
-4.1. Instalación<br>
-4.2. Administración PostGIS<br>
-4.2.1. Modelo de datos espacial<br>
-4.2.2. Tipos de datos geográficos<br>
-4.2.3. Cálculo de atributos geométricos<br>
-4.2.4. Sistemas de referencia espacial<br>
-4.3. Cargar datos espaciales utilizando SQL<br>
-4.3.1. Datos vectoriales<br>
-4.3.2. Extrayendo datos espaciales vectoriales<br>
-4.3.3. Datos ráster<br>
-4.3.4. Extrayendo datos espaciales ráster<br></p></li>
-<li><p>Integración PostGIS / Python</p></li>
-<li><p>Caso de estudio: Administración de datos para generación de modelo clasificador de Bosque / No Bosque por medio de PostGIS y Python</p></li>
-<li><p>Referencias y recursos</p></li>
-</ol>
+<div class="danger admonition">
+<p class="admonition-title">Guía para el docente</p>
+<ul class="simple">
+<li><p>Este material está diseñado para ser presentado en un entorno de JupyterBook.</p></li>
+<li><p>Incluye ejemplos prácticos en SQL y Python, utilizando tanto <code class="docutils literal notranslate"><span class="pre">psycopg2</span></code> como <code class="docutils literal notranslate"><span class="pre">SQLAlchemy</span></code>.</p></li>
+<li><p>El objetivo es facilitar la enseñanza de conceptos espaciales mediante actividades guiadas y un caso de estudio final.</p></li>
+</ul>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Recursos</p>
+<ul class="simple">
+<li><p>Capa vectorial (Shapefile de muestras de cobertura): <a class="reference external" href="https://igacoffice365-my.sharepoint.com/:f:/r/personal/juans_hernandez_igac_gov_co/Documents/Recursos_BDE_PostGIS_Diplomado/Muestras_Ejemplo?csf=1&amp;amp;web=1&amp;amp;e=x8juEL">📥 Muestras_Ejemplo</a></p></li>
+<li><p>Imagen satelital recortada (formato <code class="docutils literal notranslate"><span class="pre">.tif</span></code>): <a class="reference external" href="https://igacoffice365-my.sharepoint.com/:f:/r/personal/juans_hernandez_igac_gov_co/Documents/Recursos_BDE_PostGIS_Diplomado/Imagen_Ejemplo?csf=1&amp;amp;web=1&amp;amp;e=5ZURPK">📥 Imagen_Ejemplo</a></p></li>
+</ul>
+<p>**Es importante la descarga de los recursos para el desarrollo de la sesión. **</p>
+</div>
 <section id="definiciones-preliminares">
-<h3>Definiciones preliminares<a class="headerlink" href="#definiciones-preliminares" title="Link to this heading">#</a></h3>
+<h2>Definiciones preliminares<a class="headerlink" href="#definiciones-preliminares" title="Link to this heading">#</a></h2>
 <p><strong>Base de datos</strong></p>
 <p>“…Una base de datos es una recopilación organizada de información o datos estructurados, que normalmente se almacena de forma electrónica en un sistema informático. Normalmente, una base de datos está controlada por un sistema de gestión de bases de datos (DBMS). En conjunto, los datos y el DBMS, junto con las aplicaciones asociadas a ellos, reciben el nombre de sistema de bases de datos, abreviado normalmente a simplemente base de datos….”</p>
 <p><strong>Lenguaje de consulta estructurada (SQL)</strong>
@@ -465,179 +436,200 @@ Algunos ejemplos de software de bases de datos o DBMS populares incluyen MySQL, 
 <p>PostgreSQL (<a class="reference external" href="https://www.postgresql.org/docs/current/intro-whatis.html">https://www.postgresql.org/docs/current/intro-whatis.html</a>)</p>
 </section>
 <section id="el-lenguaje-sql">
-<h3>El lenguaje SQL<a class="headerlink" href="#el-lenguaje-sql" title="Link to this heading">#</a></h3>
+<h2>El lenguaje SQL<a class="headerlink" href="#el-lenguaje-sql" title="Link to this heading">#</a></h2>
 <p>“…El lenguaje de consulta estructurada (SQL) es un lenguaje estándar para la creación y manipulación de bases de datos…”</p>
 <p>AWS (<a class="reference external" href="https://aws.amazon.com/es/what-is/sql/#:~:text=El%20lenguaje%20de%20consulta%20estructurada%20(SQL)%20es%20un%20lenguaje%20est%C3%A1ndar,relacional%20que%20utiliza%20consultas%20SQL.">https://aws.amazon.com/es/what-is/sql/#:~:text=El lenguaje de consulta estructurada (SQL) es un lenguaje estándar,relacional que utiliza consultas SQL.</a>)</p>
-<section id="creacion-y-eliminacion-de-tablas">
-<h4>- Creación y eliminación de tablas<a class="headerlink" href="#creacion-y-eliminacion-de-tablas" title="Link to this heading">#</a></h4>
-<p>Para crear una tabla en PostgreSQL, usamos <code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">TABLE</span></code>:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">weather</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="n">city</span><span class="w">        </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">80</span><span class="p">),</span>
-<span class="w">    </span><span class="n">temp_lo</span><span class="w">     </span><span class="nb">INT</span><span class="p">,</span><span class="w">       </span><span class="c1">-- Temperatura mínima</span>
-<span class="w">    </span><span class="n">temp_hi</span><span class="w">     </span><span class="nb">INT</span><span class="p">,</span><span class="w">       </span><span class="c1">-- Temperatura máxima</span>
-<span class="w">    </span><span class="n">prcp</span><span class="w">        </span><span class="nb">REAL</span><span class="p">,</span><span class="w">      </span><span class="c1">-- Precipitación</span>
-<span class="w">    </span><span class="nb">date</span><span class="w">        </span><span class="nb">DATE</span><span class="w">       </span><span class="c1">-- Fecha del registro</span>
+<section id="crear-y-eliminar-tablas">
+<h3>Crear y eliminar tablas<a class="headerlink" href="#crear-y-eliminar-tablas" title="Link to this heading">#</a></h3>
+<p>Primero se define la estructura de la tabla <code class="docutils literal notranslate"><span class="pre">clima</span></code>, con los campos necesarios:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">clima</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">ciudad</span><span class="w">           </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">80</span><span class="p">),</span><span class="w">  </span><span class="c1">-- Nombre de la ciudad</span>
+<span class="w">    </span><span class="n">temperatura_min</span><span class="w">  </span><span class="nb">INT</span><span class="p">,</span><span class="w">          </span><span class="c1">-- Temperatura mínima (°C)</span>
+<span class="w">    </span><span class="n">temperatura_max</span><span class="w">  </span><span class="nb">INT</span><span class="p">,</span><span class="w">          </span><span class="c1">-- Temperatura máxima (°C)</span>
+<span class="w">    </span><span class="n">precipitacion</span><span class="w">    </span><span class="nb">REAL</span><span class="p">,</span><span class="w">         </span><span class="c1">-- Precipitación (mm)</span>
+<span class="w">    </span><span class="n">fecha_registro</span><span class="w">   </span><span class="nb">DATE</span><span class="w">          </span><span class="c1">-- Fecha del registro</span>
 <span class="p">);</span>
 </pre></div>
 </div>
-<p>Para eliminar una tabla:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">weather</span><span class="p">;</span>
+<p>Para eliminarla cuando ya no se necesite:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">clima</span><span class="p">;</span>
 </pre></div>
 </div>
 </section>
 <section id="insercion-de-datos">
-<h4>- Inserción de datos<a class="headerlink" href="#insercion-de-datos" title="Link to this heading">#</a></h4>
-<p>Podemos insertar datos en la tabla usando <code class="docutils literal notranslate"><span class="pre">INSERT</span> <span class="pre">INTO</span></code></p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">weather</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;San Francisco&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">46</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1994-11-27&#39;</span><span class="p">);</span>
+<h3>- Inserción de datos<a class="headerlink" href="#insercion-de-datos" title="Link to this heading">#</a></h3>
+<p>Podemos insertar un nuevo registro:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">clima</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Bogotá&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2023-06-15&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>También podemos especificar columnas específicas</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">weather</span><span class="w"> </span><span class="p">(</span><span class="n">city</span><span class="p">,</span><span class="w"> </span><span class="n">temp_lo</span><span class="p">,</span><span class="w"> </span><span class="n">temp_hi</span><span class="p">,</span><span class="w"> </span><span class="n">prcp</span><span class="p">,</span><span class="w"> </span><span class="nb">date</span><span class="p">)</span>
-<span class="w">    </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;San Francisco&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">43</span><span class="p">,</span><span class="w"> </span><span class="mi">57</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1994-11-29&#39;</span><span class="p">);</span>
+<p>O especificar las columnas explícitamente:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">clima</span><span class="w"> </span><span class="p">(</span><span class="n">ciudad</span><span class="p">,</span><span class="w"> </span><span class="n">temperatura_min</span><span class="p">,</span><span class="w"> </span><span class="n">temperatura_max</span><span class="p">,</span><span class="w"> </span><span class="n">precipitacion</span><span class="p">,</span><span class="w"> </span><span class="n">fecha_registro</span><span class="p">)</span>
+<span class="w">    </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Medellín&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w"> </span><span class="mi">27</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2023-06-15&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </section>
 <section id="consultas-basicas-con-select">
-<h4>- Consultas básicas con <code class="docutils literal notranslate"><span class="pre">SELECT</span></code><a class="headerlink" href="#consultas-basicas-con-select" title="Link to this heading">#</a></h4>
-<p>Seleccionar todos los registros de una tabla:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">weather</span><span class="p">;</span>
+<h3>- Consultas básicas con <code class="docutils literal notranslate"><span class="pre">SELECT</span></code><a class="headerlink" href="#consultas-basicas-con-select" title="Link to this heading">#</a></h3>
+<p>Obtener todos los registros:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">clima</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Seleccionar columnas específicas:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">city</span><span class="p">,</span><span class="w"> </span><span class="n">temp_lo</span><span class="p">,</span><span class="w"> </span><span class="n">temp_hi</span><span class="p">,</span><span class="w"> </span><span class="n">prcp</span><span class="p">,</span><span class="w"> </span><span class="nb">date</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">weather</span><span class="p">;</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">ciudad</span><span class="p">,</span><span class="w"> </span><span class="n">precipitacion</span><span class="p">,</span><span class="w"> </span><span class="n">fecha_registro</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">clima</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Calcular la temperatura media:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">city</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">temp_hi</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">temp_lo</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">temp_avg</span><span class="p">,</span><span class="w"> </span><span class="nb">date</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">weather</span><span class="p">;</span>
+<p>Calcular la temperatura promedio:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">ciudad</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">temperatura_max</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">temperatura_min</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">temperatura_promedio</span><span class="p">,</span><span class="w"> </span><span class="n">fecha_registro</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">clima</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Filtrar registros con condiciones:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">weather</span>
-<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">city</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;San Francisco&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">prcp</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">;</span>
+<p>Filtrar registros por condiciones (ej. días con lluvia en Bogotá):</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">clima</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">ciudad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Bogotá&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">precipitacion</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Ordenar resultados:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">weather</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">city</span><span class="p">;</span>
+<p>Ordenar resultados por ciudad:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">clima</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">ciudad</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Ordenar por múltiples columnas:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">weather</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">city</span><span class="p">,</span><span class="w"> </span><span class="n">temp_lo</span><span class="p">;</span>
+<p>Ordenar por ciudad y temperatura mínima:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">clima</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">ciudad</span><span class="p">,</span><span class="w"> </span><span class="n">temperatura_min</span><span class="p">;</span>
 </pre></div>
 </div>
 </section>
 <section id="eliminacion-de-duplicados-con-distinct">
-<h4>- Eliminación de duplicados con <code class="docutils literal notranslate"><span class="pre">DISTINCT</span></code><a class="headerlink" href="#eliminacion-de-duplicados-con-distinct" title="Link to this heading">#</a></h4>
-<p>Para obtener los valores únicos</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">city</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">weather</span><span class="p">;</span>
+<h3>- Eliminación de duplicados con <code class="docutils literal notranslate"><span class="pre">DISTINCT</span></code><a class="headerlink" href="#eliminacion-de-duplicados-con-distinct" title="Link to this heading">#</a></h3>
+<p>Obtener una lista única de ciudades registradas:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">ciudad</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">clima</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>También podemos ordenar</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">city</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">weather</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">city</span><span class="p">;</span>
+<p>Ordenar alfabéticamente:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">ciudad</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">clima</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">ciudad</span><span class="p">;</span>
 </pre></div>
 </div>
 </section>
 <section id="uso-de-join-para-combinar-tablas">
-<h4>- Uso de <code class="docutils literal notranslate"><span class="pre">JOIN</span></code> para combinar tablas<a class="headerlink" href="#uso-de-join-para-combinar-tablas" title="Link to this heading">#</a></h4>
-<p>Si tenemos una tabla <strong>cities</strong>, podemos unirla con <strong>weather</strong>:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">weather</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">cities</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">city</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<h3>- Uso de <code class="docutils literal notranslate"><span class="pre">JOIN</span></code> para combinar tablas<a class="headerlink" href="#uso-de-join-para-combinar-tablas" title="Link to this heading">#</a></h3>
+<p>Si tenemos otra tabla llamada ciudades con datos geográficos, podemos unirla con clima:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">clima</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">ciudades</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">clima</span><span class="p">.</span><span class="n">ciudad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ciudades</span><span class="p">.</span><span class="n">nombre</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Para seleccionar columnas específicas:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">weather</span><span class="p">.</span><span class="n">city</span><span class="p">,</span><span class="w"> </span><span class="n">weather</span><span class="p">.</span><span class="n">temp_lo</span><span class="p">,</span><span class="w"> </span><span class="n">weather</span><span class="p">.</span><span class="n">temp_hi</span><span class="p">,</span><span class="w"> </span><span class="n">weather</span><span class="p">.</span><span class="n">prcp</span><span class="p">,</span><span class="w"> </span><span class="n">weather</span><span class="p">.</span><span class="nb">date</span><span class="p">,</span><span class="w"> </span><span class="n">cities</span><span class="p">.</span><span class="k">location</span>
-<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">weather</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">cities</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">weather</span><span class="p">.</span><span class="n">city</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cities</span><span class="p">.</span><span class="n">name</span><span class="p">;</span>
+<p>Seleccionar solo columnas relevantes:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">clima</span><span class="p">.</span><span class="n">ciudad</span><span class="p">,</span><span class="w"> </span><span class="n">clima</span><span class="p">.</span><span class="n">temperatura_min</span><span class="p">,</span><span class="w"> </span><span class="n">clima</span><span class="p">.</span><span class="n">temperatura_max</span><span class="p">,</span><span class="w"> </span><span class="n">clima</span><span class="p">.</span><span class="n">precipitacion</span><span class="p">,</span><span class="w"> </span><span class="n">clima</span><span class="p">.</span><span class="n">fecha_registro</span><span class="p">,</span><span class="w"> </span><span class="n">ciudades</span><span class="p">.</span><span class="n">ubicacion</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">clima</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">ciudades</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">clima</span><span class="p">.</span><span class="n">ciudad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ciudades</span><span class="p">.</span><span class="n">nombre</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>También se puede hacer con LEFT OUTER JOIN</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">weather</span><span class="w"> </span><span class="k">LEFT</span><span class="w"> </span><span class="k">OUTER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">cities</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">weather</span><span class="p">.</span><span class="n">city</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cities</span><span class="p">.</span><span class="n">name</span><span class="p">;</span>
+<p>También podemos hacer una unión externa (LEFT JOIN):</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">clima</span><span class="w"> </span><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">ciudades</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">clima</span><span class="p">.</span><span class="n">ciudad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ciudades</span><span class="p">.</span><span class="n">nombre</span><span class="p">;</span>
 </pre></div>
 </div>
 </section>
 <section id="subconsultas">
-<h4>- Subconsultas<a class="headerlink" href="#subconsultas" title="Link to this heading">#</a></h4>
-<p>Para obtener la temperatura más baja registrada:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">max</span><span class="p">(</span><span class="n">temp_lo</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">weather</span><span class="p">;</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">city</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">weather</span>
-<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">temp_lo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">max</span><span class="p">(</span><span class="n">temp_lo</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">weather</span><span class="p">);</span>
+<h3>- Subconsultas<a class="headerlink" href="#subconsultas" title="Link to this heading">#</a></h3>
+<p>Obtener la temperatura mínima más alta registrada:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">temperatura_min</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">clima</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Y la ciudad correspondiente:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">ciudad</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">clima</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">temperatura_min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">temperatura_min</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">clima</span><span class="p">);</span>
 </pre></div>
 </div>
 </section>
 <section id="uso-de-group-by-y-having">
-<h4>- Uso de <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code> y <code class="docutils literal notranslate"><span class="pre">HAVING</span></code><a class="headerlink" href="#uso-de-group-by-y-having" title="Link to this heading">#</a></h4>
-<p>Contar registros por ciudad:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">city</span><span class="p">,</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">),</span><span class="w"> </span><span class="k">max</span><span class="p">(</span><span class="n">temp_lo</span><span class="p">)</span>
-<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">weather</span>
-<span class="w">    </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">city</span><span class="p">;</span>
+<h3>- Uso de <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code> y <code class="docutils literal notranslate"><span class="pre">HAVING</span></code><a class="headerlink" href="#uso-de-group-by-y-having" title="Link to this heading">#</a></h3>
+<p>Contar registros por ciudad y mostrar la temperatura mínima más alta:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">ciudad</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">),</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">temperatura_min</span><span class="p">)</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">clima</span>
+<span class="w">    </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">ciudad</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Filtrar grupos usando <code class="docutils literal notranslate"><span class="pre">HAVING</span></code></p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">city</span><span class="p">,</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">),</span><span class="w"> </span><span class="k">max</span><span class="p">(</span><span class="n">temp_lo</span><span class="p">)</span>
-<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">weather</span>
-<span class="w">    </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">city</span>
-<span class="w">    </span><span class="k">HAVING</span><span class="w"> </span><span class="k">max</span><span class="p">(</span><span class="n">temp_lo</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">40</span><span class="p">;</span>
+<p>Filtrar los grupos donde la temperatura mínima fue menor a 10 °C:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">ciudad</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">),</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">temperatura_min</span><span class="p">)</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">clima</span>
+<span class="w">    </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">ciudad</span>
+<span class="w">    </span><span class="k">HAVING</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">temperatura_min</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Aplicar filtros con <code class="docutils literal notranslate"><span class="pre">FILTER</span></code></p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">city</span><span class="p">,</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">FILTER</span><span class="w"> </span><span class="p">(</span><span class="k">WHERE</span><span class="w"> </span><span class="n">temp_lo</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">45</span><span class="p">),</span><span class="w"> </span><span class="k">max</span><span class="p">(</span><span class="n">temp_lo</span><span class="p">)</span>
-<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">weather</span>
-<span class="w">    </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">city</span><span class="p">;</span>
+<p>Filtrar dentro de una función agregada:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">ciudad</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">FILTER</span><span class="w"> </span><span class="p">(</span><span class="k">WHERE</span><span class="w"> </span><span class="n">temperatura_min</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">15</span><span class="p">),</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">temperatura_min</span><span class="p">)</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">clima</span>
+<span class="w">    </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">ciudad</span><span class="p">;</span>
 </pre></div>
 </div>
 </section>
 <section id="actualizacion-y-eliminacion-de-datos">
-<h4>- Actualización y eliminación de datos<a class="headerlink" href="#actualizacion-y-eliminacion-de-datos" title="Link to this heading">#</a></h4>
-<p>Actualizar valores en la tabla:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">UPDATE</span><span class="w"> </span><span class="n">weather</span>
-<span class="w">    </span><span class="k">SET</span><span class="w"> </span><span class="n">temp_hi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp_hi</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">temp_lo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp_lo</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span>
-<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="nb">date</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="s1">&#39;1994-11-28&#39;</span><span class="p">;</span>
+<h3>- Actualización y eliminación de datos<a class="headerlink" href="#actualizacion-y-eliminacion-de-datos" title="Link to this heading">#</a></h3>
+<p>Modificar los valores de temperatura:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">UPDATE</span><span class="w"> </span><span class="n">clima</span>
+<span class="k">SET</span><span class="w"> </span><span class="n">temperatura_max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temperatura_max</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">    </span><span class="n">temperatura_min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temperatura_min</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">fecha_registro</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="s1">&#39;2023-06-14&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 </section>
 <section id="eliminar-registros">
-<h4>- Eliminar registros<a class="headerlink" href="#eliminar-registros" title="Link to this heading">#</a></h4>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">weather</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">city</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Hayward&#39;</span><span class="p">;</span>
+<h3>- Eliminar registros<a class="headerlink" href="#eliminar-registros" title="Link to this heading">#</a></h3>
+<p>Eliminar los datos de una ciudad específica:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">clima</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">ciudad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Cartagena&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
+<p>Además de consultar e insertar datos, SQL permite construir estructuras más complejas que ayudan a organizar, proteger y mantener la integridad de la información. A continuación se explican tres conceptos clave: <strong>vistas</strong>, <strong>llaves foráneas</strong> y <strong>transacciones</strong>.</p>
 </section>
 <section id="vistas">
-<h4>- Vistas<a class="headerlink" href="#vistas" title="Link to this heading">#</a></h4>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">myview</span><span class="w"> </span><span class="k">AS</span>
-<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">temp_lo</span><span class="p">,</span><span class="w"> </span><span class="n">temp_hi</span><span class="p">,</span><span class="w"> </span><span class="n">prcp</span><span class="p">,</span><span class="w"> </span><span class="nb">date</span><span class="p">,</span><span class="w"> </span><span class="k">location</span>
-<span class="w">        </span><span class="k">FROM</span><span class="w"> </span><span class="n">weather</span><span class="p">,</span><span class="w"> </span><span class="n">cities</span>
-<span class="w">        </span><span class="k">WHERE</span><span class="w"> </span><span class="n">city</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">myview</span><span class="p">;</span>
+<h3>- Vistas<a class="headerlink" href="#vistas" title="Link to this heading">#</a></h3>
+<p>Una <strong>vista</strong> es una “tabla virtual” que guarda una <strong>consulta</strong> y permite reutilizarla como si fuera una tabla real. No almacena los datos, sino que se actualiza automáticamente cada vez que se accede a ella.
+Por ejemplo, si queremos unir información de dos tablas (<code class="docutils literal notranslate"><span class="pre">clima</span></code> y <code class="docutils literal notranslate"><span class="pre">ciudades</span></code>), podemos crear una vista:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">vista_clima_ciudades</span><span class="w"> </span><span class="k">AS</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">nombre_ciudad</span><span class="p">,</span><span class="w"> </span><span class="n">temperatura_min</span><span class="p">,</span><span class="w"> </span><span class="n">temperatura_max</span><span class="p">,</span><span class="w"> </span><span class="n">precipitacion</span><span class="p">,</span><span class="w"> </span><span class="n">fecha_registro</span><span class="p">,</span><span class="w"> </span><span class="n">ubicacion</span>
+<span class="w">        </span><span class="k">FROM</span><span class="w"> </span><span class="n">clima</span><span class="p">,</span><span class="w"> </span><span class="n">ciudades</span>
+<span class="w">        </span><span class="k">WHERE</span><span class="w"> </span><span class="n">clima</span><span class="p">.</span><span class="n">ciudad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ciudades</span><span class="p">.</span><span class="n">nombre_ciudad</span><span class="p">;</span>
 </pre></div>
 </div>
 </section>
 <section id="llaves-foraneas">
-<h4>- Llaves foráneas<a class="headerlink" href="#llaves-foraneas" title="Link to this heading">#</a></h4>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">cities</span><span class="w"> </span><span class="p">(</span>
-<span class="w">        </span><span class="n">name</span><span class="w">     </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">80</span><span class="p">)</span><span class="w"> </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="p">,</span>
-<span class="w">        </span><span class="k">location</span><span class="w"> </span><span class="n">point</span>
+<h3>- Llaves foráneas<a class="headerlink" href="#llaves-foraneas" title="Link to this heading">#</a></h3>
+<p>Una <strong>llave foránea</strong> establece una relación entre dos tablas. Garantiza que los valores en una columna (como una ciudad en clima) existan previamente en otra tabla (como
+ciudades). Esto ayuda a mantener la integridad de los datos.
+Primero, creamos la tabla de ciudades:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">ciudades</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">nombre_ciudad</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">80</span><span class="p">)</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ubicacion</span><span class="w">     </span><span class="n">POINT</span>
 <span class="p">);</span>
-<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">weather</span><span class="w"> </span><span class="p">(</span>
-<span class="w">        </span><span class="n">city</span><span class="w">      </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">80</span><span class="p">)</span><span class="w"> </span><span class="k">references</span><span class="w"> </span><span class="n">cities</span><span class="p">(</span><span class="n">name</span><span class="p">),</span>
-<span class="w">        </span><span class="n">temp_lo</span><span class="w">   </span><span class="nb">int</span><span class="p">,</span>
-<span class="w">        </span><span class="n">temp_hi</span><span class="w">   </span><span class="nb">int</span><span class="p">,</span>
-<span class="w">        </span><span class="n">prcp</span><span class="w">      </span><span class="nb">real</span><span class="p">,</span>
-<span class="w">        </span><span class="nb">date</span><span class="w">      </span><span class="nb">date</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">clima</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">ciudad</span><span class="w">           </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">80</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">ciudades</span><span class="p">(</span><span class="n">nombre_ciudad</span><span class="p">),</span>
+<span class="w">    </span><span class="n">temperatura_min</span><span class="w">  </span><span class="nb">INT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">temperatura_max</span><span class="w">  </span><span class="nb">INT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">precipitacion</span><span class="w">    </span><span class="nb">REAL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">fecha_registro</span><span class="w">   </span><span class="nb">DATE</span>
 <span class="p">);</span>
-<span class="n">ERROR</span><span class="p">:</span><span class="w">  </span><span class="k">insert</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="k">update</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="ss">&quot;weather&quot;</span><span class="w"> </span><span class="n">violates</span><span class="w"> </span><span class="k">foreign</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="k">constraint</span><span class="w"> </span><span class="ss">&quot;weather_city_fkey&quot;</span>
-<span class="n">DETAIL</span><span class="p">:</span><span class="w">  </span><span class="k">Key</span><span class="w"> </span><span class="p">(</span><span class="n">city</span><span class="p">)</span><span class="o">=</span><span class="p">(</span><span class="n">Berkeley</span><span class="p">)</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">present</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="ss">&quot;cities&quot;</span><span class="p">.</span>
+</pre></div>
+</div>
+<p>Si intentamos insertar un registro con una ciudad que no existe en la tabla ciudades, obtendremos un error:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">clima</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Tunja&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2023-06-15&#39;</span><span class="p">);</span>
+<span class="n">ERROR</span><span class="p">:</span><span class="w">  </span><span class="k">insert</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="k">update</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="ss">&quot;clima&quot;</span><span class="w"> </span><span class="n">violates</span><span class="w"> </span><span class="k">foreign</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="k">constraint</span><span class="w"> </span><span class="ss">&quot;clima_ciudad_fkey&quot;</span>
+<span class="n">DETAIL</span><span class="p">:</span><span class="w">  </span><span class="k">Key</span><span class="w"> </span><span class="p">(</span><span class="n">ciudad</span><span class="p">)</span><span class="o">=</span><span class="p">(</span><span class="n">Tunja</span><span class="p">)</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">present</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="ss">&quot;ciudades&quot;</span><span class="p">.</span>
 </pre></div>
 </div>
 </section>
 <section id="transacciones">
-<h4>- Transacciones<a class="headerlink" href="#transacciones" title="Link to this heading">#</a></h4>
+<h3>- Transacciones<a class="headerlink" href="#transacciones" title="Link to this heading">#</a></h3>
+<p>Una <strong>transacción</strong> permite agrupar varias operaciones para que se ejecuten como una sola unidad. Si alguna falla, se puede <strong>revertir</strong> todo, asegurando que los datos no queden en un estado incompleto.
+Ejemplo con una tabla de cuentas:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">BEGIN</span><span class="p">;</span>
-<span class="k">UPDATE</span><span class="w"> </span><span class="n">accounts</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">100</span><span class="p">.</span><span class="mi">00</span>
-<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Alice&#39;</span><span class="p">;</span>
-<span class="n">SAVEPOINT</span><span class="w"> </span><span class="n">my_savepoint</span><span class="p">;</span>
-<span class="k">UPDATE</span><span class="w"> </span><span class="n">accounts</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">100</span><span class="p">.</span><span class="mi">00</span>
-<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Bob&#39;</span><span class="p">;</span>
-<span class="c1">-- oops ... forget that and use Wally&#39;s account</span>
-<span class="k">ROLLBACK</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">my_savepoint</span><span class="p">;</span>
-<span class="k">UPDATE</span><span class="w"> </span><span class="n">accounts</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">100</span><span class="p">.</span><span class="mi">00</span>
-<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Wally&#39;</span><span class="p">;</span>
+<span class="c1">-- Restar dinero a una cuenta</span>
+<span class="k">UPDATE</span><span class="w"> </span><span class="n">cuentas</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">saldo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">saldo</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">100</span><span class="p">.</span><span class="mi">00</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">titular</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Alicia&#39;</span><span class="p">;</span>
+<span class="c1">-- Crear un punto de guardado</span>
+<span class="n">SAVEPOINT</span><span class="w"> </span><span class="n">punto_intermedio</span><span class="p">;</span>
+<span class="c1">-- Intentar sumar dinero a otra cuenta</span>
+<span class="k">UPDATE</span><span class="w"> </span><span class="n">cuentas</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">saldo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">saldo</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">100</span><span class="p">.</span><span class="mi">00</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">titular</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Bob&#39;</span><span class="p">;</span>
+<span class="c1">-- Ups... no era Bob, revertimos al punto anterior</span>
+<span class="k">ROLLBACK</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">punto_intermedio</span><span class="p">;</span>
+<span class="c1">-- Ahora sumamos a la cuenta correcta</span>
+<span class="k">UPDATE</span><span class="w"> </span><span class="n">cuentas</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">saldo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">saldo</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">100</span><span class="p">.</span><span class="mi">00</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">titular</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Walter&#39;</span><span class="p">;</span>
+<span class="c1">-- Confirmamos todo</span>
 <span class="k">COMMIT</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -645,47 +637,12 @@ Algunos ejemplos de software de bases de datos o DBMS populares incluyen MySQL, 
 </section>
 </section>
 <section id="postgresql">
-<h3>PostgreSQL<a class="headerlink" href="#postgresql" title="Link to this heading">#</a></h3>
-<p>“…PostgreSQL es un sistema de gestión de bases de datos relacionales de objetos (ORDBMS), desarrollado en el Departamento de Informática de la Universidad de California en Berkeley. POSTGRES fue pionero en muchos conceptos que solo estuvieron disponibles en algunos sistemas de bases de datos comerciales mucho más tarde…Y gracias a la licencia liberal, PostgreSQL puede ser utilizado, modificado y distribuido por cualquier persona de forma gratuita y para cualquier propósito, ya sea privado, comercial o académico”
+<h2>PostgreSQL<a class="headerlink" href="#postgresql" title="Link to this heading">#</a></h2>
+<p>“…PostgreSQL es un sistema de gestión de bases de datos relacionales de objetos (ORDBMS), desarrollado en el Departamento de Informática de la Universidad de California en Berkeley. PostgreSQL fue pionero en muchos conceptos que solo estuvieron disponibles en algunos sistemas de bases de datos comerciales mucho más tarde…Y gracias a la licencia liberal, PostgreSQL puede ser utilizado, modificado y distribuido por cualquier persona de forma gratuita y para cualquier propósito, ya sea privado, comercial o académico”
 PostgreSQL (<a class="reference external" href="https://www.postgresql.org/docs/current/intro-whatis.html">https://www.postgresql.org/docs/current/intro-whatis.html</a>)</p>
-<section id="proceso-de-instalacion">
-<h4>Proceso de instalación<a class="headerlink" href="#proceso-de-instalacion" title="Link to this heading">#</a></h4>
-<p>Visitar la página oficial de PostgreSQL (<a class="reference external" href="https://www.postgresql.org/download/">https://www.postgresql.org/download/</a>)</p>
-<a class="reference internal image-reference" href="../../_images/PostgreSQL.PNG"><img alt="unidad" class="align-center" src="../../_images/PostgreSQL.PNG" style="width: 500px;" />
-</a>
-<p style="text-align: center; font-size: 12px;"> <strong>Fig. 1. Página oficial de PostgreSQL – PostgreSQL. https://www.postgresql.org/download/</strong></p>
-<p>Seleccionar el instalador conforme al sistema operativo</p>
-<a class="reference internal image-reference" href="../../_images/Instalador.PNG"><img alt="unidad" class="align-center" src="../../_images/Instalador.PNG" style="width: 500px;" />
-</a>
-<p style="text-align: center; font-size: 12px;"> <strong>Fig. 2. Instalador de Windows – PostgreSQL. https://www.postgresql.org/download/</strong></p>
-<p>Al ejecutar el instalador, tener en cuenta algunos puntos importantes:</p>
-<ul class="simple">
-<li><p>Instalación de componentes (pgadmin, stack builder)</p></li>
-</ul>
-<a class="reference internal image-reference" href="../../_images/Stack_Builder_Config.PNG"><img alt="unidad" class="align-center" src="../../_images/Stack_Builder_Config.PNG" style="width: 500px;" />
-</a>
-<p style="text-align: center; font-size: 12px;"> <strong>Fig. 3. Configutación de Stack Builder</strong></p>
-```{image} Imagenes/Stack_Builder.PNG
-:width: 500px
-:align: center
-:alt: unidad
-```
-<p style="text-align: center; font-size: 12px;"> <strong>Fig. 4. Stack Builder – PostgreSQL</strong></p>
-<ul class="simple">
-<li><p>Usuario y contraseña del administrador (Para la demostración, se hace uso de postgres/postgres)</p></li>
-</ul>
-<a class="reference internal image-reference" href="../../_images/User_Postgres.PNG"><img alt="unidad" class="align-center" src="../../_images/User_Postgres.PNG" style="width: 500px;" />
-</a>
-<p style="text-align: center; font-size: 12px;"> <strong>Fig. 5. Definición de usuario – PostgreSQL</strong></p>
-<ul class="simple">
-<li><p>Seleccionar el puerto que se utilizará (Por defecto 5432)</p></li>
-</ul>
-<a class="reference internal image-reference" href="../../_images/Port.PNG"><img alt="unidad" class="align-center" src="../../_images/Port.PNG" style="width: 500px;" />
-</a>
-<p style="text-align: center; font-size: 12px;"> <strong>Fig. 6. Definición de puerto – PostgreSQL</strong></p></section>
 </section>
 <section id="postgis">
-<h3>PostGIS<a class="headerlink" href="#postgis" title="Link to this heading">#</a></h3>
+<h2>PostGIS<a class="headerlink" href="#postgis" title="Link to this heading">#</a></h2>
 <p>“…PostGIS amplía las capacidades de la base de datos relacional PostgreSQL al agregar soporte para almacenar, indexar y consultar datos geoespaciales….”
 Las características de PostGIS incluyen:</p>
 <ul class="simple">
@@ -698,21 +655,11 @@ Las características de PostGIS incluyen:</p>
 <li><p><strong>Integración:</strong> acceda y trabaje con PostGIS utilizando herramientas de terceros como QGIS , GeoServer , MapServer , ArcGIS, Tableau.</p></li>
 </ul>
 <p>PostGIS (<a class="reference external" href="https://postgis.net/">https://postgis.net/</a>)</p>
-<section id="id1">
-<h4>Proceso de instalación<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
-<p>Abrir Stack Builder e instalar la extensión espacial PostGIS</p>
-<a class="reference internal image-reference" href="../../_images/PostGIS.PNG"><img alt="unidad" class="align-center" src="../../_images/PostGIS.PNG" style="width: 500px;" />
-</a>
-<p style="text-align: center; font-size: 12px;"> <strong>Fig. 7. Instalación PostGIS</strong></p>
-<p>Identificar e instalar los componentes a instalar para complementar PostGIS</p>
-<a class="reference internal image-reference" href="../../_images/Components_PostGIS.PNG"><img alt="unidad" class="align-center" src="../../_images/Components_PostGIS.PNG" style="width: 500px;" />
-</a>
-<p style="text-align: center; font-size: 12px;"> <strong>Fig. 8. Componentes de PostGIS </strong></p></section>
 </section>
 <section id="administracion-postgis">
-<h3>Administración PostGIS<a class="headerlink" href="#administracion-postgis" title="Link to this heading">#</a></h3>
+<h2>Administración PostGIS<a class="headerlink" href="#administracion-postgis" title="Link to this heading">#</a></h2>
 <section id="modelo-de-datos-espacial">
-<h4>Modelo de datos espacial<a class="headerlink" href="#modelo-de-datos-espacial" title="Link to this heading">#</a></h4>
+<h3>Modelo de datos espacial<a class="headerlink" href="#modelo-de-datos-espacial" title="Link to this heading">#</a></h3>
 <p><strong>OGC Geometry</strong></p>
 <ul class="simple">
 <li><p><strong>Point.</strong> Geometría de 0 dimensiones que representa una única ubicación en el espacio de coordenadas.</p></li>
@@ -790,14 +737,14 @@ Las características de PostGIS incluyen:</p>
 </div>
 </section>
 <section id="tipos-de-datos-geograficos">
-<h4>Tipos de datos geográficos<a class="headerlink" href="#tipos-de-datos-geograficos" title="Link to this heading">#</a></h4>
+<h3>Tipos de datos geográficos<a class="headerlink" href="#tipos-de-datos-geograficos" title="Link to this heading">#</a></h3>
 <p><strong>Geographic</strong>
 “…El tipo de datos PostGIS geography proporciona compatibilidad nativa con entidades espaciales representadas en coordenadas geográficas (o “lat/lon”). Las coordenadas geográficas son coordenadas esféricas expresadas en unidades angulares (grados)…”</p>
 <p><strong>Geometry</strong>
 “…La base del tipo de datos geométricos de PostGIS es un plano….”</p>
 </section>
 <section id="calculo-de-atributos-geometricos">
-<h4>Cálculo de atributos geométricos<a class="headerlink" href="#calculo-de-atributos-geometricos" title="Link to this heading">#</a></h4>
+<h3>Cálculo de atributos geométricos<a class="headerlink" href="#calculo-de-atributos-geometricos" title="Link to this heading">#</a></h3>
 <p>El camino más corto entre dos puntos en el plano es una línea recta. Esto significa que las funciones geométricas (áreas, distancias, longitudes, intersecciones, etc.) se calculan utilizando vectores de línea recta y matemáticas cartesianas. Esto facilita su implementación y agiliza su ejecución, pero también las hace imprecisas para datos sobre la superficie esferoidal de la Tierra.</p>
 <p>El tipo de datos geográficos de PostGIS se basa en un modelo esférico. El camino más corto entre dos puntos de la esfera es un arco de círculo máximo. Las funciones sobre geografías (áreas, distancias, longitudes, intersecciones, etc.) se calculan utilizando arcos de la esfera. Al considerar la forma esferoidal del mundo, las funciones proporcionan resultados más precisos.</p>
 <p>Creación de tablas de geografía</p>
@@ -828,7 +775,7 @@ El tipo de datos que elija debe determinarse según el área de trabajo prevista
 </ul>
 </section>
 <section id="sistemas-de-referencia-espacial">
-<h4>Sistemas de referencia espacial<a class="headerlink" href="#sistemas-de-referencia-espacial" title="Link to this heading">#</a></h4>
+<h3>Sistemas de referencia espacial<a class="headerlink" href="#sistemas-de-referencia-espacial" title="Link to this heading">#</a></h3>
 <p>Un <strong>Sistema de Referencia Espacial (SRE)</strong> (también llamado <strong>Sistema de Referencia de Coordenadas (SRC)</strong>) define cómo se referencia la geometría a ubicaciones en la superficie terrestre. Existen tres tipos de SRE:</p>
 <ul class="simple">
 <li><p>Un <strong>SRS geodésico</strong> utiliza coordenadas angulares (longitud y latitud) que se asignan directamente a la superficie de la tierra.</p></li>
@@ -873,30 +820,44 @@ El tipo de datos que elija debe determinarse según el área de trabajo prevista
 </div>
 </section>
 <section id="cargar-datos-espaciales-utilizando-sql">
-<h4>Cargar datos espaciales utilizando SQL<a class="headerlink" href="#cargar-datos-espaciales-utilizando-sql" title="Link to this heading">#</a></h4>
+<h3>Cargar datos espaciales utilizando SQL<a class="headerlink" href="#cargar-datos-espaciales-utilizando-sql" title="Link to this heading">#</a></h3>
 <section id="datos-vectoriales">
-<h5>- Datos vectoriales<a class="headerlink" href="#datos-vectoriales" title="Link to this heading">#</a></h5>
-<p>Si los datos espaciales se pueden convertir a una representación de texto (como WKT o WKB), usar SQL podría ser la forma más sencilla de importarlos a PostGIS. Los datos se pueden cargar masivamente en PostGIS/PostgreSQL cargando un archivo de texto con <code class="docutils literal notranslate"><span class="pre">INSERT</span></code>.</p>
+<h4>- Datos vectoriales<a class="headerlink" href="#datos-vectoriales" title="Link to this heading">#</a></h4>
+<p>PostGIS permite cargar datos espaciales directamente usando comandos SQL, especialmente si estos datos están representados en formato de texto como <strong>WKT</strong> (Well-Known Text) o <strong>WKB</strong> (Well-Known Binary).
+Este método es útil para cargar información de forma rápida desde archivos de texto o secuencias de comandos SQL, sin depender de herramientas externas como QGIS o <code class="docutils literal notranslate"><span class="pre">ogr2ogr</span></code>.
+En este ejemplo, vamos a insertar datos de líneas (calles o carreteras) utilizando geometrías en formato <code class="docutils literal notranslate"><span class="pre">LINESTRING</span></code>. Supongamos que ya existe una tabla llamada <code class="docutils literal notranslate"><span class="pre">vias</span></code> con los
+siguientes campos:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">id_via</span></code> → identificador único de la vía</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">geometria</span></code> → columna espacial con tipo <code class="docutils literal notranslate"><span class="pre">LINESTRING</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nombre_via</span></code> → nombre de la vía
+Los registros se insertan de forma masiva dentro de una transacción:</p></li>
+</ul>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">BEGIN</span><span class="p">;</span>
-<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">roads</span><span class="w"> </span><span class="p">(</span><span class="n">road_id</span><span class="p">,</span><span class="w"> </span><span class="n">roads_geom</span><span class="p">,</span><span class="w"> </span><span class="n">road_name</span><span class="p">)</span>
-<span class="w">  </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;LINESTRING(191232 243118,191108 243242)&#39;</span><span class="p">,</span><span class="s1">&#39;Jeff Rd&#39;</span><span class="p">);</span>
-<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">roads</span><span class="w"> </span><span class="p">(</span><span class="n">road_id</span><span class="p">,</span><span class="w"> </span><span class="n">roads_geom</span><span class="p">,</span><span class="w"> </span><span class="n">road_name</span><span class="p">)</span>
-<span class="w">  </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;LINESTRING(189141 244158,189265 244817)&#39;</span><span class="p">,</span><span class="s1">&#39;Geordie Rd&#39;</span><span class="p">);</span>
-<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">roads</span><span class="w"> </span><span class="p">(</span><span class="n">road_id</span><span class="p">,</span><span class="w"> </span><span class="n">roads_geom</span><span class="p">,</span><span class="w"> </span><span class="n">road_name</span><span class="p">)</span>
-<span class="w">  </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;LINESTRING(192783 228138,192612 229814)&#39;</span><span class="p">,</span><span class="s1">&#39;Paul St&#39;</span><span class="p">);</span>
-<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">roads</span><span class="w"> </span><span class="p">(</span><span class="n">road_id</span><span class="p">,</span><span class="w"> </span><span class="n">roads_geom</span><span class="p">,</span><span class="w"> </span><span class="n">road_name</span><span class="p">)</span>
-<span class="w">  </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;LINESTRING(189412 252431,189631 259122)&#39;</span><span class="p">,</span><span class="s1">&#39;Graeme Ave&#39;</span><span class="p">);</span>
-<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">roads</span><span class="w"> </span><span class="p">(</span><span class="n">road_id</span><span class="p">,</span><span class="w"> </span><span class="n">roads_geom</span><span class="p">,</span><span class="w"> </span><span class="n">road_name</span><span class="p">)</span>
-<span class="w">  </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;LINESTRING(190131 224148,190871 228134)&#39;</span><span class="p">,</span><span class="s1">&#39;Phil Tce&#39;</span><span class="p">);</span>
-<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">roads</span><span class="w"> </span><span class="p">(</span><span class="n">road_id</span><span class="p">,</span><span class="w"> </span><span class="n">roads_geom</span><span class="p">,</span><span class="w"> </span><span class="n">road_name</span><span class="p">)</span>
-<span class="w">  </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="s1">&#39;LINESTRING(198231 263418,198213 268322)&#39;</span><span class="p">,</span><span class="s1">&#39;Dave Cres&#39;</span><span class="p">);</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">vias</span><span class="w"> </span><span class="p">(</span><span class="n">id_via</span><span class="p">,</span><span class="w"> </span><span class="n">geometria</span><span class="p">,</span><span class="w"> </span><span class="n">nombre_via</span><span class="p">)</span>
+<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;LINESTRING(191232 243118,191108 243242)&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Calle Jeff&#39;</span><span class="p">);</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">vias</span><span class="w"> </span><span class="p">(</span><span class="n">id_via</span><span class="p">,</span><span class="w"> </span><span class="n">geometria</span><span class="p">,</span><span class="w"> </span><span class="n">nombre_via</span><span class="p">)</span>
+<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;LINESTRING(189141 244158,189265 244817)&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Calle Geordie&#39;</span><span class="p">);</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">vias</span><span class="w"> </span><span class="p">(</span><span class="n">id_via</span><span class="p">,</span><span class="w"> </span><span class="n">geometria</span><span class="p">,</span><span class="w"> </span><span class="n">nombre_via</span><span class="p">)</span>
+<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;LINESTRING(192783 228138,192612 229814)&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Calle Paul&#39;</span><span class="p">);</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">vias</span><span class="w"> </span><span class="p">(</span><span class="n">id_via</span><span class="p">,</span><span class="w"> </span><span class="n">geometria</span><span class="p">,</span><span class="w"> </span><span class="n">nombre_via</span><span class="p">)</span>
+<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;LINESTRING(189412 252431,189631 259122)&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Avenida Graeme&#39;</span><span class="p">);</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">vias</span><span class="w"> </span><span class="p">(</span><span class="n">id_via</span><span class="p">,</span><span class="w"> </span><span class="n">geometria</span><span class="p">,</span><span class="w"> </span><span class="n">nombre_via</span><span class="p">)</span>
+<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;LINESTRING(190131 224148,190871 228134)&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Terraza Phil&#39;</span><span class="p">);</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">vias</span><span class="w"> </span><span class="p">(</span><span class="n">id_via</span><span class="p">,</span><span class="w"> </span><span class="n">geometria</span><span class="p">,</span><span class="w"> </span><span class="n">nombre_via</span><span class="p">)</span>
+<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;LINESTRING(198231 263418,198213 268322)&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Callejón Dave&#39;</span><span class="p">);</span>
 <span class="k">COMMIT</span><span class="p">;</span>
 </pre></div>
 </div>
+<p>✅ Recomendación: Asegúrate de que la columna geometria esté definida con el tipo espacial adecuado, por ejemplo:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">AddGeometryColumn</span><span class="p">(</span><span class="s1">&#39;vias&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;geometria&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">4326</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;LINESTRING&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>📌 Nota: Este método es ideal para volúmenes pequeños o cuando se trabaja con scripts personalizados. Para cargas masivas desde shapefiles o geojson, es preferible usar herramientas como shp2pgsql, ogr2ogr o directamente desde QGIS.</p>
 </section>
 </section>
 <section id="utilizando-el-shapefile-loader">
-<h4>Utilizando el Shapefile Loader<a class="headerlink" href="#utilizando-el-shapefile-loader" title="Link to this heading">#</a></h4>
+<h3>Utilizando el Shapefile Loader<a class="headerlink" href="#utilizando-el-shapefile-loader" title="Link to this heading">#</a></h3>
 <p>El <code class="docutils literal notranslate"><span class="pre">shp2pgsql</span></code> cargador de datos convierte los shapefiles a SQL, aptos para su inserción en bases de datos PostGIS/PostgreSQL, ya sea en formato geométrico o geográfico. El cargador dispone de varios modos de funcionamiento que se seleccionan mediante indicadores de línea de comandos.</p>
 <p><code class="docutils literal notranslate"><span class="pre">-c</span></code>. Crea una nueva tabla y la rellena desde el shapefile. Este es el modo predeterminado.<br>
 <code class="docutils literal notranslate"><span class="pre">-a</span></code>. Añade datos del shapefile a la tabla de la base de datos. Tenga en cuenta que para usar esta opción y cargar varios archivos, estos deben tener los mismos atributos y tipos de datos.<br>
@@ -914,42 +875,50 @@ psql<span class="w"> </span>-d<span class="w"> </span>carreterasdb<span class="w
 <ul class="simple">
 <li><p>Realizar la conexión a la base de datos</p></li>
 </ul>
-<a class="reference internal image-reference" href="../../_images/PostGIS_Connection.PNG"><img alt="unidad" class="align-center" src="../../_images/PostGIS_Connection.PNG" style="width: 500px;" />
+<a class="reference internal image-reference" href="../../_images/PostGIS_Connection.PNG"><img alt="unidad" class="align-center" src="../../_images/PostGIS_Connection.PNG" style="width: 250px;" />
 </a>
-<p style="text-align: center; font-size: 12px;"> <strong>Fig. 9. Conexión a PostGIS </strong></p>
+<p style="text-align: center; font-size: 12px;"> <strong>Fig. 1. Conexión a PostGIS </strong></p>
 <ul class="simple">
 <li><p>Verificar las opciones de importación según las necesidades del usuario</p></li>
 </ul>
-<a class="reference internal image-reference" href="../../_images/Options_Import_PostGIS.PNG"><img alt="unidad" class="align-center" src="../../_images/Options_Import_PostGIS.PNG" style="width: 500px;" />
+<a class="reference internal image-reference" href="../../_images/Options_Import_PostGIS.PNG"><img alt="unidad" class="align-center" src="../../_images/Options_Import_PostGIS.PNG" style="width: 300px;" />
 </a>
-<p style="text-align: center; font-size: 12px;"> <strong>Fig. 10. Opciones de importación - PostGIS </strong></p>
+<p style="text-align: center; font-size: 12px;"> <strong>Fig. 2. Opciones de importación - PostGIS </strong></p>
 <ul class="simple">
 <li><p>Buscar y cargar el archivo Shapefile verificando el nombre con el cual se guardará la tabla y el SRID</p></li>
 </ul>
-<a class="reference internal image-reference" href="../../_images/Options_Import_PostGIS.PNG"><img alt="unidad" class="align-center" src="../../_images/Options_Import_PostGIS.PNG" style="width: 500px;" />
+<a class="reference internal image-reference" href="../../_images/Load_Shp_PostGIS.PNG"><img alt="unidad" class="align-center" src="../../_images/Load_Shp_PostGIS.PNG" style="width: 300px;" />
 </a>
-<p style="text-align: center; font-size: 12px;"> <strong>Fig. 11. Cargar datos desde Shapefile </strong></p>
+<p style="text-align: center; font-size: 12px;"> <strong>Fig. 3. Cargar datos desde Shapefile </strong></p>
 <p>Consultar más parámetros: <a class="reference external" href="https://postgis.net/docs/manual-3.5/using_postgis_dbmanagement.html#loading-data">https://postgis.net/docs/manual-3.5/using_postgis_dbmanagement.html#loading-data</a></p>
 </section>
 <section id="extrayendo-datos-espaciales-vectoriales">
-<h4>Extrayendo datos espaciales vectoriales<a class="headerlink" href="#extrayendo-datos-espaciales-vectoriales" title="Link to this heading">#</a></h4>
-<p>La forma más sencilla de extraer datos espaciales de la base de datos es utilizar una <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> consulta SQL para definir el conjunto de datos que se va a extraer y volcar las columnas resultantes en un archivo de texto analizable.</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">road_id</span><span class="p">,</span><span class="w"> </span><span class="n">ST_AsText</span><span class="p">(</span><span class="n">road_geom</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">geom</span><span class="p">,</span><span class="w"> </span><span class="n">road_name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">roads</span><span class="p">;</span>
-
-<span class="k">SELECT</span><span class="w"> </span><span class="n">road_id</span><span class="p">,</span><span class="w"> </span><span class="n">road_name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">roads</span>
-<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">ST_Intersects</span><span class="p">(</span><span class="n">roads_geom</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;SRID=312;POLYGON((...))&#39;</span><span class="p">);</span>
+<h3>Extrayendo datos espaciales vectoriales<a class="headerlink" href="#extrayendo-datos-espaciales-vectoriales" title="Link to this heading">#</a></h3>
+<p>Una de las formas más directas de <strong>extraer información geoespacial</strong> desde PostGIS es utilizando consultas <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> que devuelvan tanto los atributos como la geometría en un
+formato legible.
+📌 Nota: Esto es útil cuando se desea exportar los datos a archivos <code class="docutils literal notranslate"><span class="pre">.csv</span></code> o <code class="docutils literal notranslate"><span class="pre">.txt</span></code> o integrarlos en otros procesos de análisis fuera de la base de datos.</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id_via</span><span class="p">,</span><span class="w"> </span><span class="n">ST_AsText</span><span class="p">(</span><span class="n">geometria</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">geometria_wkt</span><span class="p">,</span><span class="w"> </span><span class="n">nombre_via</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">vias</span><span class="p">;</span>
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="../../_images/Functions_PostGIS.PNG"><img alt="unidad" class="align-center" src="../../_images/Functions_PostGIS.PNG" style="width: 500px;" />
+<p>Si deseamos filtrar solamente aquellas vías que intersectan con una geometría (por ejemplo, un polígono de interés), podemos usar la función <strong>ST_Intersects</strong>:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id_via</span><span class="p">,</span><span class="w"> </span><span class="n">nombre_via</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">vias</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">ST_Intersects</span><span class="p">(</span><span class="n">geometria</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;SRID=4326;POLYGON((...))&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../_images/Functions_PostGIS.PNG"><img alt="unidad" class="align-center" src="../../_images/Functions_PostGIS.PNG" style="width: 300px;" />
 </a>
 <p style="text-align: center; font-size: 12px;"> 
-<strong>Fig. 12. Ejemplos de funciones de PostGIS – PostGIS. https://postgis.net/docs/manual-1.5/ch08.html</strong>
-</p><section id="datos-raster">
-<h5>- Datos raster<a class="headerlink" href="#datos-raster" title="Link to this heading">#</a></h5>
+<strong>Fig. 4. Ejemplos de funciones de PostGIS – PostGIS. https://postgis.net/docs/manual-1.5/ch08.html</strong>
+</p>
+<p>💡 Nota: Asegúrate de que la geometría proporcionada tenga el mismo SRID (sistema de referencia espacial) que la columna geometria. En este ejemplo, se usa SRID=4326.</p>
+<section id="datos-raster">
+<h4>- Datos raster<a class="headerlink" href="#datos-raster" title="Link to this heading">#</a></h4>
 </section>
 </section>
 <section id="utilizando-el-rasters-loader">
-<h4>Utilizando el Rasters Loader<a class="headerlink" href="#utilizando-el-rasters-loader" title="Link to this heading">#</a></h4>
+<h3>Utilizando el Rasters Loader<a class="headerlink" href="#utilizando-el-rasters-loader" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">raster2pgsql</span></code> es un ejecutable de carga de ráster que carga formatos ráster compatibles con GDAL en SQL, aptos para su carga en una tabla ráster PostGIS. Permite cargar carpetas de archivos ráster y crear vistas generales de rásteres. Dado que raster2pgsql se compila generalmente como parte de PostGIS (a menos que compile su propia biblioteca GDAL), los tipos de ráster compatibles con el ejecutable serán los mismos que los compilados en la biblioteca de dependencias de GDAL.</p>
 <p>En la línea de comandos</p>
 <p><code class="docutils literal notranslate"><span class="pre">-s</span></code>. SRID <br>
@@ -971,41 +940,47 @@ psql<span class="w"> </span>-d<span class="w"> </span>gisdb<span class="w"> </sp
 <a class="reference internal image-reference" href="../../_images/Formats_Raster.PNG"><img alt="unidad" class="align-center" src="../../_images/Formats_Raster.PNG" style="width: 500px;" />
 </a>
 <p style="text-align: center; font-size: 12px;"> 
-<strong>Fig. 13. Ejemplos de formatos de ráster de PostGIS – PostGIS. https://postgis.net/docs/using_raster_dataman.html</strong>
+<strong>Fig. 5. Ejemplos de formatos de ráster de PostGIS – PostGIS. https://postgis.net/docs/using_raster_dataman.html</strong>
 </p>
 <p>Para mayor información (<a class="reference external" href="https://postgis.net/docs/using_raster_dataman.html">https://postgis.net/docs/using_raster_dataman.html</a>)</p>
 </section>
 <section id="extrayendo-datos-espaciales-raster">
-<h4>Extrayendo datos espaciales ráster<a class="headerlink" href="#extrayendo-datos-espaciales-raster" title="Link to this heading">#</a></h4>
-<p>PostGIS permite almacenar y consultar datos ráster de manera eficiente. Para extraer información de una tabla que contiene datos ráster, podemos usar funciones especializadas.</p>
-<p>Extraer información de un ráster</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">rid</span><span class="p">,</span><span class="w"> </span><span class="n">ST_Metadata</span><span class="p">(</span><span class="n">rast</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">raster_table</span><span class="p">;</span>
+<h3>Extrayendo datos espaciales ráster<a class="headerlink" href="#extrayendo-datos-espaciales-raster" title="Link to this heading">#</a></h3>
+<p>PostGIS no solo permite trabajar con datos vectoriales (puntos, líneas, polígonos), sino que también es capaz de <strong>almacenar y consultar datos ráster</strong> de forma eficiente. Estos datos pueden representar información continua como imágenes satelitales, modelos de elevación digital, mapas de temperatura, entre otros.
+A continuación, se presentan ejemplos de cómo extraer información de una tabla que contiene un campo ráster utilizando funciones especializadas de PostGIS.</p>
+<section id="obtener-metadatos-del-raster">
+<h4>Obtener metadatos del ráster<a class="headerlink" href="#obtener-metadatos-del-raster" title="Link to this heading">#</a></h4>
+<p>La función <code class="docutils literal notranslate"><span class="pre">ST_Metadata</span></code> permite consultar propiedades como <strong>número de bandas</strong>, <strong>resolución</strong>, <strong>extensión espacial</strong>, etc.</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id_raster</span><span class="p">,</span><span class="w"> </span><span class="n">ST_Metadata</span><span class="p">(</span><span class="n">raster</span><span class="p">)</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">capa_raster</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Obtener el valor de un píxel en una coordenada específica</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">ST_Value</span><span class="p">(</span><span class="n">rast</span><span class="p">,</span><span class="w"> </span><span class="n">ST_SetSRID</span><span class="p">(</span><span class="n">ST_Point</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="mi">2000</span><span class="p">),</span><span class="w"> </span><span class="mi">4326</span><span class="p">))</span><span class="w"> </span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">raster_table</span><span class="p">;</span>
+<p>Para saber qué valor tiene el ráster en un punto determinado (por ejemplo, coordenadas X=1000, Y=2000):</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">ST_Value</span><span class="p">(</span><span class="n">raster</span><span class="p">,</span><span class="w"> </span><span class="n">ST_SetSRID</span><span class="p">(</span><span class="n">ST_Point</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="mi">2000</span><span class="p">),</span><span class="w"> </span><span class="mi">4326</span><span class="p">))</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">capa_raster</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Consultar rásteres que intersectan con una geometría</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">rid</span><span class="p">,</span><span class="w"> </span><span class="n">rast</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">raster_table</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">ST_Intersects</span><span class="p">(</span><span class="n">rast</span><span class="p">,</span><span class="w"> </span><span class="n">ST_GeomFromText</span><span class="p">(</span><span class="s1">&#39;POLYGON((...))&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">4326</span><span class="p">));</span>
+<p>Esta consulta devuelve los rásteres que se superponen con una geometría dada (por ejemplo, un polígono de una zona de estudio):</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id_raster</span><span class="p">,</span><span class="w"> </span><span class="n">raster</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">capa_raster</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">ST_Intersects</span><span class="p">(</span><span class="n">raster</span><span class="p">,</span><span class="w"> </span><span class="n">ST_GeomFromText</span><span class="p">(</span><span class="s1">&#39;POLÍGONO((...))&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">4326</span><span class="p">));</span>
 </pre></div>
 </div>
-<p>Estadísticas de ráster en un área específica</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">ST_SummaryStats</span><span class="p">(</span><span class="n">rast</span><span class="p">)</span><span class="w"> </span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">raster_table</span><span class="w"> </span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">ST_Intersects</span><span class="p">(</span><span class="n">rast</span><span class="p">,</span><span class="w"> </span><span class="n">ST_GeomFromText</span><span class="p">(</span><span class="s1">&#39;POLYGON((...))&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">4326</span><span class="p">));</span>
+<p>La función ST_SummaryStats calcula estadísticas básicas (mínimo, máximo, media, etc.) para los valores del ráster dentro de un área específica:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">ST_SummaryStats</span><span class="p">(</span><span class="n">raster</span><span class="p">)</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">capa_raster</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">ST_Intersects</span><span class="p">(</span><span class="n">raster</span><span class="p">,</span><span class="w"> </span><span class="n">ST_GeomFromText</span><span class="p">(</span><span class="s1">&#39;POLÍGONO((...))&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">4326</span><span class="p">));</span>
 </pre></div>
 </div>
+</section>
 </section>
 </section>
 <section id="integracion-postgis-python">
-<h3>Integración PostGIS / Python<a class="headerlink" href="#integracion-postgis-python" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Cargar datos desde Shapefile con librerías de python <code class="docutils literal notranslate"><span class="pre">Geopandas</span></code>, <code class="docutils literal notranslate"><span class="pre">Shapely</span></code> y <code class="docutils literal notranslate"><span class="pre">psycopg2</span></code></p></li>
-</ul>
+<h2>Integración PostGIS / Python<a class="headerlink" href="#integracion-postgis-python" title="Link to this heading">#</a></h2>
+<p>En esta sección se muestra cómo cargar información espacial desde un archivo Shapefile (.shp) a una base de datos PostGIS utilizando dos enfoques:</p>
+<ol class="arabic simple">
+<li><p>Usando <code class="docutils literal notranslate"><span class="pre">psycopg2</span></code> (conexión directa SQL)</p></li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># GeoPandas: Extensión de Pandas para manejar datos geoespaciales (puntos, líneas, polígonos).</span>
@@ -1024,9 +999,9 @@ psql<span class="w"> </span>-d<span class="w"> </span>gisdb<span class="w"> </sp
 <p>Leer los datos espaciales con ayuda de Geopandas</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shapefile_path</span> <span class="o">=</span> <span class="s2">&quot;./Samples/Samples_Point.shp&quot;</span>  <span class="c1"># Ruta del archivo .shp con datos geoespaciales</span>
-<span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">shapefile_path</span><span class="p">)</span>  <span class="c1"># Cargar el archivo en un GeoDataFrame</span>
-<span class="n">gdf</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>  <span class="c1"># Mostrar las primeras filas del GeoDataFrame para inspección</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shapefile_path</span> <span class="o">=</span> <span class="s2">&quot;./Samples/Samples_Point.shp&quot;</span>      <span class="c1"># Ruta del archivo .shp con datos geoespaciales (Cambiar según sea necesario)</span>
+<span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">shapefile_path</span><span class="p">)</span>                 <span class="c1"># Cargar el archivo en un GeoDataFrame</span>
+<span class="n">gdf</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>                                          <span class="c1"># Mostrar las primeras filas del GeoDataFrame para inspección</span>
 </pre></div>
 </div>
 </div>
@@ -1101,11 +1076,15 @@ psql<span class="w"> </span>-d<span class="w"> </span>gisdb<span class="w"> </sp
 </table>
 </div></div></div>
 </div>
+<p>📌 Nota: Los nombres de las columnas pueden variar dependiendo del archivo .shp que estés utilizando.
+Verifica las columnas disponibles usando gdf.columns y ajusta el código en consecuencia (por ejemplo: class, geometry, etc.).</p>
+<p>📌 Nota: Este método es ideal para volúmenes pequeños o cuando se trabaja con scripts personalizados.
+Para cargas masivas desde archivos Shapefile o GeoJSON, es preferible utilizar herramientas como shp2pgsql.</p>
 <p>Crear la conexión con la base de datos espacial</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DB_CONFIG</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;dbname&quot;</span><span class="p">:</span> <span class="s2">&quot;DB_GIS&quot;</span><span class="p">,</span>                 <span class="c1"># Nombre de la base de datos</span>
+    <span class="s2">&quot;dbname&quot;</span><span class="p">:</span> <span class="s2">&quot;postgis_34_sample&quot;</span><span class="p">,</span>      <span class="c1"># Nombre de la base de datos</span>
     <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;postgres&quot;</span><span class="p">,</span>                 <span class="c1"># Usuario de la base de datos</span>
     <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;postgres&quot;</span><span class="p">,</span>             <span class="c1"># Contraseña del usuario</span>
     <span class="s2">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>                <span class="c1"># Dirección del servidor (localhost si es local)</span>
@@ -1134,10 +1113,10 @@ psql<span class="w"> </span>-d<span class="w"> </span>gisdb<span class="w"> </sp
 </div>
 </div>
 </div>
-<a class="reference internal image-reference" href="../../_images/Table_Training_Sample1.PNG"><img alt="unidad" class="align-center" src="../../_images/Table_Training_Sample1.PNG" style="width: 500px;" />
+<a class="reference internal image-reference" href="../../_images/Table_Training_Sample1.PNG"><img alt="unidad" class="align-center" src="../../_images/Table_Training_Sample1.PNG" style="width: 200px;" />
 </a>
 <p style="text-align: center; font-size: 12px;"> 
-<strong>Fig. 14. Tabla creada "training_sample" en base de datos </strong>
+<strong>Fig. 6. Tabla creada "training_sample" en base de datos </strong>
 </p><p>Insertar los datos</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1155,6 +1134,102 @@ psql<span class="w"> </span>-d<span class="w"> </span>gisdb<span class="w"> </sp
 </div>
 </div>
 </div>
+<ol class="arabic simple" start="2">
+<li><p>Usando <code class="docutils literal notranslate"><span class="pre">SQLAlchemy</span></code> (ORM con integración SQL expresiva)</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">geopandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gpd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">shapely</span><span class="w"> </span><span class="kn">import</span> <span class="n">wkt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sqlalchemy</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_engine</span><span class="p">,</span> <span class="n">Column</span><span class="p">,</span> <span class="n">Integer</span><span class="p">,</span> <span class="n">String</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sqlalchemy.ext.declarative</span><span class="w"> </span><span class="kn">import</span> <span class="n">declarative_base</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sqlalchemy.orm</span><span class="w"> </span><span class="kn">import</span> <span class="n">sessionmaker</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">geoalchemy2</span><span class="w"> </span><span class="kn">import</span> <span class="n">Geometry</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shapefile_path</span> <span class="o">=</span> <span class="s2">&quot;./Samples/Samples_Point.shp&quot;</span>                                  <span class="c1"># Ruta del archivo .shp con datos geoespaciales (Cambiar según sea necesario)</span>
+<span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">shapefile_path</span><span class="p">)</span>                                             <span class="c1"># Cargar el archivo en un GeoDataFrame       </span>
+<span class="n">DB_URL</span> <span class="o">=</span> <span class="s2">&quot;postgresql://postgres:postgres@localhost:5432/postgis_34_sample&quot;</span>      <span class="c1"># Crear conexión con SQLAlchemy</span>
+<span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="n">DB_URL</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Base</span> <span class="o">=</span> <span class="n">declarative_base</span><span class="p">()</span>                                                       <span class="c1"># Crear una clase base para definir el modelo de la tabla       </span>
+<span class="k">class</span><span class="w"> </span><span class="nc">TrainingSample</span><span class="p">(</span><span class="n">Base</span><span class="p">):</span>
+    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s1">&#39;training_sample_sqlalchemy&#39;</span>                                <span class="c1"># Nombre de la tabla en la base de datos</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">autoincrement</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>              <span class="c1"># id SERIAL PRIMARY KEY </span>
+    <span class="n">class_</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s2">&quot;class&quot;</span><span class="p">,</span> <span class="n">String</span><span class="p">)</span>                                            <span class="c1"># class TEXT - Nota: &#39;class&#39; es palabra reservada en Python, por eso usamos &#39;class_&#39;</span>
+    <span class="n">geom</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Geometry</span><span class="p">(</span><span class="n">geometry_type</span> <span class="o">=</span> <span class="s1">&#39;POINT&#39;</span><span class="p">,</span> <span class="n">srid</span> <span class="o">=</span> <span class="mi">32619</span><span class="p">))</span>              <span class="c1"># geom GEOMETRY(Geometry, 32619) - EPSG:32619 = UTM zona 19N</span>
+<span class="n">Base</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">create_all</span><span class="p">(</span><span class="n">engine</span><span class="p">)</span>                                                <span class="c1"># Crear la tabla en la base de datos si no existe</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Session</span> <span class="o">=</span> <span class="n">sessionmaker</span><span class="p">(</span><span class="n">bind</span><span class="o">=</span><span class="n">engine</span><span class="p">)</span>         <span class="c1"># Crear una clase de sesión para interactuar con la base de datos</span>
+<span class="n">session</span> <span class="o">=</span> <span class="n">Session</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">gdf</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">muestra</span> <span class="o">=</span> <span class="n">TrainingSample</span><span class="p">(</span>
+        <span class="n">class_</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;class&quot;</span><span class="p">],</span>
+        <span class="n">geom</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">wkt</span>          <span class="c1"># GeoAlchemy acepta geometría como WKT o WKB</span>
+    <span class="p">)</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">muestra</span><span class="p">)</span>
+<span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>                            <span class="c1"># Confirmar la inserción de datos en la base de datos</span>
+<span class="n">session</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>                             <span class="c1"># Cerrar la sesión</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="comparacion-entre-psycopg2-y-sqlalchemy-para-la-carga-de-datos-espaciales">
+<h2>Comparación entre <code class="docutils literal notranslate"><span class="pre">psycopg2</span></code> y <code class="docutils literal notranslate"><span class="pre">SQLAlchemy</span></code> para la carga de datos espaciales<a class="headerlink" href="#comparacion-entre-psycopg2-y-sqlalchemy-para-la-carga-de-datos-espaciales" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Aspecto</p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">psycopg2</span></code> (consulta SQL directa)</p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">SQLAlchemy</span></code> + <code class="docutils literal notranslate"><span class="pre">GeoAlchemy2</span></code> (ORM)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Inserción de datos</p></td>
+<td><p>Manual, con sentencias <code class="docutils literal notranslate"><span class="pre">INSERT</span></code> en SQL</p></td>
+<td><p>Basada en clases Python (<code class="docutils literal notranslate"><span class="pre">add</span></code>, <code class="docutils literal notranslate"><span class="pre">commit</span></code>)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mantenimiento del código</p></td>
+<td><p>Mayor cantidad de código, menos legible</p></td>
+<td><p>Más limpio, estructurado y fácil de mantener</p></td>
+</tr>
+<tr class="row-even"><td><p>Validación del esquema</p></td>
+<td><p>Depende del control manual con SQL</p></td>
+<td><p>Definido por clases y validado automáticamente</p></td>
+</tr>
+<tr class="row-odd"><td><p>Conversión de geometría</p></td>
+<td><p>Requiere <code class="docutils literal notranslate"><span class="pre">ST_GeomFromText(...)</span></code></p></td>
+<td><p>Se puede insertar directamente como <code class="docutils literal notranslate"><span class="pre">WKT</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Creación de la tabla</p></td>
+<td><p>Manual con SQL (<code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">TABLE</span></code>)</p></td>
+<td><p>Automática con <code class="docutils literal notranslate"><span class="pre">Base.metadata.create_all()</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Escalabilidad del proyecto</p></td>
+<td><p>Adecuado para scripts simples o rápidos</p></td>
+<td><p>Ideal para aplicaciones más grandes y robustas</p></td>
+</tr>
+<tr class="row-even"><td><p>Lectura del modelo</p></td>
+<td><p>Menos intuitiva (estructura definida en SQL)</p></td>
+<td><p>Más clara: el modelo es una clase con atributos</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <ul class="simple">
 <li><p>Cargar datos desde archivo .tif con librerías de python <code class="docutils literal notranslate"><span class="pre">subprocess</span></code> y <code class="docutils literal notranslate"><span class="pre">psycopg2</span></code></p></li>
 </ul>
@@ -1170,7 +1245,7 @@ psql<span class="w"> </span>-d<span class="w"> </span>gisdb<span class="w"> </sp
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DB_CONFIG</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;dbname&quot;</span><span class="p">:</span> <span class="s2">&quot;DB_GIS&quot;</span><span class="p">,</span>                 <span class="c1"># Nombre de la base de datos</span>
+    <span class="s2">&quot;dbname&quot;</span><span class="p">:</span> <span class="s2">&quot;postgis_34_sample&quot;</span><span class="p">,</span>      <span class="c1"># Nombre de la base de datos</span>
     <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;postgres&quot;</span><span class="p">,</span>                 <span class="c1"># Usuario de la base de datos</span>
     <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;postgres&quot;</span><span class="p">,</span>             <span class="c1"># Contraseña del usuario</span>
     <span class="s2">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>                <span class="c1"># Dirección del servidor (localhost si es local)</span>
@@ -1179,7 +1254,8 @@ psql<span class="w"> </span>-d<span class="w"> </span>gisdb<span class="w"> </sp
 <span class="n">conn</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="o">**</span><span class="n">DB_CONFIG</span><span class="p">)</span> 
 <span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
 <span class="c1"># Abrir el archivo raster (.tif)</span>
-<span class="n">raster_path</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;C:\Users\JHERNANDEZ\OneDrive - Esri NOSA\Documentos\GitHub\PostGIS_Python\PostGIS_Python\temp_raster.tif&#39;</span>
+<span class="n">notebook_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>                                                  <span class="c1"># Ruta donde se ejecuta el notebook</span>
+<span class="n">raster_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">notebook_dir</span><span class="p">,</span> <span class="s2">&quot;Image_raster&quot;</span><span class="p">,</span> <span class="s2">&quot;temp_raster.tif&quot;</span><span class="p">)</span> <span class="c1"># Ruta del archivo .tif  (Cambiar según sea necesario)</span>
 <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;PGPASSWORD&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">DB_CONFIG</span><span class="p">[</span><span class="s2">&quot;password&quot;</span><span class="p">]</span>
 <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">¿Por qué usar PGPASSWORD?</span>
@@ -1199,8 +1275,8 @@ psql<span class="w"> </span>-d<span class="w"> </span>gisdb<span class="w"> </sp
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ruta a la carpeta donde están raster2pgsql y psql</span>
-<span class="n">pg_bin_path</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;C:\Program Files\PostgreSQL\16\bin&quot;</span>
-<span class="n">sql_output_path</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;C:\Shp_Example\prueba.sql&quot;</span>
+<span class="n">pg_bin_path</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;C:\Program Files\PostgreSQL\16\bin&quot;</span>         <span class="c1"># Cambiar según la instalación de PostgreSQL</span>
+<span class="n">sql_output_path</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;C:\Shp_Example\prueba.sql&quot;</span>              <span class="c1"># Ruta de salida para el archivo SQL (Cambiar según sea necesario)</span>
 <span class="c1"># Construir el comando con la ruta completa de raster2pgsql y psql</span>
 <span class="n">cmd</span> <span class="o">=</span> <span class="sa">fr</span><span class="s1">&#39;&quot;</span><span class="si">{</span><span class="n">pg_bin_path</span><span class="si">}</span><span class="s1">\raster2pgsql.exe&quot; -s 32619 -I -C &quot;</span><span class="si">{</span><span class="n">raster_path</span><span class="si">}</span><span class="s1">&quot; &gt;  </span><span class="si">{</span><span class="n">sql_output_path</span><span class="si">}</span><span class="s1">&#39;</span>
 <span class="c1"># Ejecutar el comando en la terminal</span>
@@ -1220,6 +1296,7 @@ psql<span class="w"> </span>-d<span class="w"> </span>gisdb<span class="w"> </sp
 </div>
 </div>
 </div>
+<p>Resultado del cargue del archivo raster</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">process</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
@@ -1242,53 +1319,84 @@ COMMIT
 </div>
 </div>
 </div>
+<div class="important admonition">
+<p class="admonition-title">Actividad</p>
+<ul class="simple">
+<li><p><strong>Este recuadro está destinado a preguntas y actividades para los estudiantes.</strong></p></li>
+</ul>
+<p>🔍 <strong>Reto 1: Consulta espacial con condiciones múltiples</strong></p>
+<p>Usando la tabla <code class="docutils literal notranslate"><span class="pre">clima</span></code> en PostgreSQL/PostGIS, crea una consulta que devuelva:</p>
+<ul class="simple">
+<li><p>Las ciudades donde la temperatura mínima fue inferior a 10 °C</p></li>
+<li><p>Y donde hubo alguna precipitación (<code class="docutils literal notranslate"><span class="pre">precipitacion</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>)</p></li>
+</ul>
+<p>🧭 <strong>Reto 2: Reflexión — ¿Vector o ráster?</strong></p>
+<p>Reflexiona y responde:</p>
+<ul class="simple">
+<li><p>¿Qué ventajas ofrece el modelo ráster frente al vectorial en análisis de cobertura del suelo?</p></li>
+<li><p>¿Cuándo conviene usar uno u otro?</p></li>
+</ul>
+<p>Justifica tu respuesta con base en los ejercicios desarrollados en esta guía.</p>
+<p>⚙️ <strong>Reto 3: Automatiza tu propio cargue vectorial</strong></p>
+<p>Desarrolla un script en Python que:</p>
+<ol class="arabic simple">
+<li><p>Lea un archivo Shapefile proporcionado por el usuario</p></li>
+<li><p>Detecte automáticamente las columnas del archivo</p></li>
+<li><p>Cree una tabla correspondiente en PostGIS</p></li>
+<li><p>Inserte todos los datos usando <code class="docutils literal notranslate"><span class="pre">GeoAlchemy2</span></code></p></li>
+</ol>
+<blockquote>
+<div><p>💡 Tip: Usa <code class="docutils literal notranslate"><span class="pre">gdf.columns</span></code> para explorar la estructura del archivo.</p>
+</div></blockquote>
+<p>🌱 <strong>Reto 4: Interpretación de datos ráster</strong></p>
+<p>Usando una imagen <code class="docutils literal notranslate"><span class="pre">.tif</span></code> previamente cargada en PostGIS:</p>
+<ul class="simple">
+<li><p>Calcula el valor mínimo, máximo y promedio dentro de un polígono definido</p></li>
+<li><p>Interpreta qué podrían representar estos valores en el contexto de cobertura vegetal o uso del suelo</p></li>
+</ul>
+<p>Realiza la consulta utilizando <code class="docutils literal notranslate"><span class="pre">ST_SummaryStats</span></code> desde Python con <code class="docutils literal notranslate"><span class="pre">psycopg2</span></code>.</p>
+</div>
 </section>
 <section id="referencias-y-recursos">
-<h3>Referencias y Recursos<a class="headerlink" href="#referencias-y-recursos" title="Link to this heading">#</a></h3>
-<section id="bases-de-datos">
-<h4>Bases de Datos<a class="headerlink" href="#bases-de-datos" title="Link to this heading">#</a></h4>
+<h2>Referencias y Recursos<a class="headerlink" href="#referencias-y-recursos" title="Link to this heading">#</a></h2>
+<section id="bases-de-datos-y-sql">
+<h3>🗃️ Bases de datos y SQL<a class="headerlink" href="#bases-de-datos-y-sql" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>Oracle</strong> - <a class="reference external" href="https://www.oracle.com/co/database/what-is-database/">¿Qué es una base de datos?</a></p></li>
-<li><p><strong>PostgreSQL</strong> - <a class="reference external" href="https://www.postgresql.org/docs/current/intro-whatis.html">Introducción a PostgreSQL</a></p></li>
-<li><p><strong>PostgreSQL - Documentación</strong> - <a class="reference external" href="https://www.postgresql.org/docs/current/">PostgreSQL Docs</a></p></li>
+<li><p><a class="reference external" href="https://www.oracle.com/co/database/what-is-database/">¿Qué es una base de datos? — Oracle</a></p></li>
+<li><p><a class="reference external" href="https://www.postgresql.org/docs/current/intro-whatis.html">Introducción a PostgreSQL</a></p></li>
+<li><p><a class="reference external" href="https://www.postgresql.org/docs/current/">Documentación oficial de PostgreSQL</a></p></li>
+<li><p><a class="reference external" href="https://www.postgresql.org/docs/current/sql.html">Lenguaje SQL en PostgreSQL — Comandos y estructura</a></p></li>
 </ul>
 </section>
-<section id="sql">
-<h4>SQL<a class="headerlink" href="#sql" title="Link to this heading">#</a></h4>
+<hr class="docutils" />
+<section id="postgis-y-funciones-espaciales">
+<h3>🌐 PostGIS y funciones espaciales<a class="headerlink" href="#postgis-y-funciones-espaciales" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>SQL en AWS</strong> - <a class="reference external" href="https://aws.amazon.com/es/what-is/sql/#:~:text=El%20lenguaje%20de%20consulta%20estructurada%20(SQL)%20es%20un%20lenguaje%20est%C3%A1ndar,relacional%20que%20utiliza%20consultas%20SQL.">¿Qué es SQL?</a></p></li>
-<li><p><strong>Acciones SQL en PostgreSQL</strong> - <a class="reference external" href="https://www.postgresql.org/docs/current/">Documentación Oficial</a></p></li>
+<li><p><a class="reference external" href="https://postgis.net/">Sitio oficial de PostGIS</a></p></li>
+<li><p><a class="reference external" href="https://postgis.net/docs/manual-1.5/ch08.html">Funciones espaciales en PostGIS — Manual 1.5 (imagen usada)</a></p></li>
+<li><p><a class="reference external" href="https://postgis.net/docs/manual-3.5/using_postgis_dbmanagement.html#loading-data">Carga de datos vectoriales en PostGIS</a></p></li>
+<li><p><a class="reference external" href="https://postgis.net/docs/using_raster_dataman">Manejo de datos ráster en PostGIS</a></p></li>
 </ul>
 </section>
-<section id="id2">
-<h4>PostGIS<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<hr class="docutils" />
+<section id="python-postgresql-postgis">
+<h3>🐍 Python + PostgreSQL/PostGIS<a class="headerlink" href="#python-postgresql-postgis" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>Sitio Oficial de PostGIS</strong> - <a class="reference external" href="https://postgis.net/">PostGIS.net</a></p></li>
-<li><p><strong>Carga de datos vectoriales en PostGIS</strong> - <a class="reference external" href="https://postgis.net/docs/manual-3.5/using_postgis_dbmanagement.html#loading-data">Gestión de datos en PostGIS</a></p></li>
-<li><p><strong>Formatos Ráster en PostGIS</strong> - <a class="reference external" href="https://postgis.net/docs/using_raster_dataman">Uso de datos ráster en PostGIS</a></p></li>
+<li><p><a class="reference external" href="https://geopandas.org/en/stable/">GeoPandas — Documentación oficial</a></p></li>
+<li><p><a class="reference external" href="https://shapely.readthedocs.io/en/stable/">Shapely — Documentación oficial</a></p></li>
+<li><p><a class="reference external" href="https://www.psycopg.org/docs/">Psycopg2 — PostgreSQL adapter para Python</a></p></li>
+<li><p><a class="reference external" href="https://docs.sqlalchemy.org/en/20/">SQLAlchemy — Documentación oficial</a></p></li>
+<li><p><a class="reference external" href="https://geoalchemy-2.readthedocs.io/en/latest/">GeoAlchemy2 — Extensión espacial para SQLAlchemy</a></p></li>
 </ul>
 </section>
-<section id="python-y-librerias-cientificas">
-<h4>Python y Librerías Científicas<a class="headerlink" href="#python-y-librerias-cientificas" title="Link to this heading">#</a></h4>
-<ol class="arabic simple">
-<li><p><strong>NumPy</strong> - <a class="reference external" href="https://numpy.org/">Sitio Oficial</a></p></li>
-<li><p><strong>Pandas</strong> - <a class="reference external" href="https://pandas.pydata.org/docs/">Documentación Oficial</a></p></li>
-<li><p><strong>GeoPandas</strong> - <a class="reference external" href="https://geopandas.org/en/stable/">Documentación Oficial</a></p></li>
-<li><p><strong>Scikit-Image</strong> - <a class="reference external" href="https://scikit-image.org/docs/stable/">Documentación Oficial</a></p></li>
-<li><p><strong>Scikit-Learn</strong> - <a class="reference external" href="https://scikit-learn.org/stable/">Sitio Oficial</a></p></li>
-<li><p><strong>Rasterio</strong> - <a class="reference external" href="https://rasterio.readthedocs.io/en/latest/">Documentación Oficial</a></p></li>
-<li><p><strong>Shapely</strong> - <a class="reference external" href="https://shapely.readthedocs.io/en/stable/">Documentación Oficial</a></p></li>
-<li><p><strong>Matplotlib</strong> - <a class="reference external" href="https://matplotlib.org/stable/contents.html">Documentación Oficial</a></p></li>
-</ol>
-</section>
-<section id="jupyter-y-entornos-de-desarrollo">
-<h4>Jupyter y Entornos de Desarrollo<a class="headerlink" href="#jupyter-y-entornos-de-desarrollo" title="Link to this heading">#</a></h4>
+<hr class="docutils" />
+<section id="herramientas-y-entornos-de-desarrollo">
+<h3>💻 Herramientas y entornos de desarrollo<a class="headerlink" href="#herramientas-y-entornos-de-desarrollo" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>JupyterBook</strong> - <a class="reference external" href="https://jupyterbook.org/en/stable/content/index.html">Documentación Oficial</a></p></li>
-<li><p><strong>Jupyter Notebook</strong> - <a class="reference external" href="https://jupyter.org/documentation">Guía Oficial</a></p></li>
-<li><p><strong>VS Code para Python</strong> - <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">Extensión Oficial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterbook.org/en/stable/">JupyterBook — Documentación oficial</a></p></li>
+<li><p><a class="reference external" href="https://jupyter.org/">Jupyter Notebook — Sitio oficial</a></p></li>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">Extensión oficial de Python para VS Code</a></p></li>
 </ul>
-</section>
 </section>
 </section>
 </section>
@@ -1357,59 +1465,52 @@ COMMIT
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos-espaciales">Bases de datos espaciales</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabla-de-contenido">Tabla de contenido</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definiciones-preliminares">Definiciones preliminares</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-lenguaje-sql">El lenguaje SQL</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-y-eliminacion-de-tablas">- Creación y eliminación de tablas</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#insercion-de-datos">- Inserción de datos</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#consultas-basicas-con-select">- Consultas básicas con <code class="docutils literal notranslate"><span class="pre">SELECT</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminacion-de-duplicados-con-distinct">- Eliminación de duplicados con <code class="docutils literal notranslate"><span class="pre">DISTINCT</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-join-para-combinar-tablas">- Uso de <code class="docutils literal notranslate"><span class="pre">JOIN</span></code> para combinar tablas</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#subconsultas">- Subconsultas</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-group-by-y-having">- Uso de <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code> y <code class="docutils literal notranslate"><span class="pre">HAVING</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#actualizacion-y-eliminacion-de-datos">- Actualización y eliminación de datos</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminar-registros">- Eliminar registros</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vistas">- Vistas</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#llaves-foraneas">- Llaves foráneas</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#transacciones">- Transacciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definiciones-preliminares">Definiciones preliminares</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-lenguaje-sql">El lenguaje SQL</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-y-eliminar-tablas">Crear y eliminar tablas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#insercion-de-datos">- Inserción de datos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consultas-basicas-con-select">- Consultas básicas con <code class="docutils literal notranslate"><span class="pre">SELECT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminacion-de-duplicados-con-distinct">- Eliminación de duplicados con <code class="docutils literal notranslate"><span class="pre">DISTINCT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-join-para-combinar-tablas">- Uso de <code class="docutils literal notranslate"><span class="pre">JOIN</span></code> para combinar tablas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subconsultas">- Subconsultas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-group-by-y-having">- Uso de <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code> y <code class="docutils literal notranslate"><span class="pre">HAVING</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#actualizacion-y-eliminacion-de-datos">- Actualización y eliminación de datos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminar-registros">- Eliminar registros</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vistas">- Vistas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#llaves-foraneas">- Llaves foráneas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transacciones">- Transacciones</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postgresql">PostgreSQL</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#proceso-de-instalacion">Proceso de instalación</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#postgresql">PostgreSQL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#postgis">PostGIS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#administracion-postgis">Administración PostGIS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-de-datos-espacial">Modelo de datos espacial</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-datos-geograficos">Tipos de datos geográficos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-de-atributos-geometricos">Cálculo de atributos geométricos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sistemas-de-referencia-espacial">Sistemas de referencia espacial</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cargar-datos-espaciales-utilizando-sql">Cargar datos espaciales utilizando SQL</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#datos-vectoriales">- Datos vectoriales</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postgis">PostGIS</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Proceso de instalación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utilizando-el-shapefile-loader">Utilizando el Shapefile Loader</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extrayendo-datos-espaciales-vectoriales">Extrayendo datos espaciales vectoriales</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#datos-raster">- Datos raster</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#administracion-postgis">Administración PostGIS</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-de-datos-espacial">Modelo de datos espacial</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-datos-geograficos">Tipos de datos geográficos</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-de-atributos-geometricos">Cálculo de atributos geométricos</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sistemas-de-referencia-espacial">Sistemas de referencia espacial</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cargar-datos-espaciales-utilizando-sql">Cargar datos espaciales utilizando SQL</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#datos-vectoriales">- Datos vectoriales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utilizando-el-rasters-loader">Utilizando el Rasters Loader</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extrayendo-datos-espaciales-raster">Extrayendo datos espaciales ráster</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#obtener-metadatos-del-raster">Obtener metadatos del ráster</a></li>
 </ul>
 </li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utilizando-el-shapefile-loader">Utilizando el Shapefile Loader</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#extrayendo-datos-espaciales-vectoriales">Extrayendo datos espaciales vectoriales</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#datos-raster">- Datos raster</a></li>
 </ul>
 </li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utilizando-el-rasters-loader">Utilizando el Rasters Loader</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#extrayendo-datos-espaciales-raster">Extrayendo datos espaciales ráster</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-postgis-python">Integración PostGIS / Python</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias-y-recursos">Referencias y Recursos</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos">Bases de Datos</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sql">SQL</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">PostGIS</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python-y-librerias-cientificas">Python y Librerías Científicas</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-y-entornos-de-desarrollo">Jupyter y Entornos de Desarrollo</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-postgis-python">Integración PostGIS / Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-entre-psycopg2-y-sqlalchemy-para-la-carga-de-datos-espaciales">Comparación entre <code class="docutils literal notranslate"><span class="pre">psycopg2</span></code> y <code class="docutils literal notranslate"><span class="pre">SQLAlchemy</span></code> para la carga de datos espaciales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias-y-recursos">Referencias y Recursos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos-y-sql">🗃️ Bases de datos y SQL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postgis-y-funciones-espaciales">🌐 PostGIS y funciones espaciales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-postgresql-postgis">🐍 Python + PostgreSQL/PostGIS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas-y-entornos-de-desarrollo">💻 Herramientas y entornos de desarrollo</a></li>
 </ul>
 </li>
 </ul>
