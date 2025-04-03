@@ -341,22 +341,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos-espaciales">Bases de datos espaciales</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabla-de-contenido">Tabla de contenido</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definiciones-preliminares">Definiciones preliminares</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-lenguaje-sql">El lenguaje SQL</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postgresql">PostgreSQL</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postgis">PostGIS</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-postgis-python">Integración PostGIS / Python</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caso-de-estudio-administracion-de-datos-para-generacion-de-modelo-clasificador-de-bosque-no-bosque-por-medio-de-postgis-y-python">Caso de estudio: Administración de datos para generación de modelo clasificador de Bosque / No Bosque por medio de PostGIS y Python</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias-y-recursos">Referencias y Recursos</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos">Bases de Datos</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sql">SQL</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">PostGIS</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python-y-librerias-cientificas">Python y Librerías Científicas</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-y-entornos-de-desarrollo">Jupyter y Entornos de Desarrollo</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caso-de-estudio-administracion-de-datos-para-generacion-de-modelo-clasificador-de-bosque-no-bosque-por-medio-de-postgis-y-python">Caso de estudio: Administración de datos para generación de modelo clasificador de Bosque / No Bosque por medio de PostGIS y Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias-y-recursos">Referencias y Recursos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos-y-sql">🗃️ Bases de datos y SQL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postgis-y-funciones-espaciales">🌐 PostGIS y funciones espaciales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-postgresql-postgis">🐍 Python + PostgreSQL/PostGIS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas-y-entornos-de-desarrollo">💻 Herramientas y entornos de desarrollo</a></li>
 </ul>
 </li>
 </ul>
@@ -372,337 +362,31 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="bases-de-datos-espaciales-postgis-y-su-integracion-con-python-ejemplo-de-uso">
 <h1>Bases de datos espaciales: PostGIS y su integración con Python (Ejemplo de uso)<a class="headerlink" href="#bases-de-datos-espaciales-postgis-y-su-integracion-con-python-ejemplo-de-uso" title="Link to this heading">#</a></h1>
-<section id="bases-de-datos-espaciales">
-<h2>Bases de datos espaciales<a class="headerlink" href="#bases-de-datos-espaciales" title="Link to this heading">#</a></h2>
-</section>
-<section id="tabla-de-contenido">
-<h2>Tabla de contenido<a class="headerlink" href="#tabla-de-contenido" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Definiciones preliminares</p></li>
-<li><p>El lenguaje SQL<br>
-2.1. Creación y eliminación de tablas<br>
-2.2. Inserción de datos<br>
-2.3. Consultas básicas con SELECT<br>
-2.4. Eliminación de duplicados con DISTINCT<br>
-2.5. Uso de JOIN para combinar tablas<br>
-2.6. Subconsultas<br>
-2.7. Uso de GROUP BY y HAVING<br>
-2.8. Actualización de datos<br>
-2.9. Eliminar registros<br>
-2.10. Vistas<br>
-2.11. Llaves foráneas<br>
-2.12. Transacciones<br></p></li>
-<li><p>PostgreSQL<br>
-3.1. Instalación</p></li>
-<li><p>PostGIS<br>
-4.1. Instalación<br>
-4.2. Administración PostGIS<br>
-4.2.1. Modelo de datos espacial<br>
-4.2.2. Tipos de datos geográficos<br>
-4.2.3. Cálculo de atributos geométricos<br>
-4.2.4. Sistemas de referencia espacial<br>
-4.3. Cargar datos espaciales utilizando SQL<br>
-4.3.1. Datos vectoriales<br>
-4.3.2. Extrayendo datos espaciales vectoriales<br>
-4.3.3. Datos ráster<br>
-4.3.4. Extrayendo datos espaciales ráster<br></p></li>
-<li><p>Integración PostGIS / Python</p></li>
-<li><p>Caso de estudio: Administración de datos para generación de modelo clasificador de Bosque / No Bosque por medio de PostGIS y Python</p></li>
-<li><p>Referencias y recursos</p></li>
-</ol>
-<section id="definiciones-preliminares">
-<h3>Definiciones preliminares<a class="headerlink" href="#definiciones-preliminares" title="Link to this heading">#</a></h3>
-<p><strong>Base de datos</strong></p>
-<p>“…Una base de datos es una recopilación organizada de información o datos estructurados, que normalmente se almacena de forma electrónica en un sistema informático. Normalmente, una base de datos está controlada por un sistema de gestión de bases de datos (DBMS). En conjunto, los datos y el DBMS, junto con las aplicaciones asociadas a ellos, reciben el nombre de sistema de bases de datos, abreviado normalmente a simplemente base de datos….”</p>
-<p><strong>Lenguaje de consulta estructurada (SQL)</strong>
-“…El SQL es un lenguaje de programación que utilizan casi todas las bases de datos relacionales para consultar, manipular y definir los datos, y para proporcionar control de acceso….”</p>
-<p><strong>Software de base de datos</strong>
-“…El software de base de datos se utiliza para crear, editar y mantener archivos y registros de bases de datos, lo que facilita la creación de archivos y registros, la entrada de datos, la edición de datos, la actualización y la creación de informes. El software también maneja el almacenamiento de datos, las copias de seguridad y la creación de informes, así como el control de acceso múltiple y la seguridad….”</p>
-<p><strong>Sistema de gestión de bases de datos</strong>
-“…Normalmente, una base de datos requiere un programa de software de bases de datos completo, conocido como sistema de gestión de bases de datos (DBMS). Un DBMS sirve como interfaz entre la base de datos y sus programas o usuarios finales, lo que permite a los usuarios recuperar, actualizar y gestionar cómo se organiza y se optimiza la información. Un DBMS también facilita la supervisión y el control de las bases de datos, lo que permite una variedad de operaciones administrativas como la supervisión del rendimiento, el ajuste, la copia de seguridad y la recuperación.
-Algunos ejemplos de software de bases de datos o DBMS populares incluyen MySQL, Microsoft Access, Microsoft SQL Server, FileMaker Pro, Oracle Database y dBASE…”</p>
-<p>Oracle (<a class="reference external" href="https://www.oracle.com/co/database/what-is-database/">https://www.oracle.com/co/database/what-is-database/</a>)</p>
-<p><strong>PostgreSQL</strong>
-“…PostgreSQL es un sistema de gestión de bases de datos relacionales de objetos ( ORDBMS ) basado en POSTGRES, versión 4.2 , desarrollado en el Departamento de Informática de la Universidad de California en Berkeley. POSTGRES fue pionero en muchos conceptos que solo estuvieron disponibles en algunos sistemas de bases de datos comerciales mucho más tarde….”</p>
-<p>PostgreSQL (<a class="reference external" href="https://www.postgresql.org/docs/current/intro-whatis.html">https://www.postgresql.org/docs/current/intro-whatis.html</a>)</p>
-</section>
-<section id="el-lenguaje-sql">
-<h3>El lenguaje SQL<a class="headerlink" href="#el-lenguaje-sql" title="Link to this heading">#</a></h3>
-<p>“…El lenguaje de consulta estructurada (SQL) es un lenguaje estándar para la creación y manipulación de bases de datos…”</p>
-<p>AWS (<a class="reference external" href="https://aws.amazon.com/es/what-is/sql/#:~:text=El%20lenguaje%20de%20consulta%20estructurada%20(SQL)%20es%20un%20lenguaje%20est%C3%A1ndar,relacional%20que%20utiliza%20consultas%20SQL.">https://aws.amazon.com/es/what-is/sql/#:~:text=El lenguaje de consulta estructurada (SQL) es un lenguaje estándar,relacional que utiliza consultas SQL.</a>)</p>
-</section>
-<section id="postgresql">
-<h3>PostgreSQL<a class="headerlink" href="#postgresql" title="Link to this heading">#</a></h3>
-<p>“…PostgreSQL es un sistema de gestión de bases de datos relacionales de objetos (ORDBMS), desarrollado en el Departamento de Informática de la Universidad de California en Berkeley. POSTGRES fue pionero en muchos conceptos que solo estuvieron disponibles en algunos sistemas de bases de datos comerciales mucho más tarde…Y gracias a la licencia liberal, PostgreSQL puede ser utilizado, modificado y distribuido por cualquier persona de forma gratuita y para cualquier propósito, ya sea privado, comercial o académico”
-PostgreSQL (<a class="reference external" href="https://www.postgresql.org/docs/current/intro-whatis.html">https://www.postgresql.org/docs/current/intro-whatis.html</a>)</p>
-</section>
-<section id="postgis">
-<h3>PostGIS<a class="headerlink" href="#postgis" title="Link to this heading">#</a></h3>
-<p>“…PostGIS amplía las capacidades de la base de datos relacional PostgreSQL al agregar soporte para almacenar, indexar y consultar datos geoespaciales….”
-Las características de PostGIS incluyen:</p>
+<div class="danger admonition">
+<p class="admonition-title">Guía para el docente</p>
 <ul class="simple">
-<li><p><strong>Almacenamiento de datos espaciales:</strong> almacene diferentes tipos de datos espaciales, como puntos, líneas, polígonos y multigeometrías, tanto en datos 2D como 3D.</p></li>
-<li><p><strong>Indexación espacial:</strong> busque y recupere rápidamente datos espaciales en función de su ubicación.</p></li>
-<li><p><strong>Funciones espaciales:</strong> una amplia gama de funciones espaciales que le permiten filtrar y analizar datos espaciales, medir distancias y áreas , intersecar geometrías, crear búferes y más.</p></li>
-<li><p><strong>Procesamiento de geometría:</strong> herramientas para procesar y manipular datos geométricos, como simplificación , conversión y generalización.</p></li>
-<li><p><strong>Soporte de datos ráster:</strong> almacenamiento y procesamiento de datos ráster , como datos de elevación y datos meteorológicos.</p></li>
-<li><p><strong>Geocodificación y geocodificación inversa:</strong> Funciones para geocodificación y geocodificación inversa.</p></li>
-<li><p><strong>Integración:</strong> acceda y trabaje con PostGIS utilizando herramientas de terceros como QGIS , GeoServer , MapServer , ArcGIS, Tableau.</p></li>
+<li><p>Incluye ejemplos prácticos en SQL y Python, utilizando tanto <code class="docutils literal notranslate"><span class="pre">psycopg2</span></code> como <code class="docutils literal notranslate"><span class="pre">SQLAlchemy</span></code>.</p></li>
+<li><p>El objetivo es facilitar la enseñanza de conceptos espaciales mediante actividades guiadas.</p></li>
 </ul>
-<p>PostGIS (<a class="reference external" href="https://postgis.net/">https://postgis.net/</a>)</p>
-</section>
-<section id="integracion-postgis-python">
-<h3>Integración PostGIS / Python<a class="headerlink" href="#integracion-postgis-python" title="Link to this heading">#</a></h3>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Recursos</p>
 <ul class="simple">
-<li><p>Cargar datos desde Shapefile con librerías de python <code class="docutils literal notranslate"><span class="pre">Geopandas</span></code>, <code class="docutils literal notranslate"><span class="pre">Shapely</span></code> y <code class="docutils literal notranslate"><span class="pre">psycopg2</span></code></p></li>
+<li><p>Capa vectorial (Shapefile de muestras de cobertura): <a class="reference external" href="https://igacoffice365-my.sharepoint.com/:f:/r/personal/juans_hernandez_igac_gov_co/Documents/Recursos_BDE_PostGIS_Diplomado/Muestras_Ejemplo?csf=1&amp;amp;web=1&amp;amp;e=x8juEL">📥 Muestras_Ejemplo</a></p></li>
+<li><p>Imagen satelital recortada (formato <code class="docutils literal notranslate"><span class="pre">.tif</span></code>): <a class="reference external" href="https://igacoffice365-my.sharepoint.com/:f:/r/personal/juans_hernandez_igac_gov_co/Documents/Recursos_BDE_PostGIS_Diplomado/Imagen_Ejemplo?csf=1&amp;amp;web=1&amp;amp;e=5ZURPK">📥 Imagen_Ejemplo</a></p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># GeoPandas: Extensión de Pandas para manejar datos geoespaciales (puntos, líneas, polígonos).</span>
-<span class="c1"># Permite leer, escribir y analizar datos espaciales en formatos como Shapefile, GeoJSON, etc.</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">geopandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gpd</span>
-<span class="c1"># Psycopg2: Biblioteca para conectar Python con bases de datos PostgreSQL.</span>
-<span class="c1"># Se usa para ejecutar consultas SQL, manejar transacciones y trabajar con datos espaciales en PostGIS.</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">psycopg2</span>
-<span class="c1"># Shapely: Biblioteca para la manipulación y análisis de geometrías espaciales.</span>
-<span class="c1"># &#39;wkt&#39; (Well-Known Text) permite convertir entre texto y objetos geométricos.</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">shapely</span><span class="w"> </span><span class="kn">import</span> <span class="n">wkt</span>
-</pre></div>
+<p>Es importante la descarga de los recursos para el desarrollo de la sesión.</p>
 </div>
-</div>
-</div>
-<p>Leer los datos espaciales con ayuda de Geopandas</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shapefile_path</span> <span class="o">=</span> <span class="s2">&quot;./Samples/Samples_Point.shp&quot;</span>  <span class="c1"># Ruta del archivo .shp con datos geoespaciales</span>
-<span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">shapefile_path</span><span class="p">)</span>  <span class="c1"># Cargar el archivo en un GeoDataFrame</span>
-<span class="n">gdf</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>  <span class="c1"># Mostrar las primeras filas del GeoDataFrame para inspección</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Shape_Leng</th>
-      <th>Shape_Area</th>
-      <th>class</th>
-      <th>ORIG_FID</th>
-      <th>geometry</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>Bosque</td>
-      <td>0</td>
-      <td>POINT (333600.852 710803.978)</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>Bosque</td>
-      <td>0</td>
-      <td>POINT (333797.268 710693.129)</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>Bosque</td>
-      <td>0</td>
-      <td>POINT (333865.332 710844.816)</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>Bosque</td>
-      <td>0</td>
-      <td>POINT (334120.089 710615.341)</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>Bosque</td>
-      <td>0</td>
-      <td>POINT (334166.762 710842.872)</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<p>Crear la conexión con la base de datos espacial</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DB_CONFIG</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;dbname&quot;</span><span class="p">:</span> <span class="s2">&quot;DB_GIS&quot;</span><span class="p">,</span>                 <span class="c1"># Nombre de la base de datos</span>
-    <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;postgres&quot;</span><span class="p">,</span>                 <span class="c1"># Usuario de la base de datos</span>
-    <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;postgres&quot;</span><span class="p">,</span>             <span class="c1"># Contraseña del usuario</span>
-    <span class="s2">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>                <span class="c1"># Dirección del servidor (localhost si es local)</span>
-    <span class="s2">&quot;port&quot;</span><span class="p">:</span> <span class="s2">&quot;5432&quot;</span>                      <span class="c1"># Puerto predeterminado de PostgreSQL</span>
-<span class="p">}</span>
-<span class="n">conn</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="o">**</span><span class="n">DB_CONFIG</span><span class="p">)</span>    <span class="c1"># Establecer conexión con la base de datos PostgreSQL</span>
-<span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>                     <span class="c1"># Crear un cursor para ejecutar comandos SQL</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Creación de tabla con columnas a cargar</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crear una tabla en PostGIS si no existe</span>
-<span class="n">create_table_query</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">CREATE TABLE IF NOT EXISTS training_sample (</span>
-<span class="s2">    id SERIAL PRIMARY KEY,              -- Identificador único autoincremental</span>
-<span class="s2">    class TEXT,                         -- Columna para almacenar la clase del punto</span>
-<span class="s2">    geom GEOMETRY(Geometry, 32619)      -- Columna geométrica con proyección EPSG:32619 (UTM Zona 19N)</span>
-<span class="s2">);</span>
-<span class="s2">&quot;&quot;&quot;</span>
-<span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">create_table_query</span><span class="p">)</span>     <span class="c1"># Ejecutar la consulta SQL para crear la tabla</span>
-<span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>                       <span class="c1"># Confirmar la creación de la tabla en la base de datos</span>
-</pre></div>
-</div>
-</div>
-</div>
-<a class="reference internal image-reference" href="../../_images/Table_Training_Sample.PNG"><img alt="unidad" class="align-center" src="../../_images/Table_Training_Sample.PNG" style="width: 500px;" />
-</a>
-<p style="text-align: center; font-size: 12px;"> 
-<strong>Fig. 1. Tabla creada "training_sample" en base de datos </strong>
-</p><p>Insertar los datos</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conn</span><span class="o">.</span><span class="n">rollback</span><span class="p">()</span>  <span class="c1"># Realizar un rollback por seguridad antes de insertar datos (opcional)</span>
-<span class="n">insert_query</span> <span class="o">=</span> <span class="s2">&quot;INSERT INTO training_sample (class, geom) VALUES (</span><span class="si">%s</span><span class="s2">, ST_GeomFromText(</span><span class="si">%s</span><span class="s2">, 32619))&quot;</span>
-<span class="c1"># Iterar sobre cada fila del GeoDataFrame y cargar los datos en la base de datos</span>
-<span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">gdf</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-    <span class="n">class_</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;class&quot;</span><span class="p">]</span>                       <span class="c1"># Extraer el valor de la columna &#39;class&#39; (ajustar según los nombres de columnas)</span>
-    <span class="n">geom</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">wkt</span>                  <span class="c1"># Convertir la geometría a formato WKT (Well-Known Text)    </span>
-    <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">insert_query</span><span class="p">,</span> <span class="p">(</span><span class="n">class_</span><span class="p">,</span> <span class="n">geom</span><span class="p">))</span>   <span class="c1"># Ejecutar la consulta SQL con los valores extraídos</span>
-<span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>                                   <span class="c1"># Confirmar la inserción de datos en la base de datos</span>
-<span class="n">cur</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>                                     <span class="c1"># Cerrar el cursor y la conexión con la base de datos</span>
-<span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<ul class="simple">
-<li><p>Cargar datos desde archivo .tif con librerías de python <code class="docutils literal notranslate"><span class="pre">subprocess</span></code> y <code class="docutils literal notranslate"><span class="pre">psycopg2</span></code></p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">psycopg2</span>     <span class="c1"># psycopg2: Librería para conectar Python con bases de datos PostgreSQL. Permite ejecutar consultas SQL, manipular datos y gestionar transacciones.</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>   <span class="c1"># subprocess: Módulo para ejecutar comandos del sistema desde Python. Se usa para llamar programas externos como psql, raster2pgsql, etc.</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DB_CONFIG</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;dbname&quot;</span><span class="p">:</span> <span class="s2">&quot;DB_GIS&quot;</span><span class="p">,</span>                 <span class="c1"># Nombre de la base de datos</span>
-    <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;postgres&quot;</span><span class="p">,</span>                 <span class="c1"># Usuario de la base de datos</span>
-    <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;postgres&quot;</span><span class="p">,</span>             <span class="c1"># Contraseña del usuario</span>
-    <span class="s2">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>                <span class="c1"># Dirección del servidor (localhost si es local)</span>
-    <span class="s2">&quot;port&quot;</span><span class="p">:</span> <span class="s2">&quot;5432&quot;</span>                      <span class="c1"># Puerto predeterminado de PostgreSQL</span>
-<span class="p">}</span>
-<span class="n">conn</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="o">**</span><span class="n">DB_CONFIG</span><span class="p">)</span> 
-<span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
-<span class="c1"># Abrir el archivo raster (.tif)</span>
-<span class="n">raster_path</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;C:\Users\JHERNANDEZ\OneDrive - Esri NOSA\Documentos\GitHub\PostGIS_Python\PostGIS_Python\temp_raster.tif&#39;</span>
-<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;PGPASSWORD&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">DB_CONFIG</span><span class="p">[</span><span class="s2">&quot;password&quot;</span><span class="p">]</span>
-<span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">¿Por qué usar PGPASSWORD?</span>
-<span class="sd">- Evita que psql solicite la contraseña cada vez que se ejecuta un comando.</span>
-<span class="sd">- Facilita la automatización de tareas en PostgreSQL, como importar datos o ejecutar scripts SQL.</span>
-<span class="sd">- Es más seguro que escribir la contraseña directamente en el comando, pero aún es recomendable eliminarla después de su uso.&#39;</span>
-<span class="sd">&#39;&#39;&#39;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;\n¿Por qué usar PGPASSWORD?\n- Evita que psql solicite la contraseña cada vez que se ejecuta un comando.\n- Facilita la automatización de tareas en PostgreSQL, como importar datos o ejecutar scripts SQL.\n- Es más seguro que escribir la contraseña directamente en el comando, pero aún es recomendable eliminarla después de su uso.&#39;\n&quot;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ruta a la carpeta donde están raster2pgsql y psql</span>
-<span class="n">pg_bin_path</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;C:\Program Files\PostgreSQL\16\bin&quot;</span>
-<span class="n">sql_output_path</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;C:\Shp_Example\prueba.sql&quot;</span>
-<span class="c1"># Construir el comando con la ruta completa de raster2pgsql y psql</span>
-<span class="n">cmd</span> <span class="o">=</span> <span class="sa">fr</span><span class="s1">&#39;&quot;</span><span class="si">{</span><span class="n">pg_bin_path</span><span class="si">}</span><span class="s1">\raster2pgsql.exe&quot; -s 32619 -I -C &quot;</span><span class="si">{</span><span class="n">raster_path</span><span class="si">}</span><span class="s1">&quot; &gt;  </span><span class="si">{</span><span class="n">sql_output_path</span><span class="si">}</span><span class="s1">&#39;</span>
-<span class="c1"># Ejecutar el comando en la terminal</span>
-<span class="n">process</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">capture_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cmd</span> <span class="o">=</span> <span class="sa">fr</span><span class="s1">&#39;&quot;</span><span class="si">{</span><span class="n">pg_bin_path</span><span class="si">}</span><span class="s1">\psql.exe&quot; -d </span><span class="si">{</span><span class="n">DB_CONFIG</span><span class="p">[</span><span class="s2">&quot;dbname&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1"> -U </span><span class="si">{</span><span class="n">DB_CONFIG</span><span class="p">[</span><span class="s2">&quot;user&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1"> -h </span><span class="si">{</span><span class="n">DB_CONFIG</span><span class="p">[</span><span class="s2">&quot;host&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1"> -p </span><span class="si">{</span><span class="n">DB_CONFIG</span><span class="p">[</span><span class="s2">&quot;port&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1"> -f &quot;</span><span class="si">{</span><span class="n">sql_output_path</span><span class="si">}</span><span class="s1">&quot;&#39;</span>
-<span class="c1"># Ejecutar el comando</span>
-<span class="n">process</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">capture_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="c1"># Limpiar la variable de entorno después de ejecutar el comando</span>
-<span class="k">del</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;PGPASSWORD&quot;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">process</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BEGIN
-CREATE TABLE
-INSERT 0 1
-CREATE INDEX
-ANALYZE
- addrasterconstraints 
-----------------------
- t
-(1 fila)
-
-COMMIT
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 <section id="caso-de-estudio-administracion-de-datos-para-generacion-de-modelo-clasificador-de-bosque-no-bosque-por-medio-de-postgis-y-python">
-<h3>Caso de estudio: Administración de datos para generación de modelo clasificador de Bosque / No Bosque por medio de PostGIS y Python<a class="headerlink" href="#caso-de-estudio-administracion-de-datos-para-generacion-de-modelo-clasificador-de-bosque-no-bosque-por-medio-de-postgis-y-python" title="Link to this heading">#</a></h3>
+<h2>Caso de estudio: Administración de datos para generación de modelo clasificador de Bosque / No Bosque por medio de PostGIS y Python<a class="headerlink" href="#caso-de-estudio-administracion-de-datos-para-generacion-de-modelo-clasificador-de-bosque-no-bosque-por-medio-de-postgis-y-python" title="Link to this heading">#</a></h2>
 <p>El caso de estudio <strong>“Bosque - No Bosque”</strong> consiste en la clasificación de áreas geográficas en dos categorías: regiones con cobertura boscosa y regiones sin cobertura boscosa. Este análisis es fundamental para la gestión ambiental, la planificación territorial y el monitoreo del cambio climático. Para lograr esta clasificación, se integran <strong>datos ráster y vectoriales</strong> almacenados en una base de datos PostgreSQL, combinados con técnicas de Machine Learning en Python.</p>
-<p>El proceso comienza con la extracción de datos ráster almacenados en PostGIS, los cuales contienen información multiespectral de imágenes satelitales. Luego, se combinan con muestras de entrenamiento vectoriales que indican la cobertura real de la tierra, permitiendo entrenar un modelo de clasificación basado en <strong>Random Forest</strong>. Este modelo aprende a diferenciar áreas boscosas y no boscosas a partir de las firmas espectrales de los píxeles.</p>
+<p>El proceso comienza con la extracción de datos ráster almacenados en PostGIS, los cuales contienen información RGB de una imagen satelital. Luego, se combinan con muestras de entrenamiento vectoriales que indican la cobertura real de la tierra, permitiendo entrenar un modelo de clasificación basado en <strong>Random Forest</strong>. Este modelo aprende a diferenciar áreas boscosas y no boscosas a partir de las firmas espectrales de los píxeles.</p>
 <p>La <strong>integración de PostGIS y Python</strong> es clave para procesar datos espaciales de manera eficiente. PostGIS permite realizar consultas geoespaciales avanzadas y gestionar datos ráster y vectoriales en una base de datos optimizada, mientras que Python proporciona herramientas avanzadas para el análisis de datos y el entrenamiento de modelos de aprendizaje automático. La combinación de ambas tecnologías permite automatizar la extracción de datos, la clasificación y la visualización de los resultados en mapas interpretables.</p>
 <p>Este enfoque facilita la toma de decisiones basadas en datos espaciales, permitiendo la identificación de patrones de deforestación, el monitoreo de la salud de los bosques y la generación de políticas ambientales más efectivas.</p>
 <p>Cargar imagen a base de datos espacial</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>raster2pgsql.exe<span class="w"> </span>-s<span class="w"> </span><span class="m">32619</span><span class="w"> </span>-I<span class="w"> </span>-C<span class="w"> </span>C:<span class="se">\P</span>ostGIS_Python<span class="se">\n</span>ir_aoi.tif<span class="w"> </span>&gt;<span class="w"> </span>C:<span class="se">\P</span>ostGIS_Python<span class="se">\l</span>oad_nir_img.sql
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>raster2pgsql.exe<span class="w"> </span>-s<span class="w"> </span><span class="m">32619</span><span class="w"> </span>-I<span class="w"> </span>-C<span class="w"> </span>C:<span class="se">\P</span>ostGIS_Python<span class="se">\t</span>emp_raster.tif<span class="w"> </span>&gt;<span class="w"> </span>C:<span class="se">\P</span>ostGIS_Python<span class="se">\t</span>emp_raster.sql
 
-psql<span class="w"> </span>-d<span class="w"> </span>postgis_34_sample<span class="w"> </span>-f<span class="w"> </span>C:<span class="se">\P</span>ostGIS_Python<span class="se">\l</span>oad_nir_img.sql
+psql<span class="w"> </span>-d<span class="w"> </span>postgis_34_sample<span class="w"> </span>-f<span class="w"> </span>C:<span class="se">\P</span>ostGIS_Python<span class="se">\t</span>emp_raster.sql
 </pre></div>
 </div>
 <p>Importas las liberías necesarias para el caso de uso</p>
@@ -719,6 +403,12 @@ psql<span class="w"> </span>-d<span class="w"> </span>postgis_34_sample<span cla
 <span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>                                                               <span class="c1"># Visualización de datos con gráficos estadísticos</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.colors</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mcolors</span>                                                 <span class="c1"># Manejo de colores en visualizaciones</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">skimage.transform</span><span class="w"> </span><span class="kn">import</span> <span class="n">resize</span>                                                <span class="c1"># Redimensionamiento de imágenes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3\Lib\site-packages\scipy\__init__.py:169: UserWarning: A NumPy version &gt;=1.18.5 and &lt;1.26.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f&quot;A NumPy version &gt;={np_minversion} and &lt;{np_maxversion}&quot;
 </pre></div>
 </div>
 </div>
@@ -755,7 +445,7 @@ psql<span class="w"> </span>-d<span class="w"> </span>postgis_34_sample<span cla
 <span class="c1"># Crea un cursor para ejecutar consultas SQL</span>
 <span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
 <span class="c1"># Ejecuta una consulta SQL para obtener un ráster desde la base de datos en formato GDAL (GeoTIFF)</span>
-<span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT ST_AsGDALRaster(rast, &#39;GTiff&#39;) FROM nir_aoi LIMIT 1;&quot;</span><span class="p">)</span>
+<span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT ST_AsGDALRaster(rast, &#39;GTiff&#39;) FROM temp_raster LIMIT 1;&quot;</span><span class="p">)</span>
 <span class="c1"># Recupera el resultado de la consulta (raster_bin contiene los datos del ráster en formato binario)</span>
 <span class="n">raster_bin</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
 <span class="c1"># Guarda temporalmente la imagen ráster en un archivo local (GeoTIFF)</span>
@@ -789,6 +479,105 @@ psql<span class="w"> </span>-d<span class="w"> </span>postgis_34_sample<span cla
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ingju\AppData\Local\Temp\ipykernel_23332\1185105217.py:8: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql(query, conn)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>lon</th>
+      <th>lat</th>
+      <th>class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>333600.852280</td>
+      <td>710803.977512</td>
+      <td>Bosque</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>333797.267675</td>
+      <td>710693.129220</td>
+      <td>Bosque</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>333865.332416</td>
+      <td>710844.816356</td>
+      <td>Bosque</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>334120.089017</td>
+      <td>710615.340945</td>
+      <td>Bosque</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>334166.761982</td>
+      <td>710842.871650</td>
+      <td>Bosque</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>448</th>
+      <td>341516.593621</td>
+      <td>710043.829290</td>
+      <td>No_Bosque</td>
+    </tr>
+    <tr>
+      <th>449</th>
+      <td>341264.365708</td>
+      <td>710577.958988</td>
+      <td>No_Bosque</td>
+    </tr>
+    <tr>
+      <th>450</th>
+      <td>341219.854900</td>
+      <td>710934.045452</td>
+      <td>No_Bosque</td>
+    </tr>
+    <tr>
+      <th>451</th>
+      <td>340774.746819</td>
+      <td>710704.072944</td>
+      <td>No_Bosque</td>
+    </tr>
+    <tr>
+      <th>452</th>
+      <td>340908.279243</td>
+      <td>710281.220267</td>
+      <td>No_Bosque</td>
+    </tr>
+  </tbody>
+</table>
+<p>453 rows × 3 columns</p>
+</div></div></div>
 </div>
 <p>Extraer los valores de píxel de cada banda del ráster para cada muestra</p>
 <div class="cell docutils container">
@@ -869,6 +658,23 @@ psql<span class="w"> </span>-d<span class="w"> </span>postgis_34_sample<span cla
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Precisión: 0.5735294117647058
+Exactitud del modelo: 0.5735
+</pre></div>
+</div>
+<img alt="../../_images/1f05eaaa58fbd37b7999d15d7ec53e8ea41e72c3245ab0e4b673a59609a126f6.png" src="../../_images/1f05eaaa58fbd37b7999d15d7ec53e8ea41e72c3245ab0e4b673a59609a126f6.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              precision    recall  f1-score   support
+
+   No Bosque       0.57      0.54      0.55        67
+      Bosque       0.58      0.61      0.59        69
+
+    accuracy                           0.57       136
+   macro avg       0.57      0.57      0.57       136
+weighted avg       0.57      0.57      0.57       136
+</pre></div>
+</div>
+</div>
 </div>
 <p>Aplicación del modelo para predecir la clase de cada píxel en la imagen ráster</p>
 <div class="cell docutils container">
@@ -917,6 +723,12 @@ psql<span class="w"> </span>-d<span class="w"> </span>postgis_34_sample<span cla
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Clipping input data to the valid range for imshow with RGB data ([0..1] for floats or [0..255] for integers).
+</pre></div>
+</div>
+<img alt="../../_images/8ef5a95808c25614ca14ce85f6033013d8f63b14953c3b81957960a44f2e9a52.png" src="../../_images/8ef5a95808c25614ca14ce85f6033013d8f63b14953c3b81957960a44f2e9a52.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -954,18 +766,13 @@ psql<span class="w"> </span>-d<span class="w"> </span>postgis_34_sample<span cla
 <span class="n">conn</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="o">**</span><span class="n">DB_CONFIG</span><span class="p">)</span> 
 <span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
 <span class="c1"># Abrir el archivo raster (.tif)</span>
-<span class="n">raster_path</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;C:\Users\ingju\OneDrive\Escritorio\Repositorios\Tools_ArcGIS\PostGIS_Python\PostGIS_Python\clasificacion_bosque.tif&#39;</span>
+<span class="n">notebook_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>                                                              <span class="c1"># Ruta donde se ejecuta el notebook</span>
+<span class="n">raster_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">notebook_dir</span><span class="p">,</span> <span class="s2">&quot;clasificacion_bosque.tif&quot;</span><span class="p">)</span>    <span class="c1"># Ruta del archivo .tif  (Cambiar según sea necesario)</span>
 <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;PGPASSWORD&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">DB_CONFIG</span><span class="p">[</span><span class="s2">&quot;password&quot;</span><span class="p">]</span>
-<span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">¿Por qué usar PGPASSWORD?</span>
-<span class="sd">- Evita que psql solicite la contraseña cada vez que se ejecuta un comando.</span>
-<span class="sd">- Facilita la automatización de tareas en PostgreSQL, como importar datos o ejecutar scripts SQL.</span>
-<span class="sd">- Es más seguro que escribir la contraseña directamente en el comando, pero aún es recomendable eliminarla después de su uso.&#39;</span>
-<span class="sd">&#39;&#39;&#39;</span>
 
 <span class="c1"># Ruta a la carpeta donde están raster2pgsql y psql</span>
-<span class="n">pg_bin_path</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;C:\Program Files\PostgreSQL\16\bin&quot;</span>
-<span class="n">sql_output_path</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;C:\Shp_Example\classify_raster.sql&quot;</span>
+<span class="n">pg_bin_path</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;C:\Program Files\PostgreSQL\16\bin&quot;</span>         <span class="c1"># Cambiar según la instalación de PostgreSQL</span>
+<span class="n">sql_output_path</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;C:\Shp_Example\classify_raster.sql&quot;</span>     <span class="c1"># Ruta de salida para el archivo SQL (Cambiar según sea necesario)</span>
 <span class="c1"># Construir el comando con la ruta completa de raster2pgsql y psql</span>
 <span class="n">cmd</span> <span class="o">=</span> <span class="sa">fr</span><span class="s1">&#39;&quot;</span><span class="si">{</span><span class="n">pg_bin_path</span><span class="si">}</span><span class="s1">\raster2pgsql.exe&quot; -s 32619 -I -C &quot;</span><span class="si">{</span><span class="n">raster_path</span><span class="si">}</span><span class="s1">&quot; &gt;  </span><span class="si">{</span><span class="n">sql_output_path</span><span class="si">}</span><span class="s1">&#39;</span>
 <span class="c1"># Ejecutar el comando en la terminal</span>
@@ -980,58 +787,113 @@ psql<span class="w"> </span>-d<span class="w"> </span>postgis_34_sample<span cla
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BEGIN
+CREATE TABLE
+INSERT 0 1
+CREATE INDEX
+ANALYZE
+ addrasterconstraints 
+----------------------
+ t
+(1 fila)
+
+COMMIT
+</pre></div>
+</div>
+</div>
 </div>
 <a class="reference internal image-reference" href="../../_images/Load_Classify.png"><img alt="unidad" class="align-center" src="../../_images/Load_Classify.png" style="width: 500px;" />
 </a>
 <p style="text-align: center; font-size: 12px;"> 
-<strong>Fig. 2. Conexión a base de datos espacial desde QGIS para visualización de resultados </strong>
-</p></section>
-<section id="referencias-y-recursos">
-<h3>Referencias y Recursos<a class="headerlink" href="#referencias-y-recursos" title="Link to this heading">#</a></h3>
-<section id="bases-de-datos">
-<h4>Bases de Datos<a class="headerlink" href="#bases-de-datos" title="Link to this heading">#</a></h4>
+<strong>Fig. 1. Conexión a base de datos espacial desde QGIS para visualización de resultados </strong>
+</p><div class="important admonition">
+<p class="admonition-title">Actividad</p>
 <ul class="simple">
-<li><p><strong>Oracle</strong> - <a class="reference external" href="https://www.oracle.com/co/database/what-is-database/">¿Qué es una base de datos?</a></p></li>
-<li><p><strong>PostgreSQL</strong> - <a class="reference external" href="https://www.postgresql.org/docs/current/intro-whatis.html">Introducción a PostgreSQL</a></p></li>
-<li><p><strong>PostgreSQL - Documentación</strong> - <a class="reference external" href="https://www.postgresql.org/docs/current/">PostgreSQL Docs</a></p></li>
+<li><p><strong>Este recuadro está destinado a preguntas y actividades para los estudiantes.</strong></p></li>
 </ul>
-</section>
-<section id="sql">
-<h4>SQL<a class="headerlink" href="#sql" title="Link to this heading">#</a></h4>
+<p>🧠 <strong>Reflexión: ¿Cómo se integraron los componentes?</strong></p>
 <ul class="simple">
-<li><p><strong>SQL en AWS</strong> - <a class="reference external" href="https://aws.amazon.com/es/what-is/sql/#:~:text=El%20lenguaje%20de%20consulta%20estructurada%20(SQL)%20es%20un%20lenguaje%20est%C3%A1ndar,relacional%20que%20utiliza%20consultas%20SQL.">¿Qué es SQL?</a></p></li>
-<li><p><strong>Acciones SQL en PostgreSQL</strong> - <a class="reference external" href="https://www.postgresql.org/docs/current/">Documentación Oficial</a></p></li>
+<li><p>En el caso de estudio, ¿qué papel cumple cada una de estas herramientas?</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">PostGIS</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">psycopg2</span></code> / <code class="docutils literal notranslate"><span class="pre">SQLAlchemy</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GeoPandas</span></code> y <code class="docutils literal notranslate"><span class="pre">Rasterio</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> u otra librería de ML</p></li>
 </ul>
-</section>
-<section id="id1">
-<h4>PostGIS<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+</li>
+</ul>
+<blockquote>
+<div><p>Escribe una breve explicación de cómo cada componente contribuyó al flujo general del análisis.</p>
+</div></blockquote>
+<p>🔁 <strong>Del SIG al modelo: automatiza tu flujo</strong></p>
+<blockquote>
+<div><p>Diseña un flujo básico (puede ser en pseudocódigo o diagrama) que represente los pasos que seguiste en el caso de estudio, desde la carga del shapefile y ráster hasta la generación del modelo.</p>
+</div></blockquote>
 <ul class="simple">
-<li><p><strong>Sitio Oficial de PostGIS</strong> - <a class="reference external" href="https://postgis.net/">PostGIS.net</a></p></li>
-<li><p><strong>Carga de datos vectoriales en PostGIS</strong> - <a class="reference external" href="https://postgis.net/docs/manual-3.5/using_postgis_dbmanagement.html#loading-data">Gestión de datos en PostGIS</a></p></li>
-<li><p><strong>Formatos Ráster en PostGIS</strong> - <a class="reference external" href="https://postgis.net/docs/using_raster_dataman">Uso de datos ráster en PostGIS</a></p></li>
+<li><p>¿Qué tareas podrías automatizar para futuros análisis?</p></li>
+<li><p>¿Qué parte requiere más validación manual?</p></li>
 </ul>
-</section>
-<section id="python-y-librerias-cientificas">
-<h4>Python y Librerías Científicas<a class="headerlink" href="#python-y-librerias-cientificas" title="Link to this heading">#</a></h4>
+<p>📉 <strong>Reflexión sobre el desempeño del modelo</strong></p>
+<p>Tu modelo de clasificación alcanzó una <strong>exactitud de aproximadamente 57 %</strong>, lo que indica que comete errores en más del 40 % de los casos.</p>
+<p>Analiza la matriz de confusión y responde:</p>
 <ol class="arabic simple">
-<li><p><strong>NumPy</strong> - <a class="reference external" href="https://numpy.org/">Sitio Oficial</a></p></li>
-<li><p><strong>Pandas</strong> - <a class="reference external" href="https://pandas.pydata.org/docs/">Documentación Oficial</a></p></li>
-<li><p><strong>GeoPandas</strong> - <a class="reference external" href="https://geopandas.org/en/stable/">Documentación Oficial</a></p></li>
-<li><p><strong>Scikit-Image</strong> - <a class="reference external" href="https://scikit-image.org/docs/stable/">Documentación Oficial</a></p></li>
-<li><p><strong>Scikit-Learn</strong> - <a class="reference external" href="https://scikit-learn.org/stable/">Sitio Oficial</a></p></li>
-<li><p><strong>Rasterio</strong> - <a class="reference external" href="https://rasterio.readthedocs.io/en/latest/">Documentación Oficial</a></p></li>
-<li><p><strong>Shapely</strong> - <a class="reference external" href="https://shapely.readthedocs.io/en/stable/">Documentación Oficial</a></p></li>
-<li><p><strong>Matplotlib</strong> - <a class="reference external" href="https://matplotlib.org/stable/contents.html">Documentación Oficial</a></p></li>
+<li><p>¿A qué clase está confundiendo más el modelo?</p></li>
+<li><p>¿Qué clase predice mejor?</p></li>
+<li><p>¿Qué te dicen las métricas <code class="docutils literal notranslate"><span class="pre">precision</span></code>, <code class="docutils literal notranslate"><span class="pre">recall</span></code> y <code class="docutils literal notranslate"><span class="pre">f1-score</span></code> en ambas clases?</p></li>
 </ol>
-</section>
-<section id="jupyter-y-entornos-de-desarrollo">
-<h4>Jupyter y Entornos de Desarrollo<a class="headerlink" href="#jupyter-y-entornos-de-desarrollo" title="Link to this heading">#</a></h4>
+<p>Ahora piensa:</p>
 <ul class="simple">
-<li><p><strong>JupyterBook</strong> - <a class="reference external" href="https://jupyterbook.org/en/stable/content/index.html">Documentación Oficial</a></p></li>
-<li><p><strong>Jupyter Notebook</strong> - <a class="reference external" href="https://jupyter.org/documentation">Guía Oficial</a></p></li>
-<li><p><strong>VS Code para Python</strong> - <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">Extensión Oficial</a></p></li>
+<li><p>¿Qué aspectos podrías mejorar del conjunto de entrenamiento?</p></li>
+<li><p>¿Qué pasaría si añades más muestras o balanceas la cantidad de clases?</p></li>
+<li><p>¿Podrías incluir nuevas variables (features) como NDVI, textura, elevación?</p></li>
+<li><p>¿Cambiarías el modelo o los parámetros de entrenamiento?</p></li>
+</ul>
+<blockquote>
+<div><p>💬 Escribe una breve propuesta de mejora para tu modelo de clasificación y explica por qué podría ayudar a mejorar el rendimiento.</p>
+</div></blockquote>
+</div>
+</section>
+<section id="referencias-y-recursos">
+<h2>Referencias y Recursos<a class="headerlink" href="#referencias-y-recursos" title="Link to this heading">#</a></h2>
+<section id="bases-de-datos-y-sql">
+<h3>🗃️ Bases de datos y SQL<a class="headerlink" href="#bases-de-datos-y-sql" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.oracle.com/co/database/what-is-database/">¿Qué es una base de datos? — Oracle</a></p></li>
+<li><p><a class="reference external" href="https://www.postgresql.org/docs/current/intro-whatis.html">Introducción a PostgreSQL</a></p></li>
+<li><p><a class="reference external" href="https://www.postgresql.org/docs/current/">Documentación oficial de PostgreSQL</a></p></li>
+<li><p><a class="reference external" href="https://www.postgresql.org/docs/current/sql.html">Lenguaje SQL en PostgreSQL — Comandos y estructura</a></p></li>
 </ul>
 </section>
+<hr class="docutils" />
+<section id="postgis-y-funciones-espaciales">
+<h3>🌐 PostGIS y funciones espaciales<a class="headerlink" href="#postgis-y-funciones-espaciales" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://postgis.net/">Sitio oficial de PostGIS</a></p></li>
+<li><p><a class="reference external" href="https://postgis.net/docs/manual-1.5/ch08.html">Funciones espaciales en PostGIS — Manual 1.5 (imagen usada)</a></p></li>
+<li><p><a class="reference external" href="https://postgis.net/docs/manual-3.5/using_postgis_dbmanagement.html#loading-data">Carga de datos vectoriales en PostGIS</a></p></li>
+<li><p><a class="reference external" href="https://postgis.net/docs/using_raster_dataman">Manejo de datos ráster en PostGIS</a></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="python-postgresql-postgis">
+<h3>🐍 Python + PostgreSQL/PostGIS<a class="headerlink" href="#python-postgresql-postgis" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://geopandas.org/en/stable/">GeoPandas — Documentación oficial</a></p></li>
+<li><p><a class="reference external" href="https://shapely.readthedocs.io/en/stable/">Shapely — Documentación oficial</a></p></li>
+<li><p><a class="reference external" href="https://www.psycopg.org/docs/">Psycopg2 — PostgreSQL adapter para Python</a></p></li>
+<li><p><a class="reference external" href="https://docs.sqlalchemy.org/en/20/">SQLAlchemy — Documentación oficial</a></p></li>
+<li><p><a class="reference external" href="https://geoalchemy-2.readthedocs.io/en/latest/">GeoAlchemy2 — Extensión espacial para SQLAlchemy</a></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="herramientas-y-entornos-de-desarrollo">
+<h3>💻 Herramientas y entornos de desarrollo<a class="headerlink" href="#herramientas-y-entornos-de-desarrollo" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterbook.org/en/stable/">JupyterBook — Documentación oficial</a></p></li>
+<li><p><a class="reference external" href="https://jupyter.org/">Jupyter Notebook — Sitio oficial</a></p></li>
+<li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">Extensión oficial de Python para VS Code</a></p></li>
+</ul>
 </section>
 </section>
 </section>
@@ -1091,22 +953,12 @@ psql<span class="w"> </span>-d<span class="w"> </span>postgis_34_sample<span cla
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos-espaciales">Bases de datos espaciales</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabla-de-contenido">Tabla de contenido</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definiciones-preliminares">Definiciones preliminares</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-lenguaje-sql">El lenguaje SQL</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postgresql">PostgreSQL</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postgis">PostGIS</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-postgis-python">Integración PostGIS / Python</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caso-de-estudio-administracion-de-datos-para-generacion-de-modelo-clasificador-de-bosque-no-bosque-por-medio-de-postgis-y-python">Caso de estudio: Administración de datos para generación de modelo clasificador de Bosque / No Bosque por medio de PostGIS y Python</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias-y-recursos">Referencias y Recursos</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos">Bases de Datos</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sql">SQL</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">PostGIS</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python-y-librerias-cientificas">Python y Librerías Científicas</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-y-entornos-de-desarrollo">Jupyter y Entornos de Desarrollo</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caso-de-estudio-administracion-de-datos-para-generacion-de-modelo-clasificador-de-bosque-no-bosque-por-medio-de-postgis-y-python">Caso de estudio: Administración de datos para generación de modelo clasificador de Bosque / No Bosque por medio de PostGIS y Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias-y-recursos">Referencias y Recursos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos-y-sql">🗃️ Bases de datos y SQL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postgis-y-funciones-espaciales">🌐 PostGIS y funciones espaciales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-postgresql-postgis">🐍 Python + PostgreSQL/PostGIS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas-y-entornos-de-desarrollo">💻 Herramientas y entornos de desarrollo</a></li>
 </ul>
 </li>
 </ul>
